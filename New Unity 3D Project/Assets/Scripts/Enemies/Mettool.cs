@@ -19,7 +19,6 @@ namespace Assets.Scripts.Enemies
 
         protected override void Die()
         {
-            
             _itemSpawner.SpawnItem();
             base.Die();
         }

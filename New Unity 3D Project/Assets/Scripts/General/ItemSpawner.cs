@@ -13,15 +13,14 @@ namespace Assets.Scripts.General
         [SerializeField] private List<GameObject> _itemsToSpawn;
         [SerializeField] private ItemSpawnMode _itemSpawnMode;
 
-        private System.Random _random = new System.Random();
-
         public void SpawnItem()
-        {
-            
+        {     
             switch(_itemSpawnMode)
             {
                 case ItemSpawnMode.Random:
-                    Instantiate(PickRandomItem(_itemsToSpawn), transform.position, transform.rotation);
+                    var randomObject = PickRandomItem(_itemsToSpawn);
+                    if (randomObject != null)
+                        Instantiate(randomObject, transform.position, transform.rotation);
                     break;
                 case ItemSpawnMode.Concrete:
                     Instantiate(_itemToSpawn, transform.position, transform.rotation);
@@ -29,6 +28,9 @@ namespace Assets.Scripts.General
             }
         }
 
-        private GameObject PickRandomItem(List<GameObject> gameObjectList) => gameObjectList[_random.Next(0, gameObjectList.Count)];
+        private GameObject PickRandomItem(List<GameObject> gameObjectList)
+        {
+            return gameObjectList[UnityEngine.Random.Range(0, gameObjectList.Count)];
+        }
     }
 }

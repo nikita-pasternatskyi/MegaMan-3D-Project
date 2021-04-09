@@ -7,7 +7,7 @@ using Assets.Scripts.General;
 namespace Assets.Scripts.Items
 {
     [AddComponentMenu("Items/Healing Item")]
-    public class Healing_Item : MonoBehaviour, IItem
+    public class Healing_Item : MonoBehaviour
     {
 
         [SerializeField] private int _healthToHeal;

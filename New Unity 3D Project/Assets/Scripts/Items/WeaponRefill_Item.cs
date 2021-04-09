@@ -7,7 +7,7 @@ using Assets.Scripts.Player;
 namespace Assets.Scripts.Items
 {
     [AddComponentMenu("Items/Weapon Refill")]
-    public class WeaponRefill_Item : MonoBehaviour, IItem
+    public class WeaponRefill_Item : MonoBehaviour
     {
         [SerializeField] private float ammoToRefill;
 

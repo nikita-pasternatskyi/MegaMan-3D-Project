@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8205976899171544024}
   - component: {fileID: 8205976899171544031}
   - component: {fileID: 8205976899171544027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Big Health Refill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,4 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f1e2124c88d3343897c1d43a988db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToHeal: 5
+  _healthToHeal: 0

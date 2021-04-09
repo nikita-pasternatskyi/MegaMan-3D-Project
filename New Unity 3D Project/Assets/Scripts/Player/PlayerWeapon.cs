@@ -8,6 +8,7 @@ namespace Assets.Scripts.Player
     {
         [SerializeField] private GameObject _projectile;
         [SerializeField] private Transform _whereToSpawn;
+        [SerializeField] private Transform _referenceRotation;
         [SerializeField] private float _maxAmmo;
         [SerializeField] private float _currentAmmo;
         public virtual void Refill(float ammoToRefill)
@@ -28,7 +29,11 @@ namespace Assets.Scripts.Player
 
         protected virtual void MainFire()
         {
-            Instantiate(_projectile, _whereToSpawn.position, _whereToSpawn.rotation);
+            Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
+        }
+        private void OnDisable()
+        {
+            Input.FirePressed -= MainFire;
         }
 
         protected virtual void AltFire()

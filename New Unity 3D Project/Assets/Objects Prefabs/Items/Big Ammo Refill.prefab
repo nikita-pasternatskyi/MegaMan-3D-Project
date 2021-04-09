@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4504729340084603616}
   - component: {fileID: 4504729340084603619}
   - component: {fileID: 4504729340084603631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Big Ammo Refill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
