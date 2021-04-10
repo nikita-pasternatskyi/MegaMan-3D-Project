@@ -14,6 +14,7 @@ namespace Assets.Scripts.Player.MegaMan
         public delegate void OnRushJetted();
         public static event OnRushJetted OnRushJet;
 
+        [SerializeField] private PlayerCamera _playerCamera;
         [SerializeField] private float _spawnDistance;
         [SerializeField] PlayerMove _playerMove;
         [SerializeField] RushMode _currentRushState = RushMode.None;
@@ -26,10 +27,19 @@ namespace Assets.Scripts.Player.MegaMan
             Input.CompanionSpecialTwoPressed += CallRushJet;
         }
 
+        private void Update()
+        {
+            if(_currentRushState == RushMode.RushJet)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+
         public void MountRushJet()
         {
             _currentRushState = RushMode.RushJet;
             _playerMove.enabled = false;
+            _playerCamera.ChangeCameraMode(CameraModes.AroundPoint);
             OnRushJet?.Invoke();
         }
 

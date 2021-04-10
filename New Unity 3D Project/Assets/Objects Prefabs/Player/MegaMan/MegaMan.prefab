@@ -104,14 +104,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179679416585304155}
-  m_LocalRotation: {x: -0.017310662, y: -0, z: -0, w: 0.9998502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3179679417617217246}
   m_Father: {fileID: 3179679417943795021}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -1.984, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3179679417323619823
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   _maximumMouseRotation: 90
   _lockCursor: 1
   _currentCameraMode: 0
-  _pivotModeZOffset: 0
+  _pivotModeZOffset: -5
 --- !u!114 &3179679417943795011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260c6ca38daa0a8459644edd09e2bf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerCamera: {fileID: 3179679417943795008}
   _spawnDistance: 1
   _playerMove: {fileID: 3179679417943795011}
   _currentRushState: 0

@@ -12,9 +12,10 @@ namespace Assets.Scripts.Player.MegaMan
         [SerializeField] private float _flightTime;
         [SerializeField] private float _currentFlightTime;
         [SerializeField] private float _flightSpeed;
-        [SerializeField] private float _maximumXRotation = 45;
-        [SerializeField] private float _maximumYRotation = 90;
-        [SerializeField] private float _maximumZRotation = 25;
+
+        public float xRotSpeed = 50;
+        public float yRotSpeed = 50;
+
         [SerializeField] private bool _isFlying;
         [SerializeField] public float turnSpeed;
 
@@ -30,7 +31,7 @@ namespace Assets.Scripts.Player.MegaMan
         }
 
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (_isFlying)
                 Fly();
@@ -38,10 +39,28 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void Fly()
         {
+            transform.Rotate(Vector3.up * Time.fixedDeltaTime * xRotSpeed * UnityEngine.Input.GetAxis("Horizontal"));
+            transform.Rotate(Vector3.right * Time.fixedDeltaTime * yRotSpeed * UnityEngine.Input.GetAxis("Vertical"));
+
+            Quaternion tempRot = transform.rotation;
+
+            float zRot = 0;
+            if (UnityEngine.Input.GetAxis("Horizontal") > 0.1)
+            {
+                zRot = -25f;
+            }
+            else if (UnityEngine.Input.GetAxis("Horizontal") < -0.1)
+            {
+                zRot = 25f;
+            }
+            else 
+            {
+                zRot = 0;
+            }
+
+            tempRot.eulerAngles = new Vector3(tempRot.eulerAngles.x, tempRot.eulerAngles.y, zRot);
+            transform.rotation = Quaternion.Lerp(transform.rotation, tempRot, Time.fixedDeltaTime * turnSpeed);
             transform.position += _flightSpeed * transform.forward * Time.deltaTime;
-            Quaternion targetRotation = new Quaternion(UnityEngine.Input.GetAxis("Vertical") * _maximumXRotation * Time.deltaTime, Camera.main.transform.rotation.y, 0, transform.rotation.w);
-            //transform.rotation = targetRotation;
-            transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         }
 
         private void StartFlight() => _isFlying = true;

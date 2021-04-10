@@ -30,7 +30,10 @@ namespace Assets.Scripts.Player
             {
                 case CameraModes.AroundPoint:
                     _rotateWithPivot = true;
-                    _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);
+                    _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);                   
+                    _bodyToXRotate.rotation = Quaternion.Euler(0, 0, 0);
+                    _camera.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    _mouseCanLookAround = false;
                     break;
                 case CameraModes.FPS:
                     _rotateWithPivot = false;
@@ -43,8 +46,7 @@ namespace Assets.Scripts.Player
         {
             Invoke("EnableCameraLook", 0.5f);
             Cursor.lockState = _lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-            Input.MouseMoved += MouseLook;
-           
+            Input.MouseMoved += MouseLook;      
         }
 
         private void FixedUpdate()
