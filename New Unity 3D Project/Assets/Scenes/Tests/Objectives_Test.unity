@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelType: 0
-  _enemyToDefeat: {fileID: 0}
+  _enemyToDefeat: {fileID: 321862575}
   _itemToCollect: {fileID: 0}
 --- !u!1 &321862570
 GameObject:
