@@ -36,7 +36,7 @@ namespace Assets.Scripts.General
 
         public virtual void Heal(int healthToHeal)
         {
-            _currentHealth += healthToHeal;
+            _currentHealth = _currentHealth + healthToHeal < _maximumHealth ? _currentHealth + healthToHeal : _currentHealth;
             HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maximumHealth);
         }
 
