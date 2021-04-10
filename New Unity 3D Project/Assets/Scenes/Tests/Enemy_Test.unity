@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f55cf5f577b974381d0223e7bf532e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemToSpawn: {fileID: 0}
+  _itemToSpawn: {fileID: 8205976899171544030, guid: 33b58083d8f01d5418a9f1979f11a805, type: 3}
   _itemsToSpawn:
   - {fileID: 7307723964315024015, guid: ada9d3f724b876c42afb555aae4ff106, type: 3}
   - {fileID: 1757532938930635811, guid: 30cf5a4ee03336042aeff4f38b851817, type: 3}
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3179679417943795021, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.14
       objectReference: {fileID: 0}
     - target: {fileID: 3179679417943795021, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}
       propertyPath: m_LocalRotation.w

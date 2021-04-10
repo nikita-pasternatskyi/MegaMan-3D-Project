@@ -7,11 +7,10 @@ using Assets.Scripts.General;
 namespace Assets.Scripts.Items
 {
     [AddComponentMenu("Items/Healing Item")]
-    public class Healing_Item : MonoBehaviour
+    class Healing_Item : Item
     {
 
         [SerializeField] private int _healthToHeal;
-
 
         private void OnTriggerEnter(Collider other)
         {
