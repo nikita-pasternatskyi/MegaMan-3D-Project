@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 716218494619233605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,8 @@ GameObject:
   - component: {fileID: 1493908281207110585}
   - component: {fileID: 1493908281207110589}
   - component: {fileID: 42443691}
-  m_Layer: 0
+  - component: {fileID: 7841775211198367464}
+  m_Layer: 8
   m_Name: Met
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +132,32 @@ MonoBehaviour:
   _currentEnemyState: 0
   _projectile: {fileID: 0}
   _timeToWait: 0
-  _itemSpawner: {fileID: 0}
+  _itemSpawner: {fileID: 7841775211198367464}
+--- !u!114 &7841775211198367464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493908281207110584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f55cf5f577b974381d0223e7bf532e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemToSpawn: {fileID: 0}
+  _itemsToSpawn:
+  - {fileID: 4504729340084603618, guid: f042131b044e4f049954f7d45712abb8, type: 3}
+  - {fileID: 8205976899171544030, guid: 33b58083d8f01d5418a9f1979f11a805, type: 3}
+  - {fileID: 7307723964315024015, guid: ada9d3f724b876c42afb555aae4ff106, type: 3}
+  - {fileID: 1757532938930635811, guid: 30cf5a4ee03336042aeff4f38b851817, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _itemSpawnMode: 0
 --- !u!1 &2929099605529870513
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +169,7 @@ GameObject:
   - component: {fileID: 8237882478694207563}
   - component: {fileID: 5583595211425846220}
   - component: {fileID: 7933761990567610502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +250,7 @@ GameObject:
   - component: {fileID: 5286551225335127865}
   - component: {fileID: 5300387657253160986}
   - component: {fileID: 9083799219571751635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +332,7 @@ GameObject:
   - component: {fileID: 6293051652142131890}
   - component: {fileID: 691593275118526720}
   - component: {fileID: 3529726400322588850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +413,7 @@ GameObject:
   - component: {fileID: 8768795140238793800}
   - component: {fileID: 7342670105354157003}
   - component: {fileID: 6473556261449953236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
