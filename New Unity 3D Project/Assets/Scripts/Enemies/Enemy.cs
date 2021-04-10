@@ -7,6 +7,7 @@ namespace Assets.Scripts.Enemies
 {
     class Enemy : MonoBehaviour
     {
+
         [SerializeField] private Health _health;
         [SerializeField] private Animator _animator;
         [SerializeField] EnemyState _currentEnemyState;

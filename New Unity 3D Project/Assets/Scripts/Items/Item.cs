@@ -6,6 +6,9 @@ namespace Assets.Scripts.Items
 {
     class Item : MonoBehaviour
     {
+        public delegate void OnPickUp();
+        public event OnPickUp PickedUp;
+
         private float _lerpMultiplier = 0.1f;
         private Vector3 _groundPosition;
         private Vector3 _startPosition;
@@ -22,7 +25,10 @@ namespace Assets.Scripts.Items
                 _groundPosition.y += _boxCollider.size.y * transform.localScale.y / 2;
             }
         }
-
+        protected virtual void OnTriggerEnter(Collider other)
+        {
+            PickedUp.Invoke();
+        }
         protected virtual IEnumerator Fall()
         {
             while (transform.position.y != _groundPosition.y)

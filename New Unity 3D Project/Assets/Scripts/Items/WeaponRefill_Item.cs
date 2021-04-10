@@ -11,8 +11,10 @@ namespace Assets.Scripts.Items
     {
         [SerializeField] private float ammoToRefill;
 
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
+            base.OnTriggerEnter(other);
+
             if (other.GetComponent<PlayerWeapon>() != null)
             {
                 other.GetComponent<PlayerWeapon>().Refill(ammoToRefill);

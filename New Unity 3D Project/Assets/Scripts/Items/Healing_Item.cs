@@ -11,8 +11,10 @@ namespace Assets.Scripts.Items
     {
         [SerializeField] private int _healthToHeal;
 
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
+            base.OnTriggerEnter(other);
+
             if (other.GetComponent<Health>() != null)
             {
                 other.GetComponent<Health>().Heal(_healthToHeal);

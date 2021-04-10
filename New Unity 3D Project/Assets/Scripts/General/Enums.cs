@@ -23,3 +23,8 @@ public enum EnemyState
 {
     Idle, Attack,
 }
+
+public enum LevelType
+{ 
+    DefeatEnemy, CollectItem, DestroyObject    
+}
