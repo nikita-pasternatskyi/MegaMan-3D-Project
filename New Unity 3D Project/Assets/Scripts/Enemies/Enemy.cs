@@ -5,6 +5,7 @@ using Assets.Scripts.General;
 
 namespace Assets.Scripts.Enemies
 {
+    [RequireComponent(typeof(Health))]
     class Enemy : MonoBehaviour
     {
 

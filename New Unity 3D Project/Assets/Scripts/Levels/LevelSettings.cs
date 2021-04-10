@@ -6,9 +6,11 @@ using Assets.Scripts.General;
 
 namespace Assets.Scripts.Levels
 {
-    class LevelObjective : MonoBehaviour
+    class LevelSettings : MonoBehaviour
     {
-        public static LevelObjective Instance;
+        public static LevelSettings Instance;
+
+        public static bool IsPaused = false;
 
         public delegate void OnFinishedLevel();
         public static event OnFinishedLevel FinishedLevel;
@@ -51,6 +53,16 @@ namespace Assets.Scripts.Levels
         protected virtual void FinishLevel()
         {
             FinishedLevel.Invoke();
+        }
+
+        public static void PauseGame()
+        {
+            Time.timeScale = 0;
+        }
+
+        public static void ResumeGame()
+        {
+            Time.timeScale = 1;
         }
     }
 }

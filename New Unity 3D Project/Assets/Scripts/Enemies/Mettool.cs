@@ -4,6 +4,7 @@ using UnityEngine;
 using Assets.Scripts.General;
 namespace Assets.Scripts.Enemies
 {
+    [RequireComponent(typeof(ItemSpawner))]
     class Mettool : Enemy
     {
         [SerializeField] GameObject _projectile;

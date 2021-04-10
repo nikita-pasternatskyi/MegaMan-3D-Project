@@ -14,6 +14,7 @@ namespace Assets.Scripts.Player
     {
         public static Input Instance;
 
+        public delegate void OnPauseButtonPressed();
         public delegate void OnCompanionSpecialOnePressed();
         public delegate void OnCompanionSpecialTwoPressed();
         public delegate void OnMovementPressed(Vector2 MovementInput);
@@ -24,6 +25,7 @@ namespace Assets.Scripts.Player
         public delegate void OnJumpPressed();
         public delegate void OnSpecialAbilityPressed();
 
+        public static event OnPauseButtonPressed PauseButtonPressed;
         public static event OnCompanionSpecialOnePressed CompanionSpecialOnePressed;
         public static event OnCompanionSpecialTwoPressed CompanionSpecialTwoPressed;
         public static event OnFirePressed FirePressed;
@@ -61,6 +63,11 @@ namespace Assets.Scripts.Player
 
         private void InvokeEvents()
         {
+            if(UnityEngine.Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseButtonPressed?.Invoke();
+            }
+
             if (_movementInput != Vector2.zero)
             {
                 MovementPressed?.Invoke(_movementInput);

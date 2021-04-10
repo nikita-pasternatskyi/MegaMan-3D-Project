@@ -28,3 +28,8 @@ public enum LevelType
 { 
     DefeatEnemy, CollectItem, DestroyObject    
 }
+
+public enum PauseMenuState
+{ 
+    Closed, Opened,
+}
