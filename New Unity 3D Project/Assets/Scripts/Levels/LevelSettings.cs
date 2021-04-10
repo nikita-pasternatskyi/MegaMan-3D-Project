@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Items;
 using Assets.Scripts.General;
+using TMPro;
 
 namespace Assets.Scripts.Levels
 {
@@ -10,6 +11,7 @@ namespace Assets.Scripts.Levels
     {
         public static LevelSettings Instance;
 
+        public GameObject TMP;
         public static bool IsPaused = false;
 
         public delegate void OnFinishedLevel();
@@ -52,7 +54,9 @@ namespace Assets.Scripts.Levels
 
         protected virtual void FinishLevel()
         {
-            FinishedLevel.Invoke();
+            Debug.Log("hio");
+            FinishedLevel?.Invoke();
+            TMP.SetActive(true);
         }
 
         public static void PauseGame()

@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260c6ca38daa0a8459644edd09e2bf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnDistance: 0
+  _spawnDistance: 1
   _playerMove: {fileID: 3179679417943795011}
   _currentRushState: 0
   _rushCoil: {fileID: 2644897158012535850, guid: 84236876d3b3ef24abcaffa5f307bd69, type: 3}
@@ -649,6 +649,18 @@ PrefabInstance:
     - target: {fileID: 5153741381653354898, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153741381796902192, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153741381796902192, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153741381796902192, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5153741381796902193, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
       propertyPath: m_Name

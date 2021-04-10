@@ -36,8 +36,10 @@ namespace Assets.Scripts.Player.MegaMan
         private void CallRushJet()
         {
             if (_currentRushState == RushMode.None)
+            {
                 SpawnRush(_rushJet);
                 _currentRushState = RushMode.RushJetAwaiting;
+            }
         }
 
         private void CallRushCoil()
@@ -51,7 +53,13 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void SpawnRush(GameObject whichRush)
         {
+            RaycastHit raycastHit;
             Vector3 position = transform.position + transform.forward * _spawnDistance;
+
+            if (Physics.Raycast(position, -transform.up, out raycastHit))
+            {
+                position.y = raycastHit.point.y + 0.5f;
+            }
             Instantiate(whichRush, position, transform.rotation);
         }
 
