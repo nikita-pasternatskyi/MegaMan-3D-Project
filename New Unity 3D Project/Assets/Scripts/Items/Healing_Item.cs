@@ -9,7 +9,6 @@ namespace Assets.Scripts.Items
     [AddComponentMenu("Items/Healing Item")]
     class Healing_Item : Item
     {
-
         [SerializeField] private int _healthToHeal;
 
         private void OnTriggerEnter(Collider other)

@@ -19,7 +19,7 @@ namespace Assets.Scripts.Items
             {
                 _startPosition = transform.position;
                 _groundPosition = raycastHit.point;
-                _groundPosition.y += _boxCollider.size.y / 2;
+                _groundPosition.y += _boxCollider.size.y * transform.localScale.y / 2;
             }
         }
 

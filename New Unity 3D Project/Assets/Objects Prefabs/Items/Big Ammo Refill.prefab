@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9922134289b3e3642bce1778fac0e988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 4504729340084603619}
-  t: 0
+  _boxCollider: {fileID: 4504729340084603619}
   ammoToRefill: 30
 --- !u!95 &4056898077308203803
 Animator:

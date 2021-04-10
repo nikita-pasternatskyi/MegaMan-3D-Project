@@ -127,8 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f1e2124c88d3343897c1d43a988db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1241417515}
-  t: 0
+  _boxCollider: {fileID: 1241417515}
   _healthToHeal: 30
 --- !u!95 &4098695487699700117
 Animator:
