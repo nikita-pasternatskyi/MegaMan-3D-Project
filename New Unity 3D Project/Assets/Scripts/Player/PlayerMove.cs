@@ -33,10 +33,6 @@ namespace Assets.Scripts.Player
             Input.JumpPressed += Jump;
         }
 
-        private void Start()
-        {
-        }
-
         private void FixedUpdate()
         {
             ApplyPhysics();

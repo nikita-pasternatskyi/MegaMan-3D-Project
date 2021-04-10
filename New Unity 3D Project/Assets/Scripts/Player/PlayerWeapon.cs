@@ -13,11 +13,11 @@ namespace Assets.Scripts.Player
         [SerializeField] private float _currentAmmo;
         public virtual void Refill(float ammoToRefill)
         {
-            _currentAmmo += ammoToRefill;
+            _currentAmmo = _currentAmmo + ammoToRefill < _maxAmmo ? _currentAmmo + ammoToRefill : ammoToRefill;
             RefreshWeaponUI();
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             Input.FirePressed += MainFire;
         }
@@ -26,19 +26,19 @@ namespace Assets.Scripts.Player
         { 
         
         }
-
         protected virtual void MainFire()
         {
             Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
         }
-        private void OnDisable()
-        {
-            Input.FirePressed -= MainFire;
-        }
-
         protected virtual void AltFire()
         { 
             
         }
+        protected virtual void OnDisable()
+        {
+            Input.FirePressed -= MainFire;
+        }
+
+   
     }
 }

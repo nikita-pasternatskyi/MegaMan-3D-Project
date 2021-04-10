@@ -16,7 +16,7 @@ namespace Assets.Scripts.General
         [SerializeField] private int _maximumHealth;
         [SerializeField] private int _currentHealth;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             HealthChanged?.Invoke(_maximumHealth, 1);
         }
