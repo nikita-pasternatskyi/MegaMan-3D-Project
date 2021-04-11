@@ -12,10 +12,10 @@ namespace Assets.Scripts.Player.UI
 
         private void OnEnable()
         {
-            Input.PauseButtonPressed += Open;
+            Input.PauseButtonPressed += TogglePauseMenu;
         }
 
-        private void Open()
+        private void TogglePauseMenu()
         {
             if (_currentPauseMenuState == PauseMenuState.Opened)
             {
@@ -23,14 +23,21 @@ namespace Assets.Scripts.Player.UI
             }
             else if ( _currentPauseMenuState == PauseMenuState.Closed)
             {
-                LevelSettings.PauseGame();
-                _uiPauseMenu.SetActive(true);
+                Open();
             }
+        }
+
+        private void Open()
+        {
+            LevelSettings.PauseGame();
+            _currentPauseMenuState = PauseMenuState.Opened;
+            _uiPauseMenu.SetActive(true);
         }
 
         private void Close()
         {
             LevelSettings.ResumeGame();
+            _currentPauseMenuState = PauseMenuState.Closed;
             _uiPauseMenu.SetActive(false);
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Levels;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.MegaMan
@@ -14,10 +15,11 @@ namespace Assets.Scripts.Player.MegaMan
                 other.GetComponent<PlayerMove>().Jump(_jumpHeight);
             }
 
-            else 
+            else
             {
-            
+
             }
+
         }
 
     }

@@ -1,5 +1,4 @@
-﻿
-
+﻿using Assets.Scripts.Levels;
 using System;
 using UnityEngine;
 
@@ -12,8 +11,11 @@ namespace Assets.Scripts.Player
             Input.SpecialAbilityPressed += SpecialAbility;
         }
         protected virtual void SpecialAbility()
-        { 
-            throw new NotImplementedException();
+        {
+            if (!LevelSettings.IsPaused)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

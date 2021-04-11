@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Levels;
+using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
@@ -58,25 +59,28 @@ namespace Assets.Scripts.Player
 
         private void MouseLook(Vector2 mouseInput)
         {
-            if (_mouseCanLookAround)
+            if (!LevelSettings.IsPaused)
             {
-                if (_bodyToXRotate != null)
+                if (_mouseCanLookAround)
                 {
-                    mouseInput *= Time.deltaTime;
-                   
-                    _cameraXRotation -= mouseInput.y;
-                    _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
-
-                    if (_rotateWithPivot)
+                    if (_bodyToXRotate != null)
                     {
-                        _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                    }
-                    else {
-                        _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                    }
-                    _bodyToXRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
-                }
+                        mouseInput *= Time.deltaTime;
 
+                        _cameraXRotation -= mouseInput.y;
+                        _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
+
+                        if (_rotateWithPivot)
+                        {
+                            _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                        }
+                        else {
+                            _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                        }
+                        _bodyToXRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+                    }
+
+                }
             }
         }
 

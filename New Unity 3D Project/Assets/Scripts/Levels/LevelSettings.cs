@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Items;
 using Assets.Scripts.General;
-using TMPro;
 
 namespace Assets.Scripts.Levels
 {
     class LevelSettings : MonoBehaviour
     {
-        public static LevelSettings Instance;
+        [SerializeField] private GameObject _winScreen;
 
-        public GameObject TMP;
+        public static LevelSettings Instance;
         public static bool IsPaused = false;
 
         public delegate void OnFinishedLevel();
@@ -54,18 +53,19 @@ namespace Assets.Scripts.Levels
 
         protected virtual void FinishLevel()
         {
-            Debug.Log("hio");
             FinishedLevel?.Invoke();
-            TMP.SetActive(true);
+            _winScreen.SetActive(true);
         }
 
         public static void PauseGame()
         {
+            IsPaused = true;
             Time.timeScale = 0;
         }
 
         public static void ResumeGame()
         {
+            IsPaused = false;
             Time.timeScale = 1;
         }
     }

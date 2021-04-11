@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Levels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,9 +30,12 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void Update()
         {
-            if(_currentRushState == RushMode.RushJet)
+            if (!LevelSettings.IsPaused)
             {
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                if (_currentRushState == RushMode.RushJet)
+                {
+                    transform.localRotation = Quaternion.Euler(0, 0, 0);
+                }
             }
         }
 
@@ -45,19 +49,25 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void CallRushJet()
         {
-            if (_currentRushState == RushMode.None)
+            if (!LevelSettings.IsPaused)
             {
-                SpawnRush(_rushJet);
-                _currentRushState = RushMode.RushJetAwaiting;
+                if (_currentRushState == RushMode.None)
+                {
+                    SpawnRush(_rushJet);
+                    _currentRushState = RushMode.RushJetAwaiting;
+                }
             }
         }
 
         private void CallRushCoil()
         {
-            if (_currentRushState == RushMode.None)
+            if (!LevelSettings.IsPaused)
             {
-                SpawnRush(_rushCoil);
-                _currentRushState = RushMode.RushCoil;
+                if (_currentRushState == RushMode.None)
+                {
+                    SpawnRush(_rushCoil);
+                    _currentRushState = RushMode.RushCoil;
+                }
             }
         }
 

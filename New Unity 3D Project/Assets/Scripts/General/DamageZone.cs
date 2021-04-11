@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.General;
+using Assets.Scripts.Levels;
 
 namespace Assets.Scripts
 {
@@ -11,10 +12,10 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.GetComponent<Health>() != null)
-            {
+             if (other.GetComponent<Health>() != null)
+             {
                 other.GetComponent<Health>().TakeDamage(_damage);
-            }
+             }
         }
 
     }

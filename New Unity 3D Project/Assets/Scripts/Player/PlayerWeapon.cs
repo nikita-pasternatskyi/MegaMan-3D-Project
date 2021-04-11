@@ -1,3 +1,4 @@
+using Assets.Scripts.Levels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private float _currentAmmo;
         public virtual void Refill(float ammoToRefill)
         {
-            _currentAmmo = _currentAmmo + ammoToRefill < _maxAmmo ? _currentAmmo + ammoToRefill : ammoToRefill;
+            _currentAmmo = _currentAmmo + ammoToRefill < _maxAmmo ? _currentAmmo + ammoToRefill : _maxAmmo;
             RefreshWeaponUI();
         }
 
@@ -21,18 +22,23 @@ namespace Assets.Scripts.Player
         {
             Input.FirePressed += MainFire;
         }
-
         protected virtual void RefreshWeaponUI()
         { 
         
         }
         protected virtual void MainFire()
         {
-            Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
+            if (!LevelSettings.IsPaused)
+            {
+                Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
+            }
         }
         protected virtual void AltFire()
-        { 
+        {
+            if (!LevelSettings.IsPaused)
+            {
             
+            }
         }
         protected virtual void OnDisable()
         {

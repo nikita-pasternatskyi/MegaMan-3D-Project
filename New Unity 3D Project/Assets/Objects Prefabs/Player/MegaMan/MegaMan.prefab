@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1763102612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1763102613}
+  - component: {fileID: 1763102615}
+  - component: {fileID: 1763102614}
+  m_Layer: 6
+  m_Name: PauseMenu_BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1763102613
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763102612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9119917522863711656}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030518, y: -0.0013275}
+  m_SizeDelta: {x: 800, y: 450.15}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1763102615
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763102612}
+  m_CullTransparentMesh: 1
+--- !u!114 &1763102614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763102612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7372549}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1347397518071695809
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +466,7 @@ GameObject:
   - component: {fileID: 3179679417943795015}
   - component: {fileID: 4113388250421663704}
   - component: {fileID: 5887954921677045407}
+  - component: {fileID: 4280594344505121450}
   m_Layer: 6
   m_Name: MegaMan
   m_TagString: Untagged
@@ -556,6 +632,20 @@ MonoBehaviour:
   _currentRushState: 0
   _rushCoil: {fileID: 2644897158012535850, guid: 84236876d3b3ef24abcaffa5f307bd69, type: 3}
   _rushJet: {fileID: 1731037228381954942, guid: 6922974c106878e44b631936e4d36971, type: 3}
+--- !u!114 &4280594344505121450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179679417943795020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05895950925d4854da739798da9a76db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiPauseMenu: {fileID: 1763102612}
+  _currentPauseMenuState: 0
 --- !u!1 &4997933956823867200
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,9 +921,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
---- !u!4 &9119917521990437158 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5153741382064294935, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
+--- !u!224 &9119917522863711656 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5153741382935077017, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
   m_PrefabInstance: {fileID: 4113388248535237937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9119917521224502182 stripped
@@ -852,6 +942,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &9119917521990437158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5153741382064294935, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}
+  m_PrefabInstance: {fileID: 4113388248535237937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9119917522748997382 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5153741382856604215, guid: 0c1a340be698d9640bf169a07a74901b, type: 3}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Levels;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.General
@@ -31,12 +32,11 @@ namespace Assets.Scripts.General
             }
 
             HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maximumHealth);
-            
         }
 
         public virtual void Heal(int healthToHeal)
         {
-            _currentHealth = _currentHealth + healthToHeal < _maximumHealth ? _currentHealth + healthToHeal : _currentHealth;
+            _currentHealth = _currentHealth + healthToHeal < _maximumHealth ? _currentHealth + healthToHeal : _maximumHealth;
             HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maximumHealth);
         }
 
