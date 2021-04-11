@@ -58,13 +58,13 @@ namespace Assets.Scripts.Levels
             _winScreen.SetActive(true);
         }
 
-        public static void PauseGame()
+        public void PauseGame()
         {
             Instance.IsPaused = true;
             Time.timeScale = 0;
         }
 
-        public static void ResumeGame()
+        public void ResumeGame()
         {
             Instance.IsPaused = false;
             Time.timeScale = 1;

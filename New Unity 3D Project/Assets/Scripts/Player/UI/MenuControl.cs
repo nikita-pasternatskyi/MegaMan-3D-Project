@@ -7,7 +7,7 @@ namespace Assets.Scripts.Player.UI
 {
     public class MenuControl : MonoBehaviour
     {
-        [SerializeField] private GameObject _uiPauseMenu;
+        public GameObject _uiPauseMenu;
         [SerializeField] private PauseMenuState _currentPauseMenuState;
 
         private void OnEnable()
@@ -29,21 +29,22 @@ namespace Assets.Scripts.Player.UI
 
         private void Open()
         {
-            LevelSettings.PauseGame();
+            Debug.Log(_uiPauseMenu);
+            LevelSettings.Instance.PauseGame();
             _currentPauseMenuState = PauseMenuState.Opened;
-            _uiPauseMenu?.SetActive(true);
+            _uiPauseMenu?.SetActive(true); 
         }
 
         private void Close()
         {
-            LevelSettings.ResumeGame();
+            LevelSettings.Instance.ResumeGame();
             _currentPauseMenuState = PauseMenuState.Closed;
             _uiPauseMenu?.SetActive(false);
         }
 
         private void OnDisable()
         {
-            Input.PauseButtonPressed -= Open;
+            Input.PauseButtonPressed -= TogglePauseMenu;
         }
     }
 }

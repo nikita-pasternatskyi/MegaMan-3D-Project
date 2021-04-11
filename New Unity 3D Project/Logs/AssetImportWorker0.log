@@ -15,11 +15,11 @@ E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57619
+56950
 Successfully changed project path to: E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
 E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 93.26 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 68.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path E:/Unity Editors/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
@@ -36,707 +36,59 @@ Initialize mono
 Mono path[0] = 'E:/Unity Editors/2020.3.1f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'E:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56960
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity Editors/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003165 seconds.
+Registered in 0.000884 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.53 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 61.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.423 seconds
+- Completed reload, in  0.935 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002357 seconds.
+Registered in 0.001990 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 108.66 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 66.74 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.820 seconds
+- Completed reload, in  1.701 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.07 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3456 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.0 MB.
-System memory in use after: 158.2 MB.
+Unloading 3455 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.1 MB.
+System memory in use after: 158.3 MB.
 
-Unloading 154 unused Assets to reduce memory usage. Loaded Objects now: 3888.
-Total: 10.625300 ms (FindLiveObjects: 0.421600 ms CreateObjectMapping: 0.200300 ms MarkObjects: 9.708800 ms  DeleteObjects: 0.293000 ms)
+Unloading 154 unused Assets to reduce memory usage. Loaded Objects now: 3887.
+Total: 5.214100 ms (FindLiveObjects: 0.470600 ms CreateObjectMapping: 0.268600 ms MarkObjects: 4.249900 ms  DeleteObjects: 0.223500 ms)
 
 ========================================================================
 Received Import Request.
-  path: Packages/com.unity.animation.rigging/Editor/Shapes/LocatorEffector.asset
-  artifactKey: Guid(c6793350c150f456688e39a81f97364a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.animation.rigging/Editor/Shapes/LocatorEffector.asset using Guid(c6793350c150f456688e39a81f97364a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a81a43ac49f8f180f1eea16b10383ee0') in 0.260089 seconds
-  Import took 0.287997 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Packages/com.unity.animation.rigging/Editor/Shapes/SquareEffector.asset
-  artifactKey: Guid(707439f5f179a460987ecbb96364c8a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.animation.rigging/Editor/Shapes/SquareEffector.asset using Guid(707439f5f179a460987ecbb96364c8a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f4dba78f8af2d9f0c578bc4ba0e1a13') in 0.083586 seconds
-  Import took 0.099970 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 916.430531 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged 1.fbx
-  artifactKey: Guid(b4c9880c876db9e439b78ba6b0b4d30c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged 1.fbx using Guid(b4c9880c876db9e439b78ba6b0b4d30c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca2f51823128dd4913d5ac25399d27e9') in 0.441538 seconds
-  Import took 0.458770 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.402983 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea1ad2e51cde3d4d52fd5387ceb05db4') in 0.110663 seconds
-  Import took 0.116986 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 968.150755 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7689f1925b1c157725ffd0c77effbbf') in 0.106442 seconds
-  Import took 0.130650 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 710.301324 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged 1.fbx
-  artifactKey: Guid(b4c9880c876db9e439b78ba6b0b4d30c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged 1.fbx using Guid(b4c9880c876db9e439b78ba6b0b4d30c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '372d54ba86abc56d0d1ea4fec21bc7c3') in 0.165191 seconds
-  Import took 0.193375 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 63.061538 seconds.
-  path: Packages/com.unity.animation.rigging/Editor/Shapes/BoxEffector.asset
-  artifactKey: Guid(687b70eb9c49243639f9379f6965034f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.animation.rigging/Editor/Shapes/BoxEffector.asset using Guid(687b70eb9c49243639f9379f6965034f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9da12f3afee3f1d61b24b173da374c7') in 0.020597 seconds
-  Import took 0.054579 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Packages/com.unity.animation.rigging/Editor/Shapes/CircleEffector.asset
-  artifactKey: Guid(b43e6ef97ee1b4e31be1a0187b9f4495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.animation.rigging/Editor/Shapes/CircleEffector.asset using Guid(b43e6ef97ee1b4e31be1a0187b9f4495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '200e8cbfeb76932266dd7f6d13a147bd') in 0.090336 seconds
-  Import took 0.108432 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000182 seconds.
-  path: Packages/com.unity.animation.rigging/Editor/Shapes/BallEffector.asset
-  artifactKey: Guid(e050c2b16fe384bd994474655a4b4968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.animation.rigging/Editor/Shapes/BallEffector.asset using Guid(e050c2b16fe384bd994474655a4b4968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf8f4e8cf2664ba8582f99814de9c26c') in 0.018693 seconds
-  Import took 0.026663 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2853.992928 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rig_2.blend
-  artifactKey: Guid(d84423ff4dc95bb448189ca36c95b90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rig_2.blend using Guid(d84423ff4dc95bb448189ca36c95b90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ffb689d94ddea3954800dc28dd720b9') in 0.185165 seconds
-  Import took 0.234536 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 206.955847 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rig_2.blend
-  artifactKey: Guid(d84423ff4dc95bb448189ca36c95b90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rig_2.blend using Guid(d84423ff4dc95bb448189ca36c95b90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c2c0ffa7016a4894ace2a049cb3805a') in 0.168974 seconds
-  Import took 0.199510 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 33.302196 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/Scene.anim
-  artifactKey: Guid(cd6dfe17cff9cf744b35cdfe4553afc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/Scene.anim using Guid(cd6dfe17cff9cf744b35cdfe4553afc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a3da15b683e22efa7bcd1a8d93f8533') in 0.022948 seconds
-  Import took 0.120408 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 686.728096 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df96e806473967b739749a8383d8aeec') in 0.137226 seconds
-  Import took 0.173575 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 115.296937 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31d7c5df2e914ff939d2c47fe4c25549') in 0.010012 seconds
-  Import took 0.017962 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.010321 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7ce9398ad98c5e970f3b5a91f72ce1e') in 0.119516 seconds
-  Import took 0.126495 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 875.397407 seconds.
-  path: Assets/Animation Clips/tst.anim
-  artifactKey: Guid(13e7b1e7efaa64e459c79edd1a502783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/tst.anim using Guid(13e7b1e7efaa64e459c79edd1a502783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c6cc356ca4f42984fe5bd798008d4ce') in 0.014026 seconds
-  Import took 0.121525 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.670623 seconds.
-  path: Assets/Animation Clips/Idle.anim
-  artifactKey: Guid(13e7b1e7efaa64e459c79edd1a502783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Idle.anim using Guid(13e7b1e7efaa64e459c79edd1a502783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25102c109cba1cf3162d36ea88c490da') in 0.007016 seconds
-  Import took 0.069858 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.270378 seconds.
-  path: Assets/Animation Clips/Idle.anim
-  artifactKey: Guid(13e7b1e7efaa64e459c79edd1a502783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Idle.anim using Guid(13e7b1e7efaa64e459c79edd1a502783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad786e71d9a3f462eb49a238cb23376f') in 0.003092 seconds
-  Import took 0.050864 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.673865 seconds.
-  path: Assets/Animation Clips/MegaMan_Rig_2.controller
-  artifactKey: Guid(68eede19f2b34bc4a8d40c5340943097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/MegaMan_Rig_2.controller using Guid(68eede19f2b34bc4a8d40c5340943097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06865164b08e9640786003ecb9c6ef8a') in 0.018500 seconds
-  Import took 0.107364 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.026346 seconds.
-  path: Assets/Animation Clips/MegaMan_Rigged.controller
-  artifactKey: Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/MegaMan_Rigged.controller using Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eab10d37bc7a34e4b52b1c6b0d546ab9') in 0.002701 seconds
-  Import took 0.060851 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.398132 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/Armature_Shoot.anim
-  artifactKey: Guid(0eab6cd9a57212743a1f77b3fb519af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/Armature_Shoot.anim using Guid(0eab6cd9a57212743a1f77b3fb519af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8baada76e51c8bcc4046d952fb2b06a') in 0.009282 seconds
-  Import took 0.041341 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.384992 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/Armature_Run.anim
-  artifactKey: Guid(3c1460022aa38cc4ea7e339ab9690bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/Armature_Run.anim using Guid(3c1460022aa38cc4ea7e339ab9690bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e47c72defbd0aec1cfea5d2fe0da46f0') in 0.194973 seconds
-  Import took 0.233798 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.147545 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/Armature_Idle.anim
-  artifactKey: Guid(023e780044ef2544c8e7f97fa0bba47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/Armature_Idle.anim using Guid(023e780044ef2544c8e7f97fa0bba47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55e6a8a39a4c4f7bf221a3b5f5905616') in 0.010965 seconds
-  Import took 0.115284 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.741904 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Idle.anim
-  artifactKey: Guid(023e780044ef2544c8e7f97fa0bba47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Idle.anim using Guid(023e780044ef2544c8e7f97fa0bba47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c1da8fa4dcf0c573d1231a7f35139c8') in 0.011103 seconds
-  Import took 0.021959 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.122784 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Run.anim
-  artifactKey: Guid(3c1460022aa38cc4ea7e339ab9690bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Run.anim using Guid(3c1460022aa38cc4ea7e339ab9690bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bde5db7e411f57993d025751e341147') in 0.011275 seconds
-  Import took 0.107726 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.036957 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Shoot.anim
-  artifactKey: Guid(0eab6cd9a57212743a1f77b3fb519af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Shoot.anim using Guid(0eab6cd9a57212743a1f77b3fb519af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ed7087784b95653f4fac81d43c439c8') in 0.015142 seconds
-  Import took 0.052538 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.044177 seconds.
-  path: Assets/Animation Clips/Player/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1be7783ae96cb8a83d702a53a396671b') in 0.265279 seconds
-  Import took 0.354993 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.320143 seconds.
-  path: Assets/Animation Clips/Player/MegaMan
-  artifactKey: Guid(ad4b358ad34421543a6e94c1a9034f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan using Guid(ad4b358ad34421543a6e94c1a9034f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60fc779ea5cf9270e3e21f0a4a83f7f8') in 0.007867 seconds
-  Import took 0.016516 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.948303 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/Idle.anim
-  artifactKey: Guid(5751e021f6df9484292bff6678fb6cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/Idle.anim using Guid(5751e021f6df9484292bff6678fb6cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b417e5d9bb7894e39bd86084c5770429') in 0.006772 seconds
-  Import took 0.105634 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.035744 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller
-  artifactKey: Guid(a0aeac7f3f1b5c941a026138ca9ed261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller using Guid(a0aeac7f3f1b5c941a026138ca9ed261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff06a75e302dd98aaa87a468a9b4bd20') in 0.155919 seconds
-  Import took 0.162937 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.141975 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/Run.anim
-  artifactKey: Guid(826b882747a93f942bfbabc9fd16f272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/Run.anim using Guid(826b882747a93f942bfbabc9fd16f272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '666157aab6d7a110d8b4b557301e08eb') in 0.019798 seconds
-  Import took 0.142322 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.852117 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/Shoot.anim
-  artifactKey: Guid(04da50a96ebd1284eb99e44ff2dd20e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/Shoot.anim using Guid(04da50a96ebd1284eb99e44ff2dd20e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26cc4ab08b80c66bab26e03279a85a96') in 0.010229 seconds
-  Import took 0.229334 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 35.844519 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller
-  artifactKey: Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller using Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd39217fef6018db41a741088729b2342') in 0.003055 seconds
-  Import took 0.010308 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 451.423469 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller
-  artifactKey: Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller using Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97afd681a631b920ba23e45000cbb867') in 0.023885 seconds
-  Import took 0.131966 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 139.896213 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/MegaMan_Run.anim
-  artifactKey: Guid(3c1460022aa38cc4ea7e339ab9690bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/MegaMan_Run.anim using Guid(3c1460022aa38cc4ea7e339ab9690bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc8d042d272613abfe89e1dddb9f6e45') in 0.014833 seconds
-  Import took 0.022003 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 116.551379 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '813de6dc4442fee19d1a20dba4b8d1d3') in 1.210781 seconds
-  Import took 1.228230 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.735876 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52a40ec2a1357a1ead415309cb58c440') in 0.060400 seconds
-  Import took 0.075827 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.716051 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7779df88896a479fe6ff022440dee784') in 0.100990 seconds
-  Import took 0.107655 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.614479 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b372a68bd4d6dcd1b37fff86b9685c54') in 0.039586 seconds
-  Import took 0.148678 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.237209 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce27b85b31c60a9478327ba6878f0da2') in 0.071160 seconds
-  Import took 0.089639 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.628105 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22fd2696ebf3f3fc135530e84e79e6fc') in 0.081184 seconds
-  Import took 0.202508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.685404 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6d60df961a561192b4b888edf30308b') in 0.054984 seconds
-  Import took 0.062022 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.877689 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eb6c0ebeda791c41f93f391ed0bd75b') in 0.136683 seconds
-  Import took 0.145705 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.917474 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26f1025ae44f99eb3a858413503b2e1f') in 0.054318 seconds
-  Import took 0.069584 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.149336 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba496b48edf63e48c0497a59ec7a02af') in 0.104558 seconds
-  Import took 0.850435 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.970858 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a3161b2901d2c970908c808cfa33125') in 0.043933 seconds
-  Import took 0.098239 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.234931 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4217fa9954566c5f3b1d64079a918a7') in 0.041890 seconds
-  Import took 0.049297 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.201231 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aa74ec889a60f189e6bad7799413a9b') in 0.041518 seconds
-  Import took 0.107242 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.580546 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90e9bc578908639586d0919efc8d0c85') in 0.043861 seconds
-  Import took 0.065986 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.493302 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd81546113c2976184f034068eead124') in 0.044230 seconds
-  Import took 0.052861 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.323414 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb3bbb342c07d36f65d16c949024dfdd') in 0.044956 seconds
-  Import took 0.052233 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.234558 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1263747d25e1f2b77672d053cbe9c82b') in 0.040232 seconds
-  Import took 0.046375 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.966875 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79a8a7cf04e121a746552f6b3e9f99a') in 0.078238 seconds
-  Import took 0.108959 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.961893 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52c9e0f5b24fe61e70f70188e957c2c7') in 0.050038 seconds
-  Import took 0.056909 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.854939 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecd78cc7de663b81cc540b6ce9fba7d8') in 0.047150 seconds
-  Import took 0.209725 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.508406 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f55afa901ff05e518bb6f9c0b5ee5589') in 0.047501 seconds
-  Import took 0.056406 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.972000 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '456a1a487160dd748048f9ad9564bd66') in 0.050997 seconds
-  Import took 0.059204 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.797159 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e30d48779cf499090b77ebf549ea2d70') in 0.045599 seconds
-  Import took 0.054815 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.833641 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16f5c30ec014d5781cb2663ca5e2b33c') in 0.046362 seconds
-  Import took 0.068260 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.373879 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e36b879166c2c1ace1234333bd1daf75') in 0.039386 seconds
-  Import took 0.046273 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.262372 seconds.
-  path: Assets/Resources/Materials/Levels/City/Buildings_Texture.mat
-  artifactKey: Guid(8ae4d93a28baaa5479a2857e8055cc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Materials/Levels/City/Buildings_Texture.mat using Guid(8ae4d93a28baaa5479a2857e8055cc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9db66fd144d3a483f5401dc4c98dcf') in 0.478986 seconds
-  Import took 0.485745 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Settings/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
-  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f44353bde0b7f0e5f7e5f7959ff466f') in 2.064827 seconds
-  Import took 2.071025 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000184 seconds.
-  path: Assets/Resources/Materials/Levels/City/Buildings_Texture.mat
-  artifactKey: Guid(8ae4d93a28baaa5479a2857e8055cc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Materials/Levels/City/Buildings_Texture.mat using Guid(8ae4d93a28baaa5479a2857e8055cc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9db66fd144d3a483f5401dc4c98dcf') in 0.018209 seconds
-  Import took 0.025972 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/Settings/TextMesh Pro/Fonts/LiberationSans.ttf
-  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1126d9ab0f652a31b02cdab1f864f5cd') in 0.096493 seconds
-  Import took 0.115803 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/Settings/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
-  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49c14e414381b0f61ffb559ae0559af1') in 0.126647 seconds
-  Import took 0.135373 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.619393 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f6cc8024d3b930f24c13f28f4037f6e') in 0.043035 seconds
-  Import took 0.080595 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.325835 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e6aff7e24c73f676384ecc9f55be36') in 0.052203 seconds
-  Import took 0.058433 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.862417 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf606b44f1760cf908c45fabe656082') in 0.046472 seconds
-  Import took 0.053790 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 48.214519 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3d82ee8296d67781941cb501b96f13') in 0.113523 seconds
-  Import took 0.123104 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 51.442324 seconds.
   path: Assets/Scenes/Tests/InGameUI_Test.unity
   artifactKey: Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/InGameUI_Test.unity using Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2fdaccf4f694427275fead7bf9edb6f') in 0.007584 seconds
-  Import took 0.015201 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001249 seconds.
-  path: Assets/Scenes/Tests/InGameUI_Test.unity
-  artifactKey: Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/InGameUI_Test.unity using Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2fdaccf4f694427275fead7bf9edb6f') in 0.002859 seconds
-  Import took 0.008870 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 221.422049 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan.png
-  artifactKey: Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan.png using Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '508a21265dfbbaa503ad595a1520d6c6') in 0.052642 seconds
-  Import took 0.094520 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 38.837067 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan.png
-  artifactKey: Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan.png using Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ee0ef66a25caa32b49a70684dd12d80') in 0.020429 seconds
-  Import took 0.037291 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 36.850001 seconds.
-  path: Assets/Resources/Models/Enemies/Metool/Metool_Tex.png
-  artifactKey: Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Enemies/Metool/Metool_Tex.png using Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98a9714acc394c5458bfb15f7cdcfc45') in 0.014360 seconds
-  Import took 0.049463 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.671196 seconds.
-  path: Assets/Resources/Models/Enemies/Metool/Metool_Tex.png
-  artifactKey: Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Enemies/Metool/Metool_Tex.png using Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae846a75a1887b55e20014ed6554601f') in 0.012186 seconds
-  Import took 0.037704 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002225 seconds.
-  path: Assets/Resources/Models/Enemies/Metool/Metool_Tex.png
-  artifactKey: Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Enemies/Metool/Metool_Tex.png using Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae846a75a1887b55e20014ed6554601f') in 0.014508 seconds
-  Import took 0.022938 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.061839 seconds.
-  path: Assets/Resources/Models/Enemies/Metool/Metool_Tex.png
-  artifactKey: Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Enemies/Metool/Metool_Tex.png using Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4af7972fb814d2f3861bbd676f99906') in 0.013898 seconds
-  Import took 0.038069 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.604172 seconds.
-  path: Assets/Resources/Models/Enemies/Metool/Metool_Tex.png
-  artifactKey: Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Enemies/Metool/Metool_Tex.png using Guid(0f6cdcc5de6678541af50aa2c7e6a2f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60caf81912ee8c65ac2e021813b4e87e') in 0.014654 seconds
-  Import took 0.023630 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 141.643847 seconds.
-  path: Assets/Scenes/Tests/Items_Test.unity
-  artifactKey: Guid(ba5855ffbcbd0324cb7730b8ac3f0342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/Items_Test.unity using Guid(ba5855ffbcbd0324cb7730b8ac3f0342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1499d7ae98521f8dc86948daa5ace456') in 0.010569 seconds
-  Import took 0.016956 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.211026 seconds.
-  path: Assets/Scenes/Tests/New Scene.unity
-  artifactKey: Guid(4709f9c7c954de148ac2b357a11178bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/New Scene.unity using Guid(4709f9c7c954de148ac2b357a11178bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '767a47febe7541d304c06fc0648a32a7') in 0.007196 seconds
-  Import took 0.015729 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.366584 seconds.
-  path: Assets/Scenes/Tests/Enemy_Test.unity
-  artifactKey: Guid(77d098e79c774f143a30732c7c6f35c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/Enemy_Test.unity using Guid(77d098e79c774f143a30732c7c6f35c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d479902e70690def1b60ea36a6e7ef0') in 0.007019 seconds
-  Import took 0.048722 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.149755 seconds.
-  path: Assets/Scenes/Tests/Objectives_Test/Objectives_Item.unity
-  artifactKey: Guid(5fdc81802d39dd64d9e7236f232701c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/Objectives_Test/Objectives_Item.unity using Guid(5fdc81802d39dd64d9e7236f232701c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc841e7c3f8225a71fe18b47a7fdb91e') in 0.102346 seconds
-  Import took 0.165229 seconds .
+Start importing Assets/Scenes/Tests/InGameUI_Test.unity using Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af22a2a3adb685e5fe981fcdc6a7dda1') in 0.014761 seconds
+  Import took 0.029244 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001862 seconds.
+Registered in 0.002923 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.67 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -751,164 +103,25 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.669 seconds
+- Completed reload, in  1.158 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.19 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3262 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.5 MB.
-System memory in use after: 165.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 3982.
-Total: 7.802000 ms (FindLiveObjects: 0.784300 ms CreateObjectMapping: 0.487300 ms MarkObjects: 6.476900 ms  DeleteObjects: 0.050600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001891 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.036 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3262 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.5 MB.
-System memory in use after: 165.8 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3985.
-Total: 7.077100 ms (FindLiveObjects: 1.703300 ms CreateObjectMapping: 0.570000 ms MarkObjects: 4.743200 ms  DeleteObjects: 0.049600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001834 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.386 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3262 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.6 MB.
-System memory in use after: 165.8 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3988.
-Total: 8.410200 ms (FindLiveObjects: 0.818200 ms CreateObjectMapping: 0.679500 ms MarkObjects: 6.859300 ms  DeleteObjects: 0.051000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 474.942062 seconds.
-  path: Assets/Scenes/Tests/InGameUI_Test.unity
-  artifactKey: Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/InGameUI_Test.unity using Guid(013c618ade1a4c145946fb2c100f691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b732f5d3292b9e67013334737ada08da') in 0.008314 seconds
-  Import took 0.015952 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.719454 seconds.
-  path: Assets/Objects Prefabs/General/LevelController.prefab
-  artifactKey: Guid(e667bfc664ab550418fa2261fc59814f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/General/LevelController.prefab using Guid(e667bfc664ab550418fa2261fc59814f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4d3030a6c298254dfdbaeb55e032a7c') in 0.077263 seconds
-  Import took 0.084265 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.507946 seconds.
-  path: Assets/Objects Prefabs/General/LevelSettings.prefab
-  artifactKey: Guid(e667bfc664ab550418fa2261fc59814f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/General/LevelSettings.prefab using Guid(e667bfc664ab550418fa2261fc59814f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc15a191e66cc05ec85d5a45af556eb4') in 0.029558 seconds
-  Import took 0.035365 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.157324 seconds.
-  path: Assets/Objects Prefabs/General/LevelSettings.prefab
-  artifactKey: Guid(e667bfc664ab550418fa2261fc59814f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/General/LevelSettings.prefab using Guid(e667bfc664ab550418fa2261fc59814f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '450a600eca80fb67b446c26e20b57854') in 0.025656 seconds
-  Import took 0.034238 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.721069 seconds.
-  path: Assets/TestScript.cs
-  artifactKey: Guid(bbe1db288afca284d9532618e68d05ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TestScript.cs using Guid(bbe1db288afca284d9532618e68d05ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '492856dad3a2b3421eefde7ec7fc67c9') in 0.012757 seconds
-  Import took 0.018729 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002424 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.324 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3261 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.6 MB.
-System memory in use after: 165.8 MB.
+System memory in use before: 146.0 MB.
+System memory in use after: 146.2 MB.
 
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3990.
-Total: 3.896700 ms (FindLiveObjects: 0.500400 ms CreateObjectMapping: 0.208700 ms MarkObjects: 3.161400 ms  DeleteObjects: 0.025100 ms)
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3890.
+Total: 4.405500 ms (FindLiveObjects: 0.484700 ms CreateObjectMapping: 0.186400 ms MarkObjects: 3.704000 ms  DeleteObjects: 0.028700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001861 seconds.
+Registered in 0.001854 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -923,103 +136,15 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.135 seconds
+- Completed reload, in  1.262 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3261 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.6 MB.
-System memory in use after: 165.8 MB.
+System memory in use before: 146.0 MB.
+System memory in use after: 146.3 MB.
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3993.
-Total: 13.282200 ms (FindLiveObjects: 1.629000 ms CreateObjectMapping: 0.530800 ms MarkObjects: 11.085400 ms  DeleteObjects: 0.035000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 180.723593 seconds.
-  path: Assets/Scenes/Tests/Rigging_Test.unity
-  artifactKey: Guid(542bd37af990b0c4ea33b4446554e7b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tests/Rigging_Test.unity using Guid(542bd37af990b0c4ea33b4446554e7b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '765feae9037543eb63239039dd371bab') in 0.014164 seconds
-  Import took 0.020424 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 48.572895 seconds.
-  path: Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller
-  artifactKey: Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation Clips/Player/MegaMan/MegaMan_Rigged.controller using Guid(6a73ebf7ea0280e499d39966aefbb90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf884b4a687edfad84194881555c52ad') in 0.029656 seconds
-  Import took 0.037554 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 94.907155 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ad80b7b8b1d52f05f52f6ffb8cae7b9') in 0.307821 seconds
-  Import took 0.329156 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 37.352956 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2076927fa583120ea2e8db1741893e60') in 0.149403 seconds
-  Import took 0.174264 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 372.273003 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan.png
-  artifactKey: Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan.png using Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0afac23a7f2d5700969f6e9f6775b60') in 0.029354 seconds
-  Import took 0.038817 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 40.145068 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan.png
-  artifactKey: Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan.png using Guid(2d6d786a3f0512945829d241921d3a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a6795b0d4bb29fa7f39113ade24f244') in 0.023786 seconds
-  Import took 0.052115 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1202.112065 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx
-  artifactKey: Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.fbx using Guid(1ac12d33addcc1441b054e9c4b8097d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4f53c21d44e2d50b964342ce78841a') in 0.232784 seconds
-  Import took 0.270071 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 294.285518 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend
-  artifactKey: Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend using Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6386af800853f1e433f19bd4c988d6b') in 0.166353 seconds
-  Import took 0.254956 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 51.509900 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend
-  artifactKey: Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend using Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fce68c2706c435a83daab552a438068') in 0.146001 seconds
-  Import took 0.167048 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002684 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend
-  artifactKey: Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend using Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fce68c2706c435a83daab552a438068') in 0.130013 seconds
-  Import took 0.139790 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.455462 seconds.
-  path: Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend
-  artifactKey: Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Models/Player/MegaMan/MegaMan_Rigged.blend using Guid(fe7c8b47b1ed40f45bf16007d784cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b51322c444a4a7a1e424c9a84ecc6c81') in 0.145940 seconds
-  Import took 0.156622 seconds .
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3893.
+Total: 7.797100 ms (FindLiveObjects: 1.929800 ms CreateObjectMapping: 0.411200 ms MarkObjects: 5.429500 ms  DeleteObjects: 0.022100 ms)
 
