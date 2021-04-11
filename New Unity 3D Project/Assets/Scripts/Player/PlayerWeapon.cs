@@ -28,14 +28,14 @@ namespace Assets.Scripts.Player
         }
         protected virtual void MainFire()
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
                 Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
             }
         }
         protected virtual void AltFire()
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
             
             }

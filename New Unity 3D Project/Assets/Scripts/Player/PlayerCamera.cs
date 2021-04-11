@@ -59,7 +59,7 @@ namespace Assets.Scripts.Player
 
         private void MouseLook(Vector2 mouseInput)
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
                 if (_mouseCanLookAround)
                 {

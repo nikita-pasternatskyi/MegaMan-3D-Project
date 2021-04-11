@@ -12,7 +12,7 @@ namespace Assets.Scripts.Player
         }
         protected virtual void SpecialAbility()
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
                 throw new NotImplementedException();
             }

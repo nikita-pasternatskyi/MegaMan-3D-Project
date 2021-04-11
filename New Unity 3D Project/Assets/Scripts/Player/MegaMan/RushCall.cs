@@ -30,7 +30,7 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void Update()
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
                 if (_currentRushState == RushMode.RushJet)
                 {
@@ -49,7 +49,7 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void CallRushJet()
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
                 if (_currentRushState == RushMode.None)
                 {
@@ -61,7 +61,7 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void CallRushCoil()
         {
-            if (!LevelSettings.IsPaused)
+            if (!LevelSettings.Instance.IsPaused)
             {
                 if (_currentRushState == RushMode.None)
                 {

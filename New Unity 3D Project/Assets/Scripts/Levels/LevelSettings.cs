@@ -11,7 +11,7 @@ namespace Assets.Scripts.Levels
         [SerializeField] private GameObject _winScreen;
 
         public static LevelSettings Instance;
-        public static bool IsPaused = false;
+        public bool IsPaused = false;
 
         public delegate void OnFinishedLevel();
         public static event OnFinishedLevel FinishedLevel;
@@ -41,6 +41,7 @@ namespace Assets.Scripts.Levels
 
         private void Awake()
         {
+            IsPaused = false;
             if (Instance == null)
             {
                 Instance = this;
@@ -59,13 +60,13 @@ namespace Assets.Scripts.Levels
 
         public static void PauseGame()
         {
-            IsPaused = true;
+            Instance.IsPaused = true;
             Time.timeScale = 0;
         }
 
         public static void ResumeGame()
         {
-            IsPaused = false;
+            Instance.IsPaused = false;
             Time.timeScale = 1;
         }
     }

@@ -31,14 +31,14 @@ namespace Assets.Scripts.Player.UI
         {
             LevelSettings.PauseGame();
             _currentPauseMenuState = PauseMenuState.Opened;
-            _uiPauseMenu.SetActive(true);
+            _uiPauseMenu?.SetActive(true);
         }
 
         private void Close()
         {
             LevelSettings.ResumeGame();
             _currentPauseMenuState = PauseMenuState.Closed;
-            _uiPauseMenu.SetActive(false);
+            _uiPauseMenu?.SetActive(false);
         }
 
         private void OnDisable()
