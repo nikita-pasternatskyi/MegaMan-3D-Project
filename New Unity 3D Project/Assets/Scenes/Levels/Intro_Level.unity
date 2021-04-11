@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TMP: {fileID: 0}
-  _levelType: 0
+  _levelType: 2
   _enemyToDefeat: {fileID: 0}
   _itemToCollect: {fileID: 0}
 --- !u!114 &1235074547
@@ -444,7 +444,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh56084
+  m_Name: pb_Mesh19846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
