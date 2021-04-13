@@ -43,9 +43,6 @@ void AddAdditionalLights_float(float Smoothness, float3 WorldPosition, float3 Wo
     }
 #endif
 
-    half total = Diffuse + Specular;
-    // If no light touches this pixel, set the color to the main light's color
-    Color = total <= 0 ? MainColor : Color / total;
 }
 
 #endif
