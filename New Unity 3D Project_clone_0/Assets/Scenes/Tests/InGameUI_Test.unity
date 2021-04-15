@@ -318,6 +318,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8466463119710189484, guid: e667bfc664ab550418fa2261fc59814f, type: 3}
+      propertyPath: sceneId
+      value: 3404606945
+      objectReference: {fileID: 0}
     - target: {fileID: 4133900963422864704, guid: e667bfc664ab550418fa2261fc59814f, type: 3}
       propertyPath: m_Name
       value: LevelSettings
@@ -375,6 +379,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6397242800033611700, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}
+      propertyPath: sceneId
+      value: 3500014353
+      objectReference: {fileID: 0}
     - target: {fileID: 3179679417943795020, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}
       propertyPath: m_Name
       value: MegaMan
@@ -422,6 +430,10 @@ PrefabInstance:
     - target: {fileID: 3179679417943795021, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465782740887160224, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}
+      propertyPath: sceneId
+      value: 2076887381
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d53472a20e93da14fbeb33f3308f810b, type: 3}

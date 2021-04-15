@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player.MegaMan
         {
             if (other.GetComponent<PlayerMove>() != null)
             {
-                other.GetComponent<PlayerMove>().Jump(_jumpHeight);
+               // other.GetComponent<PlayerMove>().Jump(_jumpHeight);
             }
 
             else

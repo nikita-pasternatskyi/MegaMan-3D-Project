@@ -8,7 +8,7 @@ namespace Assets.Scripts.Player
 
     class PlayerCamera : NetworkBehaviour
     {
-        [SerializeField] private Transform _bodyToXRotate;
+        [SerializeField] private Transform _bodyToYRotate;
         [SerializeField] private Transform _cameraPivot;
         [SerializeField] private Camera _camera;
         [SerializeField] private float _shakeSpeed;
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Player
                 case CameraModes.AroundPoint:
                     _rotateWithPivot = true;
                     _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);                   
-                    _bodyToXRotate.rotation = Quaternion.Euler(0, 0, 0);
+                    _bodyToYRotate.rotation = Quaternion.Euler(0, 0, 0);
                     _camera.transform.rotation = Quaternion.Euler(0, 0, 0);
                     _mouseCanLookAround = false;
                     break;
@@ -41,55 +41,63 @@ namespace Assets.Scripts.Player
                     break;
             }
         }
-
-        private void Start()
+        public override void OnStartAuthority()
         {
-            if (isLocalPlayer)
-            {
-                Invoke("EnableCameraLook", 0.5f);
-                Cursor.lockState = _lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-                Input.MouseMoved += MouseLook;
-            }
+            Invoke("EnableCameraLook", 0.5f);
+            Cursor.lockState = _lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            Input.MouseMoved += MouseLook;
         }
 
-        private void OnDisable() => Input.MouseMoved -= MouseLook;
-
+        public override void OnStopAuthority()
+        {
+            Input.MouseMoved -= MouseLook;
+        }
+        
+        [ClientCallback]
         private void MouseLook(Vector2 mouseInput)
         {
-            if (isLocalPlayer)
+            if (!LevelSettings.Instance.IsPaused)
             {
-                if (!LevelSettings.Instance.IsPaused)
+                if (_mouseCanLookAround)
                 {
-                    if (_mouseCanLookAround)
+                    if (_bodyToYRotate != null)
                     {
-                        if (_bodyToXRotate != null)
+                        mouseInput *= Time.deltaTime;
+
+                        _cameraXRotation -= mouseInput.y;
+                        _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
+
+                        if (_rotateWithPivot)
                         {
-                            mouseInput *= Time.deltaTime;
-
-                            _cameraXRotation -= mouseInput.y;
-                            _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
-
-                            if (_rotateWithPivot)
-                            {
-                                _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                            }
-                            else
-                            {
-                                _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                            }
-                            RotateXAxis(mouseInput);
+                            _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
                         }
-
+                        else
+                        {
+                            _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                        }
+                        RotateBodyYAxis(mouseInput);
+                        RotateCameraYAxis(mouseInput);
                     }
+
                 }
             }
         }
 
-        private void RotateXAxis(Vector2 mouseInput)
+        [ClientCallback]
+        private void RotateCameraYAxis(Vector2 mouseInput)
         {
-            _bodyToXRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+            _cameraPivot.transform.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
         }
 
+        [Command]
+        private void RotateBodyYAxis(Vector2 mouseInput)
+        {
+            _bodyToYRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+        }
+
+        [ClientCallback]
         public void EnableCameraLook() => _mouseCanLookAround = true;
+
+
     }
 }

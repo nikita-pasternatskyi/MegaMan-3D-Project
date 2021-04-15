@@ -6,27 +6,20 @@ namespace Assets.Scripts.Player.Multiplayer
 {
     public class NetworkPlayer : NetworkBehaviour
     {
-        [SerializeField] GameObject _cameraToDisable;
-        [SerializeField] Input _inputToDisable;
-        
+        [SerializeField] GameObject _cameraToEnable;
+        [SerializeField] Input _inputToEnable;
 
-        // Start is called before the first frame update
-        private void Start()
+        public override void OnStartAuthority()
         {
-            if (!isLocalPlayer)
-            {
-                DisableLocalObjects();
-            }
-            else if (isLocalPlayer)
-            {
-                Debug.Log("Its a me mario");
-            }
+            base.OnStartAuthority();
+            EnableLocalObjects();
         }
 
-        private void DisableLocalObjects()
+        [ClientCallback]
+        private void EnableLocalObjects()
         {
-            _cameraToDisable.SetActive(false);
-            _inputToDisable.enabled = false;
+            _cameraToEnable.SetActive(true);
+            _inputToEnable.enabled = true;
         }
 
     }
