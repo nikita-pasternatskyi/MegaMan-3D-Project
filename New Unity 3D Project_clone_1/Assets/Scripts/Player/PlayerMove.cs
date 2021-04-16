@@ -8,7 +8,6 @@ namespace Assets.Scripts.Player
 {
     [AddComponentMenu("Player/Base/Movement")]
     [RequireComponent(typeof(CharacterController))]
-
     public class PlayerMove : NetworkBehaviour
     {
         [Header("Movement Parameters")]

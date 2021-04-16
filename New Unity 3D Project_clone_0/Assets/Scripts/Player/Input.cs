@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Mirror;
 using UnityEngine.Events;
-
+using UnityEngine.InputSystem;
 namespace Assets.Scripts.Player
 {
     [AddComponentMenu("Player/Base/Input")]
     class Input : NetworkBehaviour
     {
         public static Input Instance;
+        [SerializeField] public UnityEngine.InputSystem.PlayerInput InputActions;
 
         public delegate void OnPauseButtonPressed();
         public delegate void OnCompanionSpecialOnePressed();
