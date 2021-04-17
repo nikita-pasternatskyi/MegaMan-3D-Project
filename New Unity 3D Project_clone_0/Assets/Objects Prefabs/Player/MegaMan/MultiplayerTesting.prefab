@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 6465782740887160224}
   - component: {fileID: 3179679417943795010}
   - component: {fileID: 3179679417943795011}
+  - component: {fileID: -7807767873160330088}
   - component: {fileID: 6938160750670454371}
   - component: {fileID: 5078252885315425978}
   - component: {fileID: 979118074932940102}
@@ -278,7 +279,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179679417943795020}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e0c7e74cc5d4e441acd3e8f6edd2d42, type: 3}
   m_Name: 
@@ -288,19 +289,34 @@ MonoBehaviour:
   _forwardDirectionReference: {fileID: 7442645020639527198}
   _speed: 0.5
   _sprintSpeedMultiplier: 1.5
-  _gravity: -9.8
   _jumpHeight: 1
-  _playerCamera: {fileID: 0}
   _characterController: {fileID: 3179679417943795010}
-  _groundDistance: 0.2
-  _whatIsGround:
-    serializedVersion: 2
-    m_Bits: 128
-  CharacterControllerPredictionObject: {fileID: 9171814419979000964}
-  delta: {x: 0, y: 0, z: 0}
   PlayerFixedUpdateInterval: 0.02
   PlayerLerpSpacing: 1
   PlayerLerpEasing: 0.1
+--- !u!114 &-7807767873160330088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179679417943795020}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbc6fab1e2eaa14b9c62070ddbbb5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _characterController: {fileID: 3179679417943795010}
+  _groundCheckRadius: 0.1
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  _gravity: -9.8
+  _mass: 1
+  jumpHeight: 1
+  _velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6938160750670454371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,8 +331,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  _physicsToEnable: {fileID: -7807767873160330088}
   _cameraToEnable: {fileID: 1749626753978574680}
   _inputToEnable: {fileID: 979118074932940102}
+  _componentsToEnable:
+  - {fileID: -7807767873160330088}
+  - {fileID: 979118074932940102}
+  - {fileID: 3179679417943795011}
 --- !u!114 &5078252885315425978
 MonoBehaviour:
   m_ObjectHideFlags: 0

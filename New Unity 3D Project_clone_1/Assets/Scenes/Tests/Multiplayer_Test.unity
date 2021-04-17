@@ -365,7 +365,7 @@ MonoBehaviour:
   PersistNetworkManagerToOfflineScene: 0
   runInBackground: 1
   autoStartServerBuild: 1
-  serverTickRate: 60
+  serverTickRate: 30
   serverBatching: 1
   serverBatchInterval: 0
   offlineScene: 
@@ -376,9 +376,9 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 3179679417943795020, guid: f5678874fd0b3c74dbb1148f955f771e, type: 3}
+  playerPrefab: {fileID: 3179679417943795020, guid: 13854ac163890fd45882e75bdfde4b47, type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
+  playerSpawnMethod: 1
   spawnPrefabs: []
 --- !u!1 &1490531678
 GameObject:

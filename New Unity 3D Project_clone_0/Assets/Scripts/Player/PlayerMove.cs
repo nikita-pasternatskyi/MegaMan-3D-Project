@@ -15,18 +15,12 @@ namespace Assets.Scripts.Player
         [SerializeField] private Transform _forwardDirectionReference;
         [SerializeField] private float _speed;
         [SerializeField] private float _sprintSpeedMultiplier;
-        [SerializeField] private float _gravity;
         [SerializeField] private float _jumpHeight;
         private Vector3 _velocity;
         private Vector2 _currentInput;
 
         [Header("Class dependencies")]
         [SerializeField] private CharacterController _characterController;
-
-        [Header("Physics Check")]
-        [SerializeField] private float _groundDistance;
-        [SerializeField] private LayerMask _whatIsGround;
-        private bool _isGrounded;
 
         [Header("Client-Side Prediction")]
         [SyncVar(hook = "OnServerStateChanged")]
@@ -44,57 +38,12 @@ namespace Assets.Scripts.Player
         {        
             if (isLocalPlayer)
             {
-                ApplyPhysics();
                 ApplyVelocity();              
             }
             SyncState();
         }
         public override void OnStartLocalPlayer() => _pendingInputs = new List<CollectedPlayerInput>();
 
-        [ClientCallback]
-        private void OnMove(InputValue value) => _currentInput = value.Get<Vector2>();
-
-        [Command]
-        private void OnJump()
-        {
-            _velocity.y = _isGrounded ? Mathf.Sqrt(_jumpHeight * -2 * _gravity) : _velocity.y;
-        }
-
-        [Command]
-        private void ApplyPhysics()
-        {
-            Vector3 groundCheckPosition = new Vector3
-                (_characterController.bounds.center.x,
-                _characterController.bounds.center.y - _characterController.height / 2,
-                _characterController.bounds.center.z);
-
-            _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundDistance, _whatIsGround);
-
-            if (_isGrounded && _velocity.y < 0)
-            {
-                _velocity.y = -2f;
-            }
-            if (!_isGrounded && _velocity.y > -50)
-            {
-                _velocity.y += _gravity * Time.fixedDeltaTime;
-            }
-            else if (!_isGrounded && _velocity.y < -50)
-            {
-                return;
-            }
-        }
-
-        #region Client_Side_Prediction
-        private void InitState()
-        {
-            _state = new PlayerTransformState
-            {
-                TimeStamp = 0,
-                Position = transform.position,
-            };
-        }
-        [Command]
-        private void CmdMoveOnServer(CollectedPlayerInput playerInput) => _state = MovePlayer(_state, playerInput);
         private PlayerTransformState MovePlayer(PlayerTransformState playerTransformState, CollectedPlayerInput playerInput)
         {
             CalculateVelocity(playerInput.Direction);
@@ -145,6 +94,22 @@ namespace Assets.Scripts.Player
             //    return null;
             return playerInput;
         }
+
+
+        #region Client_Side_Prediction
+        
+        [ClientCallback]
+        private void OnMove(InputValue value) => _currentInput = value.Get<Vector2>();
+        [Command]
+        private void CmdMoveOnServer(CollectedPlayerInput playerInput) => _state = MovePlayer(_state, playerInput);
+        private void InitState()
+        {
+            _state = new PlayerTransformState
+            {
+                TimeStamp = 0,
+                Position = transform.position,
+            };
+        }
         private void UpdatePredictedState()
         {
             _predictedState = _state;
@@ -179,36 +144,6 @@ namespace Assets.Scripts.Player
         }
         #endregion
 
-
-        //private void FixedUpdate()
-        //{
-        //    if (isLocalPlayer)
-        //    {
-        //        ApplyPhysics();
-        //    }
-        //}
-
-
-        //[Command]
-        //private void ApplyPhysics()
-        //{
-        //    Vector3 groundCheckPosition = new Vector3
-        //        (_characterController.bounds.center.x,
-        //        _characterController.bounds.center.y - _characterController.height / 2,
-        //        _characterController.bounds.center.z);
-
-        //    _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundDistance, _whatIsGround);
-
-        //    if (_isGrounded && _velocity.y < 0)
-        //    {
-        //        _velocity.y = -2f;
-        //    }
-        //    else if (!_isGrounded)
-        //    {
-        //        _velocity.y += _gravity * Time.fixedDeltaTime;
-        //    }
-        //}
     }
 
-    //void OnServerStateChanged(Assets.Scripts.Player.PlayerTransformState oldValue, Assets.Scripts.Player.PlayerTransformState newValue
 }
