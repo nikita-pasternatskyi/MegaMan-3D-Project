@@ -11,11 +11,6 @@ namespace Assets.Scripts.Player.UI
         public GameObject _uiPauseMenu;
         [SerializeField] private PauseMenuState _currentPauseMenuState;
 
-        private void OnEnable()
-        {
-            Input.PauseButtonPressed += TogglePauseMenu;
-        }
-
         private void TogglePauseMenu()
         {
             if (_currentPauseMenuState == PauseMenuState.Opened)
@@ -43,9 +38,5 @@ namespace Assets.Scripts.Player.UI
             _uiPauseMenu?.SetActive(false);
         }
 
-        private void OnDisable()
-        {
-            Input.PauseButtonPressed -= TogglePauseMenu;
-        }
     }
 }

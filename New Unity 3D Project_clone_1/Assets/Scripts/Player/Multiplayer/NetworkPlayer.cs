@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.InputSystem;
+
 namespace Assets.Scripts.Player.Multiplayer
 {
     public class NetworkPlayer : NetworkBehaviour
     {
         [SerializeField] GameObject _cameraToEnable;
-        [SerializeField] Input _inputToEnable;
+        [SerializeField] PlayerInput _inputToEnable;
 
         public override void OnStartAuthority()
         {

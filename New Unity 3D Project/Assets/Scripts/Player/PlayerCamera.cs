@@ -45,14 +45,8 @@ namespace Assets.Scripts.Player
         {
             Invoke("EnableCameraLook", 0.5f);
             Cursor.lockState = _lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-            Input.MouseMoved += MouseLook;
         }
 
-        public override void OnStopAuthority()
-        {
-            Input.MouseMoved -= MouseLook;
-        }
-        
         [ClientCallback]
         private void MouseLook(Vector2 mouseInput)
         {

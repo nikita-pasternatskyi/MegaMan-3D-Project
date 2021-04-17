@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
-    public class PlayerInput
+    public class CollectedPlayerInput
     {
-        public float Forward;
-        public float Right;
+        public Vector2 Direction;
+        public bool inAir;
     }
 }

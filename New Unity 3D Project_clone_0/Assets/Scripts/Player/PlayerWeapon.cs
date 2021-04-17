@@ -18,15 +18,11 @@ namespace Assets.Scripts.Player
             RefreshWeaponUI();
         }
 
-        protected virtual void OnEnable()
-        {
-            Input.FirePressed += MainFire;
-        }
         protected virtual void RefreshWeaponUI()
         { 
         
         }
-        protected virtual void MainFire()
+        protected virtual void OnMainFire()
         {
             if (!LevelSettings.Instance.IsPaused)
             {
@@ -34,18 +30,13 @@ namespace Assets.Scripts.Player
             }
 
         }
-        protected virtual void AltFire()
+        protected virtual void OnAltFire()
         {
             if (!LevelSettings.Instance.IsPaused)
             {
             
             }
         }
-        protected virtual void OnDisable()
-        {
-            Input.FirePressed -= MainFire;
-        }
-
    
     }
 }

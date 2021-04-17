@@ -7,11 +7,7 @@ namespace Assets.Scripts.Player
 {
     class PlayerSpecialAbility : NetworkBehaviour
     {
-        protected virtual void OnEnable()
-        {
-            Input.SpecialAbilityPressed += SpecialAbility;
-        }
-        protected virtual void SpecialAbility()
+        protected virtual void OnSpecialAbility()
         {
             if (!LevelSettings.Instance.IsPaused)
             {

@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
@@ -7,6 +6,5 @@ namespace Assets.Scripts.Player
     {
         public int TimeStamp;
         public Vector3 Position;
-        public Quaternion Rotation;
     }
 }

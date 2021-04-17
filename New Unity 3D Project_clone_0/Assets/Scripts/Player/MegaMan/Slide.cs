@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player.MegaMan
         [SerializeField] private float _slideForce;
         [SerializeField] private CharacterController _characterController;
 
-        protected override void SpecialAbility()
+        protected override void OnSpecialAbility()
         {
             throw new NotImplementedException();
         }

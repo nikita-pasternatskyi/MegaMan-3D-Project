@@ -18,11 +18,6 @@ namespace Assets.Scripts.Player.MegaMan
         [SerializeField] GameObject _rushCoil;
         [SerializeField] GameObject _rushJet;
 
-        private void OnEnable()
-        {
-            Input.CompanionSpecialOnePressed += CallRushCoil;
-            Input.CompanionSpecialTwoPressed += CallRushJet;
-        }
 
         private void Update()
         {
@@ -77,12 +72,6 @@ namespace Assets.Scripts.Player.MegaMan
                 position.y = raycastHit.point.y + 0.5f;
             }
             Instantiate(whichRush, position, transform.rotation);
-        }
-
-        private void OnDisable()
-        {
-            Input.CompanionSpecialOnePressed -= CallRushCoil;
-            Input.CompanionSpecialTwoPressed -= CallRushJet;
         }
 
     }

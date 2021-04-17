@@ -1,0 +1,834 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 18363.1500; Version 1909; 64bit' Language: 'ru' Physical Memory: 16264 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+E:\Unity Editors\2020.3.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51220
+Successfully changed project path to: E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
+E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 71.96 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path E:/Unity Editors/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
+    Vendor:   
+    VRAM:     3962 MB
+    Driver:   27.21.14.5167
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'E:/Unity Editors/2020.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'E:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56624
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/Unity Editors/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001471 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 72.88 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.910 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003115 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 81.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Find all reader and writers took 114 milliseconds
+Script Module: UnityEngine.UI.dll
+Weave behaviours and messages took63 milliseconds
+Find all reader and writers took 64 milliseconds
+Script Module: Unity.RenderPipelines.Core.Runtime.dll
+Weave behaviours and messages took54 milliseconds
+Find all reader and writers took 68 milliseconds
+Script Module: UnityEngine.TestRunner.dll
+Weave behaviours and messages took28 milliseconds
+Find all reader and writers took 69 milliseconds
+Script Module: Unity.Mathematics.dll
+Weave behaviours and messages took155 milliseconds
+Find all reader and writers took 70 milliseconds
+Script Module: Unity.InputSystem.dll
+Weave behaviours and messages took161 milliseconds
+Find all reader and writers took 55 milliseconds
+Script Module: SimpleWebTransport.dll
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 87 milliseconds
+Script Module: Unity.RenderPipelines.Universal.Runtime.dll
+Weave behaviours and messages took50 milliseconds
+Find all reader and writers took 64 milliseconds
+Script Module: Unity.Animation.Rigging.dll
+Weave behaviours and messages took15 milliseconds
+Find all reader and writers took 63 milliseconds
+Script Module: Unity.Burst.dll
+Weave behaviours and messages took30 milliseconds
+Find all reader and writers took 83 milliseconds
+Script Module: Unity.TextMeshPro.dll
+Weave behaviours and messages took69 milliseconds
+Find all reader and writers took 60 milliseconds
+Script Module: Unity.ProBuilder.Poly2Tri.dll
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 77 milliseconds
+Script Module: Cinemachine.dll
+Weave behaviours and messages took43 milliseconds
+Find all reader and writers took 70 milliseconds
+Script Module: Unity.Timeline.dll
+Weave behaviours and messages took21 milliseconds
+Find all reader and writers took 64 milliseconds
+Script Module: Unity.Postprocessing.Runtime.dll
+Weave behaviours and messages took26 milliseconds
+Find all reader and writers took 69 milliseconds
+Script Module: Unity.ProBuilder.dll
+Weave behaviours and messages took60 milliseconds
+Find all reader and writers took 65 milliseconds
+Script Module: Telepathy.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 68 milliseconds
+Script Module: Unity.ProBuilder.Csg.dll
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 67 milliseconds
+Script Module: Mirror.Cloud.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 62 milliseconds
+Script Module: kcp2k.dll
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 64 milliseconds
+Script Module: Mirror.Examples.Cloud.GUI.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 67 milliseconds
+Script Module: Unity.Recorder.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 63 milliseconds
+Script Module: Unity.ProBuilder.KdTree.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 59 milliseconds
+Script Module: Unity.RenderPipelines.Core.ShaderLibrary.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 62 milliseconds
+Script Module: Unity.Recorder.Base.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 59 milliseconds
+Script Module: Unity.RenderPipeline.Universal.ShaderLibrary.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 60 milliseconds
+Script Module: Unity.ProBuilder.Stl.dll
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 62 milliseconds
+Script Module: Unity.RenderPipelines.Universal.Shaders.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 59 milliseconds
+Script Module: Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 90 milliseconds
+Script Module: com.unity.cinemachine.editor.dll
+Weave behaviours and messages took33 milliseconds
+Find all reader and writers took 82 milliseconds
+Script Module: UnityEditor.TestRunner.dll
+Weave behaviours and messages took40 milliseconds
+Find all reader and writers took 78 milliseconds
+Script Module: ParrelSync.dll
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 80 milliseconds
+Script Module: Unity.ProBuilder.AssetIdRemapUtility.dll
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 62 milliseconds
+Script Module: Mirror.CompilerSymbols.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 79 milliseconds
+Script Module: UnityEditor.UI.dll
+Weave behaviours and messages took8 milliseconds
+Find all reader and writers took 62 milliseconds
+Script Module: Unity.ShaderGraph.Utilities.dll
+Weave behaviours and messages took0 milliseconds
+Mono: successfully reloaded assembly
+- Completed reload, in  9.784 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4030 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 180.6 MB.
+System memory in use after: 180.8 MB.
+
+Unloading 167 unused Assets to reduce memory usage. Loaded Objects now: 4456.
+Total: 5.619000 ms (FindLiveObjects: 0.637800 ms CreateObjectMapping: 0.410600 ms MarkObjects: 4.298500 ms  DeleteObjects: 0.270700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fb3d06b363e1344017077db27c37fa1') in 0.059030 seconds
+  Import took 0.100343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 120.234825 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d0920c30de301e3180e6f5ff3825617') in 0.008819 seconds
+  Import took 0.123339 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.603392 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ba4ddf67147fafa2de8975b303a4605') in 0.003871 seconds
+  Import took 0.014309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.691699 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ecdef4b1a44d7fdb55bcb0a8e79215b') in 0.003449 seconds
+  Import took 0.013763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.780463 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2b312706d4f14deb389618e510b632a') in 0.003295 seconds
+  Import took 0.027095 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.267814 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1838472a5ab5945c574fdf6d10151d65') in 0.003535 seconds
+  Import took 0.045515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.573179 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3886ea4a1598c74f04dd20f673f26eb1') in 0.003936 seconds
+  Import took 0.024384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.625866 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e27cd897aaa78b6ff4243ea2d553656') in 0.003947 seconds
+  Import took 0.013674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.651081 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52533bf99a313247cc475146dc5d67bf') in 0.003871 seconds
+  Import took 0.033035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.541773 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd46c1269df1e7edb95aadf135dc01037') in 0.003232 seconds
+  Import took 0.022823 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000634 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd46c1269df1e7edb95aadf135dc01037') in 0.003051 seconds
+  Import took 0.010884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.214534 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '336c0dab1d3111a0388caa6c94e64cb2') in 0.003571 seconds
+  Import took 0.041056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.635622 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa818ed28e0c29cf16a0d4e67364a82') in 0.004377 seconds
+  Import took 0.039417 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.796785 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96fe767105c1fda53bed9726dc0cd49') in 0.003352 seconds
+  Import took 0.094533 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.716381 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '655437d683d58108ff3e3fd91a1d37d8') in 0.003852 seconds
+  Import took 0.044465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.688487 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e861cfff3b8c845b6099e3dba8c533f') in 0.005676 seconds
+  Import took 0.052525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.034380 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ee51f04d8980478f43d514793be60d1') in 0.005715 seconds
+  Import took 0.050345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.946195 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1beefa349b7d6456b1d6c435ce5df7b4') in 0.004898 seconds
+  Import took 0.023100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.533708 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ce81e85f23e6e679f5d6bc8175a71a8') in 0.005144 seconds
+  Import took 0.034595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.053692 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cd19bb5c518779ff837758dc14738bf') in 0.004980 seconds
+  Import took 0.015662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.029774 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '297af0c109c069e9004ef2456f867e85') in 0.005011 seconds
+  Import took 0.013218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004439 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '297af0c109c069e9004ef2456f867e85') in 0.002401 seconds
+  Import took 0.011379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.802504 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '720fb461c4fe86c8e44b14bc1ed157b0') in 0.003261 seconds
+  Import took 0.040966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.141131 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6362c2f9b81c4b8c15e767f6e03a3e29') in 0.003349 seconds
+  Import took 0.011782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.179937 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e81c910f1b132fce3d606e3cdbdc325') in 0.003570 seconds
+  Import took 0.045048 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.322638 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b58b262f36b93f97e2607b632ce6b25') in 0.003381 seconds
+  Import took 0.021751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000628 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b58b262f36b93f97e2607b632ce6b25') in 0.003419 seconds
+  Import took 0.010127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.289121 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '002453d14ae5fbdbcaa553ee8f3c45ff') in 0.003805 seconds
+  Import took 0.014018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.521102 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8fa66e6473e32b6fb467be365cd270e') in 0.003383 seconds
+  Import took 0.043000 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.218195 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcf0ba1dc17a621cfa690435121c1a34') in 0.003508 seconds
+  Import took 0.010009 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.132512 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '048dabf5ee9963177ce729e8db043dd0') in 0.004357 seconds
+  Import took 0.048373 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.275498 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c7103cc25145122626c40acc1c19c0e') in 0.004124 seconds
+  Import took 0.040545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.668998 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b548fe451845e93c8db7b2d2b9b52be') in 0.003579 seconds
+  Import took 0.026882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002413 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b548fe451845e93c8db7b2d2b9b52be') in 0.005746 seconds
+  Import took 0.013841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.549945 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3b8441adff192107ef5f53356bb296') in 0.005047 seconds
+  Import took 0.015061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.734437 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1a98012283e215573072b3297e65007') in 0.005099 seconds
+  Import took 0.033392 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.133451 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c20c212d6bbd5c81d71df790db1255c') in 0.006512 seconds
+  Import took 0.034567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.142654 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cc461143382c68d143fedcf8f86920b') in 0.004077 seconds
+  Import took 0.013549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.033970 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '974d4af354b59e5b44f82c7d74f12c4a') in 0.003424 seconds
+  Import took 0.009792 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.860828 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e2297741fe9ae988d2402fd4b75df9f') in 0.006016 seconds
+  Import took 0.111525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.219195 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8d8d90d75d87a84960f2beab4439f16') in 0.003806 seconds
+  Import took 0.011900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.445421 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7c557280b21c5f6ae75c19c6e1d66d6') in 0.004321 seconds
+  Import took 0.027693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.151208 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a881edb614b7bf59fb39470780df2f15') in 0.004102 seconds
+  Import took 0.014377 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003988 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a881edb614b7bf59fb39470780df2f15') in 0.003741 seconds
+  Import took 0.016017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.758044 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '369be3d4cccaa87cdd5d4acf22d27061') in 0.003761 seconds
+  Import took 0.030016 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.437666 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a2a31ba67052eb023c7405f1d4d8cd1') in 0.005780 seconds
+  Import took 0.120980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.762180 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d1bec355ca5891fa6366247ab1d77cc') in 0.006033 seconds
+  Import took 0.030739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.430114 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dae090993ed94ec386dd70208145569a') in 0.004361 seconds
+  Import took 0.030993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.182041 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f69934d87b62653b1cbcf7a835ab4b1b') in 0.004237 seconds
+  Import took 0.010759 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.574207 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7916910aa529ba4aa70c9a05c899353') in 0.004617 seconds
+  Import took 0.013874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.829946 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30b96c5744d81121ffda9b812f1540b6') in 0.004278 seconds
+  Import took 0.013843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.190501 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44ae8555ac1833598faaa35c389b936f') in 0.004757 seconds
+  Import took 0.302693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.749022 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fdd4f2d324d9654a084b9f2177a867d') in 0.004794 seconds
+  Import took 0.016313 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006734 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fdd4f2d324d9654a084b9f2177a867d') in 0.006257 seconds
+  Import took 0.012762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.097374 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343dc3a63074b756652c87b7ccb580c0') in 0.004991 seconds
+  Import took 0.015164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.275669 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3118fd249deba84971af938db139020d') in 0.005337 seconds
+  Import took 0.016906 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.344730 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f248dd7f9efe526721dfe14ad505fcb') in 0.006503 seconds
+  Import took 0.015033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.722956 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fb95b41d7bbcbe8b9561e74fbc32564') in 0.005964 seconds
+  Import took 0.051664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11289.757406 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a857d48ac0f0cb30a54490e16776444') in 0.020680 seconds
+  Import took 0.035173 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.390894 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f06709bca18fc115a51f8ac83fc386c0') in 0.005161 seconds
+  Import took 0.015236 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002701 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f06709bca18fc115a51f8ac83fc386c0') in 0.005425 seconds
+  Import took 0.020196 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.172209 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68a0d1ab0b2220eb7326a9543a55ed88') in 0.007003 seconds
+  Import took 0.014031 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.356227 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73076c53f7ff70c79086c30d5a801d33') in 0.005206 seconds
+  Import took 0.039353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.385005 seconds.
+  path: Assets/Settings/PlayerInputActions.inputactions
+  artifactKey: Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.inputactions using Guid(fd4379738a7a4054a9c9111168d15c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbfa8806f4a126337c1905712604d47e') in 0.007093 seconds
+  Import took 0.160479 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003667 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.002 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3833 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.6 MB.
+System memory in use after: 168.9 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4460.
+Total: 6.034100 ms (FindLiveObjects: 0.864800 ms CreateObjectMapping: 0.322700 ms MarkObjects: 4.806400 ms  DeleteObjects: 0.038300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.926041 seconds.
+  path: Assets/Settings/PlayerInputActions.cs
+  artifactKey: Guid(6b93fafae0962be48bb5043781316c84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/PlayerInputActions.cs using Guid(6b93fafae0962be48bb5043781316c84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d609e829781fcac26232ff8bb393cce') in 0.014701 seconds
+  Import took 0.109521 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002974 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.185 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3833 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.7 MB.
+System memory in use after: 168.9 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4463.
+Total: 6.700000 ms (FindLiveObjects: 0.963100 ms CreateObjectMapping: 0.510800 ms MarkObjects: 5.187300 ms  DeleteObjects: 0.036300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003046 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.111 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3833 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.7 MB.
+System memory in use after: 169.0 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4466.
+Total: 9.913100 ms (FindLiveObjects: 1.427600 ms CreateObjectMapping: 0.617100 ms MarkObjects: 7.827100 ms  DeleteObjects: 0.037600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003031 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.120 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3833 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.7 MB.
+System memory in use after: 169.0 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4469.
+Total: 5.101800 ms (FindLiveObjects: 0.709000 ms CreateObjectMapping: 0.445400 ms MarkObjects: 3.923500 ms  DeleteObjects: 0.022800 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
