@@ -33,7 +33,8 @@ namespace Assets.Scripts.Player
         private PlayerTransformState _predictedState;
         private List<CollectedPlayerInput> _pendingInputs;
 
-        private void Awake() => InitState();
+        private void Awake() => InitState(); //transferred
+        public override void OnStartLocalPlayer() => _pendingInputs = new List<CollectedPlayerInput>(); //transferred
         private void FixedUpdate()
         {        
             if (isLocalPlayer)
@@ -42,7 +43,6 @@ namespace Assets.Scripts.Player
             }
             SyncState();
         }
-        public override void OnStartLocalPlayer() => _pendingInputs = new List<CollectedPlayerInput>();
 
         private PlayerTransformState MovePlayer(PlayerTransformState playerTransformState, CollectedPlayerInput playerInput)
         {
@@ -100,8 +100,10 @@ namespace Assets.Scripts.Player
         
         [ClientCallback]
         private void OnMove(InputValue value) => _currentInput = value.Get<Vector2>();
+
         [Command]
         private void CmdMoveOnServer(CollectedPlayerInput playerInput) => _state = MovePlayer(_state, playerInput);
+        
         private void InitState()
         {
             _state = new PlayerTransformState
@@ -109,7 +111,7 @@ namespace Assets.Scripts.Player
                 TimeStamp = 0,
                 Position = transform.position,
             };
-        }
+        } //transferred
         private void UpdatePredictedState()
         {
             _predictedState = _state;
@@ -118,7 +120,7 @@ namespace Assets.Scripts.Player
             {
                 _predictedState = MovePlayer(_predictedState, playerInput);
             }
-        }
+        } //transferred
         private void SyncState()
         {
             if (isServer)
@@ -129,8 +131,8 @@ namespace Assets.Scripts.Player
 
             PlayerTransformState stateToShow = isLocalPlayer ? _predictedState : _state;
             transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
-        }
-        public void OnServerStateChanged(PlayerTransformState oldState, PlayerTransformState newState)
+        } //transferred
+        public void OnServerStateChanged(PlayerTransformState oldState, PlayerTransformState newState) //transferred
         {
             _state = newState;
             if (_pendingInputs != null)

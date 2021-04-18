@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,37 +15,41 @@ namespace Assets.Scripts.Player.Multiplayer
         [SerializeField] private LayerMask _whatIsGround;
         [SerializeField] private float _gravity;
         [SerializeField] private float _mass;
-        public float jumpHeight;
-        public Vector3 _velocity;
-        public float speed;
-        public CharacterController ch;
-        private bool _isGrounded;
+        [SerializeField] private float _fixedDeltaTimeRate;
+        [SerializeField] private float _jumpHeight;
+        [SerializeField] private Vector3 _velocity;
+        [SerializeField] private float _speed;
+        [SerializeField] private CharacterController _characterController;
+        [SyncVar] private bool _isGrounded;
 
         public override void OnStartAuthority()
         {
             base.OnStartAuthority();
             enabled = true;
+            StartCoroutine(WaitForGrounded());
         }
-            
-        private void FixedUpdate()
+
+        private IEnumerator WaitForGrounded()
         {
-            if (isLocalPlayer)
+            do
             {
+                CheckGround();
                 ProcessPhysics();
                 CmdMoveServer();
+                yield return new WaitForFixedUpdate();
             }
+            while (_isGrounded != true);
         }
 
         [Command]
         private void CmdMoveServer()
         {
-            ch.Move(_velocity);
+            _characterController.Move(_velocity * _fixedDeltaTimeRate);
         }
+
         [Command]
         private void ProcessPhysics()
         {
-            CheckGround();
-
             if (_isGrounded && _velocity.y < 0)
             {
                 _velocity.y = -2f;
@@ -53,18 +57,17 @@ namespace Assets.Scripts.Player.Multiplayer
 
             if (!_isGrounded)
             {
-                _velocity.y += _gravity;
-                
+                _velocity.y += _gravity;       
             }
         }
 
-
+        [Command]
         private void CheckGround()
         {
             Vector3 groundCheckPosition = new Vector3
-                    (ch.bounds.center.x,
-                    ch.bounds.center.y - ch.height / 2,
-                    ch.bounds.center.z);
+                    (_characterController.bounds.center.x,
+                    _characterController.bounds.center.y - _characterController.height / 2,
+                    _characterController.bounds.center.z);
 
             _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
         }

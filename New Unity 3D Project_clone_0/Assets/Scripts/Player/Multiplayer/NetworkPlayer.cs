@@ -8,9 +8,7 @@ namespace Assets.Scripts.Player.Multiplayer
 {
     public class NetworkPlayer : NetworkBehaviour
     {
-        [SerializeField] PlayerPhysics _physicsToEnable;
         [SerializeField] GameObject _cameraToEnable;
-        [SerializeField] PlayerInput _inputToEnable;
         [SerializeField] MonoBehaviour[] _componentsToEnable;
 
         public override void OnStartAuthority()
@@ -21,11 +19,14 @@ namespace Assets.Scripts.Player.Multiplayer
         [ClientCallback]
         private void EnableLocalObjects()
         {
-            _cameraToEnable.SetActive(true);
+            _cameraToEnable?.SetActive(true);
             
             foreach (var component in _componentsToEnable)
             {
-                component.enabled = true;
+                if (component != null)
+                {
+                    component.enabled = true;
+                }
             }
         }
 
