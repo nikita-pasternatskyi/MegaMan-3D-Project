@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Mirror;
 using UnityEngine;
 
-namespace Assets.Scripts.Player.Multiplayer
+namespace Assets.Scripts.Player
 {
-    class ClientSidePrediction : NetworkBehaviour
+    public class ClientSidePrediction : NetworkBehaviour
     {
         [SyncVar(hook = "OnServerStateChanged")]
-        public PlayerTransformState _state;
+        public PlayerTransformState State;
 
         private Vector3 _velocity;
         public Vector3 Velocity { get => _velocity; set => _velocity += value; }
@@ -22,70 +22,93 @@ namespace Assets.Scripts.Player.Multiplayer
         [SerializeField] private float PlayerLerpEasing;
 
         private PlayerTransformState _predictedState;
-        private List<CollectedPlayerInput> _pendingInputs;
-
+        private List<Vector3> _pendingVelocities;
+        public void ReceiveVelocity(Vector3 calculatedVelocity)
+        {
+            _pendingVelocities.Add(calculatedVelocity);
+            UpdatePredictedState();
+            CmdMoveOnServer(calculatedVelocity);
+        }
         private void Awake() => InitState();
         private void InitState()
         {
-            _state = new PlayerTransformState
+            State = new PlayerTransformState
             {
                 TimeStamp = 0,
                 Position = transform.position,
             };
         }
-        public override void OnStartLocalPlayer() => _pendingInputs = new List<CollectedPlayerInput>();
-
+        public override void OnStartLocalPlayer() => _pendingVelocities = new List<Vector3>();
         private void FixedUpdate()
         {
             SyncState();
         }
-
-        private PlayerTransformState ProcessInput(PlayerTransformState state, CollectedPlayerInput playerInput)
+        private PlayerTransformState PredictMovement(PlayerTransformState state, Vector3 velocity)
         {
-
-
-
+            Vector3 newPosition = state.Position;
+            if (!_velocity.Equals(new Vector3(0, -2f, 0)))
+            {
+                if (isServer)
+                {
+                    if (isLocalPlayer)
+                        _characterController.Move(velocity * PlayerFixedUpdateInterval / 2);
+                    else
+                    {
+                        _characterController.Move(velocity * PlayerFixedUpdateInterval);
+                    }
+                    newPosition = transform.position;
+                }
+                else if (isClient)
+                {
+                    newPosition = state.Position += velocity * PlayerFixedUpdateInterval;
+                }
+            }
             return new PlayerTransformState
             {
-                Position = Vector3.zero,
-                TimeStamp = 1,
-            };   
+                TimeStamp = state.TimeStamp + 1,
+                Position = newPosition,
+            };
         }
+        public void OnServerStateChanged(PlayerTransformState oldState, PlayerTransformState newState)
+        {
+            State = newState;
+            if (_pendingVelocities != null)
+            {
+                while (_pendingVelocities.Count > _predictedState.TimeStamp - State.TimeStamp)
+                {
+                    _pendingVelocities.RemoveAt(0);
+                }
+                UpdatePredictedState();
+            }
+        }
+        [Command]
+        private void CmdMoveOnServer(Vector3 velocity) => State = PredictMovement(State, velocity);
         private void UpdatePredictedState()
         {
-            _predictedState = _state;
+            _predictedState = State;
 
-            foreach (CollectedPlayerInput playerInput in _pendingInputs)
+            foreach (Vector3 calculatedVelocity in _pendingVelocities)
             {
-                _predictedState = ProcessInput(_predictedState, playerInput);
+                _predictedState = PredictMovement(_predictedState, calculatedVelocity);
             }
         }
         private void SyncState()
         {
             if (isServer)
             {
-                transform.position = _state.Position;
+                transform.position = State.Position;
                 return;
             }
 
-            PlayerTransformState stateToShow = isLocalPlayer ? _predictedState : _state;
+            PlayerTransformState stateToShow = isLocalPlayer ? _predictedState : State;
             transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
-        }
-        public void OnServerStateChanged(PlayerTransformState oldState, PlayerTransformState newState)
-        {
-            _state = newState;
-            if (_pendingInputs != null)
-            {
-                while (_pendingInputs.Count > _predictedState.TimeStamp - _state.TimeStamp)
-                {
-                    _pendingInputs.RemoveAt(0);
-                }
-                UpdatePredictedState();
-            }
         }
 
     }
 }
+
+
+
 
 
 

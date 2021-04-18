@@ -1,29 +1,29 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 18363.1500; Version 1909; 64bit' Language: 'ru' Physical Memory: 16264 MB
+OS: 'Windows 10 Pro; OS build 19041.450; Version 2004; 64bit' Language: 'ru' Physical Memory: 16264 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-E:\Unity Editors\2020.3.1f1\Editor\Unity.exe
+C:\Program Files\Unity\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
+F:/MyGames/MegaMan-3D-Project/New Unity 3D Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-65250
-Successfully changed project path to: E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
-E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project
+52428
+Successfully changed project path to: F:/MyGames/MegaMan-3D-Project/New Unity 3D Project
+F:/MyGames/MegaMan-3D-Project/New Unity 3D Project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 87.85 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 65.72 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
-[Subsystems] Discovering subsystems at path E:/Unity Editors/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/Work/Nikita Pasternatskyi/MyGames/GitRepository/New Unity 3D Project/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/MyGames/MegaMan-3D-Project/New Unity 3D Project/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -33,199 +33,246 @@ Direct3D:
     Driver:   27.21.14.5167
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'E:/Unity Editors/2020.3.1f1/Editor/Data/Managed'
-Mono path[1] = 'E:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'E:/Unity Editors/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56924
+Mono path[0] = 'C:/Program Files/Unity/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: E:/Unity Editors/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001005 seconds.
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.002937 seconds.
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 74.55 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 67.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.020 seconds
+- Completed reload, in  1.148 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004815 seconds.
+Registered in 0.002780 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 78.43 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 69.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
-Find all reader and writers took 97 milliseconds
+Find all reader and writers took 91 milliseconds
 Script Module: UnityEngine.UI.dll
-Weave behaviours and messages took75 milliseconds
-Find all reader and writers took 75 milliseconds
-Script Module: Unity.RenderPipelines.Core.Runtime.dll
-Weave behaviours and messages took56 milliseconds
-Find all reader and writers took 72 milliseconds
-Script Module: UnityEngine.TestRunner.dll
-Weave behaviours and messages took24 milliseconds
-Find all reader and writers took 78 milliseconds
-Script Module: Unity.Mathematics.dll
-Weave behaviours and messages took169 milliseconds
-Find all reader and writers took 87 milliseconds
-Script Module: Unity.InputSystem.dll
-Weave behaviours and messages took177 milliseconds
+Weave behaviours and messages took63 milliseconds
 Find all reader and writers took 71 milliseconds
+Script Module: Unity.RenderPipelines.Core.Runtime.dll
+Weave behaviours and messages took45 milliseconds
+Find all reader and writers took 64 milliseconds
+Script Module: UnityEngine.TestRunner.dll
+Weave behaviours and messages took27 milliseconds
+Find all reader and writers took 70 milliseconds
+Script Module: Unity.Mathematics.dll
+Weave behaviours and messages took162 milliseconds
+Find all reader and writers took 84 milliseconds
+Script Module: Unity.InputSystem.dll
+Weave behaviours and messages took166 milliseconds
+Find all reader and writers took 75 milliseconds
 Script Module: SimpleWebTransport.dll
-Weave behaviours and messages took5 milliseconds
-Find all reader and writers took 88 milliseconds
+Weave behaviours and messages took4 milliseconds
+Find all reader and writers took 70 milliseconds
 Script Module: Unity.RenderPipelines.Universal.Runtime.dll
-Weave behaviours and messages took60 milliseconds
-Find all reader and writers took 68 milliseconds
-Script Module: Unity.Animation.Rigging.dll
-Weave behaviours and messages took16 milliseconds
-Find all reader and writers took 80 milliseconds
-Script Module: Unity.Burst.dll
 Weave behaviours and messages took37 milliseconds
-Find all reader and writers took 93 milliseconds
+Find all reader and writers took 65 milliseconds
+Script Module: Unity.Animation.Rigging.dll
+Weave behaviours and messages took20 milliseconds
+Find all reader and writers took 62 milliseconds
+Script Module: Unity.Burst.dll
+Weave behaviours and messages took36 milliseconds
+Find all reader and writers took 85 milliseconds
 Script Module: Unity.TextMeshPro.dll
-Weave behaviours and messages took77 milliseconds
-Find all reader and writers took 72 milliseconds
+Weave behaviours and messages took72 milliseconds
+Find all reader and writers took 53 milliseconds
 Script Module: Unity.ProBuilder.Poly2Tri.dll
 Weave behaviours and messages took5 milliseconds
-Find all reader and writers took 82 milliseconds
+Find all reader and writers took 70 milliseconds
 Script Module: Cinemachine.dll
-Weave behaviours and messages took56 milliseconds
-Find all reader and writers took 80 milliseconds
+Weave behaviours and messages took49 milliseconds
+Find all reader and writers took 68 milliseconds
 Script Module: Unity.Timeline.dll
 Weave behaviours and messages took26 milliseconds
-Find all reader and writers took 76 milliseconds
+Find all reader and writers took 71 milliseconds
 Script Module: Unity.Postprocessing.Runtime.dll
-Weave behaviours and messages took23 milliseconds
-Find all reader and writers took 78 milliseconds
-Script Module: Unity.ProBuilder.dll
-Weave behaviours and messages took69 milliseconds
-Find all reader and writers took 63 milliseconds
-Script Module: Telepathy.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 73 milliseconds
-Script Module: Unity.ProBuilder.Csg.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 74 milliseconds
-Script Module: Mirror.Cloud.dll
-Weave behaviours and messages took4 milliseconds
+Weave behaviours and messages took19 milliseconds
 Find all reader and writers took 68 milliseconds
-Script Module: kcp2k.dll
-Weave behaviours and messages took3 milliseconds
-Find all reader and writers took 76 milliseconds
-Script Module: Mirror.Examples.Cloud.GUI.dll
+Script Module: Unity.ProBuilder.dll
+Weave behaviours and messages took59 milliseconds
+Find all reader and writers took 59 milliseconds
+Script Module: Telepathy.dll
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 63 milliseconds
+Script Module: Unity.ProBuilder.Csg.dll
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 63 milliseconds
+Script Module: Mirror.Cloud.dll
 Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 84 milliseconds
+Find all reader and writers took 63 milliseconds
+Script Module: kcp2k.dll
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 67 milliseconds
 Script Module: Unity.Recorder.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 68 milliseconds
+Find all reader and writers took 62 milliseconds
 Script Module: Unity.ProBuilder.KdTree.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 66 milliseconds
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 62 milliseconds
 Script Module: Unity.RenderPipelines.Core.ShaderLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 81 milliseconds
+Find all reader and writers took 58 milliseconds
 Script Module: Unity.Recorder.Base.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 68 milliseconds
+Find all reader and writers took 60 milliseconds
 Script Module: Unity.RenderPipeline.Universal.ShaderLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 71 milliseconds
+Find all reader and writers took 63 milliseconds
 Script Module: Unity.ProBuilder.Stl.dll
-Weave behaviours and messages took1 milliseconds
-Find all reader and writers took 65 milliseconds
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 62 milliseconds
 Script Module: Unity.RenderPipelines.Universal.Shaders.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 70 milliseconds
+Find all reader and writers took 65 milliseconds
 Script Module: Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 94 milliseconds
+Find all reader and writers took 85 milliseconds
 Script Module: com.unity.cinemachine.editor.dll
-Weave behaviours and messages took38 milliseconds
-Find all reader and writers took 93 milliseconds
+Weave behaviours and messages took37 milliseconds
+Find all reader and writers took 76 milliseconds
 Script Module: UnityEditor.TestRunner.dll
-Weave behaviours and messages took36 milliseconds
-Find all reader and writers took 101 milliseconds
+Weave behaviours and messages took38 milliseconds
+Find all reader and writers took 80 milliseconds
 Script Module: ParrelSync.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 91 milliseconds
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 63 milliseconds
+Script Module: Unity.Toolchain.Win-x86_64-Linux-x86_64.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 85 milliseconds
 Script Module: Unity.ProBuilder.AssetIdRemapUtility.dll
-Weave behaviours and messages took6 milliseconds
-Find all reader and writers took 69 milliseconds
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 62 milliseconds
 Script Module: Mirror.CompilerSymbols.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 87 milliseconds
+Find all reader and writers took 82 milliseconds
 Script Module: UnityEditor.UI.dll
 Weave behaviours and messages took11 milliseconds
-Find all reader and writers took 76 milliseconds
+Find all reader and writers took 61 milliseconds
 Script Module: Unity.ShaderGraph.Utilities.dll
 Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 61 milliseconds
+Script Module: Unity.Sysroot.Linux_x86_64.dll
+Weave behaviours and messages took0 milliseconds
 Mono: successfully reloaded assembly
-- Completed reload, in 10.486 seconds
+- Completed reload, in  9.700 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.98 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4032 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 180.7 MB.
-System memory in use after: 180.9 MB.
+Unloading 3984 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 175.1 MB.
+System memory in use after: 175.2 MB.
 
-Unloading 167 unused Assets to reduce memory usage. Loaded Objects now: 4458.
-Total: 4.723300 ms (FindLiveObjects: 0.351700 ms CreateObjectMapping: 0.186500 ms MarkObjects: 3.955700 ms  DeleteObjects: 0.228200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Objects Prefabs/Player/Player.prefab
-  artifactKey: Guid(597b03a243a8b3041ae461c27fdd1786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Player.prefab using Guid(597b03a243a8b3041ae461c27fdd1786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dd856d1150f9833b125da4587b269ce') in 0.332825 seconds
-  Import took 0.339451 seconds .
+Unloading 168 unused Assets to reduce memory usage. Loaded Objects now: 4402.
+Total: 7.039100 ms (FindLiveObjects: 0.576500 ms CreateObjectMapping: 0.314800 ms MarkObjects: 5.821800 ms  DeleteObjects: 0.323200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000322 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c494babe4dca1395f47995c65bc6b218') in 0.018042 seconds
-  Import took 0.025175 seconds .
+  path: Assets/Objects Prefabs/Items/Big Health Refill.prefab
+  artifactKey: Guid(3e2ea7a6b83f83b4ea796d8a8f20c474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Items/Big Health Refill.prefab using Guid(3e2ea7a6b83f83b4ea796d8a8f20c474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4f64c52000d0307b62d2de46a3e361b') in 0.372098 seconds
+  Import took 0.379392 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.402459 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76120c63164051c1967ca5f28475c50b') in 0.011570 seconds
-  Import took 0.021216 seconds .
+  Time since last request: 0.000204 seconds.
+  path: Assets/Objects Prefabs/Items/Small Ammo Refill.prefab
+  artifactKey: Guid(efc74ad003fbdb644b5ef30d916a3699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Items/Small Ammo Refill.prefab using Guid(efc74ad003fbdb644b5ef30d916a3699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5134eb968b991a95db8754ca426268b4') in 0.016109 seconds
+  Import took 0.022790 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.019918 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76120c63164051c1967ca5f28475c50b') in 0.009428 seconds
-  Import took 0.015845 seconds .
+  Time since last request: 0.000194 seconds.
+  path: Assets/Objects Prefabs/Items/Small Health Refill.prefab
+  artifactKey: Guid(84800b59d8f1ca24d9e7a15075177b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Items/Small Health Refill.prefab using Guid(84800b59d8f1ca24d9e7a15075177b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '047bf4899986fea96fbc7d83fb0c37af') in 0.014978 seconds
+  Import took 0.021780 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.604146 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadd4a12034a395f4d3539f4bde33aa4') in 0.009250 seconds
-  Import took 0.016476 seconds .
+  Time since last request: 0.000207 seconds.
+  path: Assets/Objects Prefabs/Items/Big Ammo Refill.prefab
+  artifactKey: Guid(1dbff3904bc0f714b84872cc4c7ff9d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Items/Big Ammo Refill.prefab using Guid(1dbff3904bc0f714b84872cc4c7ff9d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4af7126b2258e489dd14f0677e5a0fed') in 0.014682 seconds
+  Import took 0.022156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Objects Prefabs/Items
+  artifactKey: Guid(f151f5ace60dad343a308f0e02903a8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Items using Guid(f151f5ace60dad343a308f0e02903a8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a835b5f083a255fd252d47b3977387e4') in 0.005175 seconds
+  Import took 0.011693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.879846 seconds.
+  path: Assets/Scripts/Player
+  artifactKey: Guid(feb7096a86440274fb584523723d9f63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player using Guid(feb7096a86440274fb584523723d9f63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81f3a736787b55b9d10db165ee6737c3') in 0.004760 seconds
+  Import took 0.011599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.388588 seconds.
+  path: Assets/Scripts/Player/Multiplayer
+  artifactKey: Guid(166e329eebf1b234b94051a60059cb49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Multiplayer using Guid(166e329eebf1b234b94051a60059cb49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd62a28d55b8a0da4970d308b1f94dcd6') in 0.005379 seconds
+  Import took 0.012040 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.601712 seconds.
+  path: Assets/Scripts/Player/Multiplayer/NetworkPlayer.cs
+  artifactKey: Guid(c17babcb8bdfcc74b9d665602f0903bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Multiplayer/NetworkPlayer.cs using Guid(c17babcb8bdfcc74b9d665602f0903bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b129b97dd5645aa640f0f2ffc27ba1') in 0.007966 seconds
+  Import took 0.014479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002028 seconds.
+  path: Assets/Scripts/Player/Multiplayer/NetworkPlayer.cs
+  artifactKey: Guid(c17babcb8bdfcc74b9d665602f0903bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/Multiplayer/NetworkPlayer.cs using Guid(c17babcb8bdfcc74b9d665602f0903bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b129b97dd5645aa640f0f2ffc27ba1') in 0.002507 seconds
+  Import took 0.009295 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007092 seconds.
+Registered in 0.003146 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -240,49 +287,28 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.997 seconds
+- Completed reload, in  1.197 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 172.9 MB.
-System memory in use after: 173.2 MB.
+Unloading 3788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 167.5 MB.
+System memory in use after: 167.7 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4507.
-Total: 7.315300 ms (FindLiveObjects: 1.247300 ms CreateObjectMapping: 0.825800 ms MarkObjects: 5.211600 ms  DeleteObjects: 0.028900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 70.971161 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e03a025b88a1da8432e385b1024383f') in 0.217523 seconds
-  Import took 0.227646 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.392581 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f80a3f4e4c7ae08fbcc0a080daa1b37b') in 0.013246 seconds
-  Import took 0.023217 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.235484 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86edbb95fe7ba0c5b22dbb310818e2f5') in 0.011064 seconds
-  Import took 0.021155 seconds .
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4452.
+Total: 4.707000 ms (FindLiveObjects: 0.361300 ms CreateObjectMapping: 0.247300 ms MarkObjects: 4.003500 ms  DeleteObjects: 0.093800 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003145 seconds.
+Registered in 0.002801 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -297,49 +323,28 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.118 seconds
+- Completed reload, in  1.508 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.99 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 6.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.1 MB.
-System memory in use after: 173.4 MB.
+Unloading 3788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 167.5 MB.
+System memory in use after: 167.7 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4546.
-Total: 5.517400 ms (FindLiveObjects: 0.995400 ms CreateObjectMapping: 0.377400 ms MarkObjects: 4.114000 ms  DeleteObjects: 0.028500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 61.107414 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8706ca7ec780d0046825f1e85f9b845d') in 0.175489 seconds
-  Import took 0.182458 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.483588 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84662c33bfb0a54f1174f598c76f0779') in 0.009574 seconds
-  Import took 0.016184 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.014754 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84662c33bfb0a54f1174f598c76f0779') in 0.008485 seconds
-  Import took 0.016259 seconds .
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4455.
+Total: 8.192300 ms (FindLiveObjects: 1.655900 ms CreateObjectMapping: 0.531600 ms MarkObjects: 5.854900 ms  DeleteObjects: 0.142500 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003540 seconds.
+Registered in 0.157403 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -354,381 +359,84 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.211 seconds
+- Completed reload, in  1.315 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.3 MB.
-System memory in use after: 173.5 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4585.
-Total: 6.272700 ms (FindLiveObjects: 0.599000 ms CreateObjectMapping: 0.389800 ms MarkObjects: 5.242800 ms  DeleteObjects: 0.039200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 196.887496 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df2ab7d8f7cb5cce6e88e3f0eb46c824') in 0.156113 seconds
-  Import took 0.196124 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.604914 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab
-  artifactKey: Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MegaMan.prefab using Guid(d53472a20e93da14fbeb33f3308f810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17bc47cec4dab1f74da5245c5a560e6c') in 0.081547 seconds
-  Import took 0.172831 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab
-  artifactKey: Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab using Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdbb8aa3cd074d654f8a558501605321') in 0.016921 seconds
-  Import took 0.031826 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.172180 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab
-  artifactKey: Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab using Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d920e103eb6ef8e26816c8a381eafce') in 0.015865 seconds
-  Import took 0.033958 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.189952 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab
-  artifactKey: Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab using Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '010f55f7b4e4eeba2c38116992aafa1e') in 0.014154 seconds
-  Import took 0.036018 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.197008 seconds.
-  path: Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab
-  artifactKey: Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/MegaMan/MultiplayerTesting.prefab using Guid(f5678874fd0b3c74dbb1148f955f771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7a3fb9875adff711314f4da9a458b04') in 0.013212 seconds
-  Import took 0.049021 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.160224 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e390c72a798f42fd7a155738fd4646c3') in 0.015888 seconds
-  Import took 0.038386 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.497542 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc53ecb9b9d02a919bbe900c2120d4d3') in 0.014104 seconds
-  Import took 0.036780 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.245967 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac54b8c66cd4cf36bbc2bd0bdd0ce31') in 0.014153 seconds
-  Import took 0.101857 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.628676 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ad902059792fd430cec593c4f482775') in 0.014505 seconds
-  Import took 0.043968 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.328673 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdb5a741069d1a5eb58fe564e515cad0') in 0.017533 seconds
-  Import took 0.023990 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.478576 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9141b4a2a352d1bf95fc6002f24fadb6') in 0.015577 seconds
-  Import took 0.113406 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.478398 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcc5c10fb53ec2c9587bbf57894b3559') in 0.007627 seconds
-  Import took 0.032505 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.433760 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22d651a43019d3d480672a3992ef8aa7') in 0.004730 seconds
-  Import took 0.066509 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.841181 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea72b80191c9fffe2bacbd39dbfecc54') in 0.011617 seconds
-  Import took 0.020174 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003051 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.18 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.326 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.50 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.5 MB.
-System memory in use after: 173.8 MB.
-
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4626.
-Total: 8.174100 ms (FindLiveObjects: 0.790600 ms CreateObjectMapping: 0.402500 ms MarkObjects: 6.932000 ms  DeleteObjects: 0.047200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 56.168965 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a4c9769e07d00c9d234bc4ae0fa0407') in 0.213154 seconds
-  Import took 0.223085 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.991788 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2089521c7de1aade0fc39d5ac5b96586') in 0.012724 seconds
-  Import took 0.054423 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.373851 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '908043e07130b7ec7bff58a8fcf92af9') in 0.012347 seconds
-  Import took 0.105560 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.446949 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd937fc0a13ee8b169d0bac04fca0b00') in 0.012900 seconds
-  Import took 0.021188 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.059239 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f561481fffc6fb04d08bdf97e41f9a0') in 0.011565 seconds
-  Import took 0.025645 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.565333 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9efabd733a6fdd48b33e67fb88cd8ee') in 0.015209 seconds
-  Import took 0.026428 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.055656 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ea60e737c1e99f401ff3cd0a242dcc') in 0.018061 seconds
-  Import took 0.042162 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.595397 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b96154075917e16bda275568a1825c4') in 0.015072 seconds
-  Import took 0.083925 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.490460 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '436df8d1252794ea6682874314a9009e') in 0.011079 seconds
-  Import took 0.018226 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.831504 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c55867d24b1ca135424a9938380815b') in 0.011509 seconds
-  Import took 0.018625 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003088 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.70 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.497 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.6 MB.
-System memory in use after: 173.9 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4665.
-Total: 7.713300 ms (FindLiveObjects: 0.743900 ms CreateObjectMapping: 0.632300 ms MarkObjects: 6.284500 ms  DeleteObjects: 0.050600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.361783 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c013ce158b7a0ea42b8182dced6fbf81') in 0.174870 seconds
-  Import took 0.191394 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003361 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+Unloading 3788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 167.6 MB.
+System memory in use after: 167.8 MB.
 
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.445 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.8 MB.
-System memory in use after: 174.0 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4704.
-Total: 8.778000 ms (FindLiveObjects: 1.651600 ms CreateObjectMapping: 0.399100 ms MarkObjects: 6.670800 ms  DeleteObjects: 0.053600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003143 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.211 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.8 MB.
-System memory in use after: 174.0 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4707.
-Total: 6.254200 ms (FindLiveObjects: 0.490700 ms CreateObjectMapping: 0.272100 ms MarkObjects: 5.453600 ms  DeleteObjects: 0.035700 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4458.
+Total: 4.009900 ms (FindLiveObjects: 0.397700 ms CreateObjectMapping: 0.226000 ms MarkObjects: 3.291300 ms  DeleteObjects: 0.093400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 534.024329 seconds.
+  Time since last request: 3918.625668 seconds.
   path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a965fecab6b2e28e1dd6720203f3347') in 0.175931 seconds
-  Import took 0.182349 seconds .
+  artifactKey: Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c80f7599a2a0099c3e3c643745f9b9b') in 0.184226 seconds
+  Import took 0.191657 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.368663 seconds.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Objects Prefabs/Player/Player.prefab
+  artifactKey: Guid(caf2d555f1ca5764dbb725dbd6d2a6fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Player.prefab using Guid(caf2d555f1ca5764dbb725dbd6d2a6fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c02905adbd8efaff1df94ca761d56ff7') in 0.006997 seconds
+  Import took 0.013216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.650610 seconds.
   path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a965fecab6b2e28e1dd6720203f3347') in 0.011075 seconds
-  Import took 0.038933 seconds .
+  artifactKey: Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be0f37ef824defe4193f820278d09de7') in 0.029485 seconds
+  Import took 0.038881 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.822049 seconds.
+  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
+  artifactKey: Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b61110609669d0e8293be6d8ab8c30d0') in 0.015214 seconds
+  Import took 0.024100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.282278 seconds.
+  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
+  artifactKey: Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ec6b6473c7c5d82f7c597ce271f194f') in 0.015675 seconds
+  Import took 0.023288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.991005 seconds.
+  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
+  artifactKey: Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be1355b1740622b9a9c919e7e8bcce31') in 0.014998 seconds
+  Import took 0.023913 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007666 seconds.
+  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
+  artifactKey: Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(2ffa6df40996ab74ab2a65a3141d4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be1355b1740622b9a9c919e7e8bcce31') in 0.015570 seconds
+  Import took 0.022862 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002993 seconds.
+Registered in 0.003703 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -743,25 +451,28 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.283 seconds
+- Completed reload, in  2.066 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.9 MB.
-System memory in use after: 174.2 MB.
+Unloading 3788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 167.8 MB.
+System memory in use after: 168.0 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4746.
-Total: 9.088600 ms (FindLiveObjects: 1.804800 ms CreateObjectMapping: 0.893800 ms MarkObjects: 6.355500 ms  DeleteObjects: 0.032500 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4498.
+Total: 9.435200 ms (FindLiveObjects: 1.355200 ms CreateObjectMapping: 0.421400 ms MarkObjects: 7.504100 ms  DeleteObjects: 0.152700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003208 seconds.
+Registered in 0.004182 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -776,403 +487,140 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.113 seconds
+- Completed reload, in  1.363 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.9 MB.
-System memory in use after: 174.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4749.
-Total: 6.478800 ms (FindLiveObjects: 0.534200 ms CreateObjectMapping: 0.315700 ms MarkObjects: 5.603200 ms  DeleteObjects: 0.024300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003332 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.268 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.9 MB.
-System memory in use after: 174.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4752.
-Total: 5.560700 ms (FindLiveObjects: 0.493400 ms CreateObjectMapping: 0.270000 ms MarkObjects: 4.767900 ms  DeleteObjects: 0.028100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003494 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.185 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.52 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.0 MB.
-System memory in use after: 174.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4755.
-Total: 4.035300 ms (FindLiveObjects: 0.482800 ms CreateObjectMapping: 0.266300 ms MarkObjects: 3.259700 ms  DeleteObjects: 0.025000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003510 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+Unloading 3789 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 167.9 MB.
+System memory in use after: 168.1 MB.
 
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.350 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.0 MB.
-System memory in use after: 174.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4758.
-Total: 5.174700 ms (FindLiveObjects: 0.499500 ms CreateObjectMapping: 0.250500 ms MarkObjects: 4.397600 ms  DeleteObjects: 0.025700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002976 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.202 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.23 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.0 MB.
-System memory in use after: 174.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4761.
-Total: 4.184800 ms (FindLiveObjects: 0.495800 ms CreateObjectMapping: 0.268700 ms MarkObjects: 3.394700 ms  DeleteObjects: 0.024400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002946 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.167 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.0 MB.
-System memory in use after: 174.2 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4764.
-Total: 4.239200 ms (FindLiveObjects: 0.447900 ms CreateObjectMapping: 0.261400 ms MarkObjects: 3.505300 ms  DeleteObjects: 0.023400 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4502.
+Total: 5.449900 ms (FindLiveObjects: 0.757100 ms CreateObjectMapping: 0.458300 ms MarkObjects: 4.148000 ms  DeleteObjects: 0.084500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 329.324041 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '177fad665df1ccffe4b9082e1a299dff') in 0.165151 seconds
-  Import took 0.187028 seconds .
+  Time since last request: 1721.845678 seconds.
+  path: Assets/Objects Prefabs/Player/Multiplayer Player 1.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/Multiplayer Player 1.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8bc1a243efc086cc64022e0e644aa34') in 0.186034 seconds
+  Import took 0.195477 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.597864 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '177fad665df1ccffe4b9082e1a299dff') in 0.068901 seconds
-  Import took 0.108023 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003225 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.471 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.1 MB.
-System memory in use after: 174.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4803.
-Total: 5.387500 ms (FindLiveObjects: 0.554400 ms CreateObjectMapping: 0.278100 ms MarkObjects: 4.519300 ms  DeleteObjects: 0.033400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002993 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.02 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.324 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.1 MB.
-System memory in use after: 174.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4806.
-Total: 5.446500 ms (FindLiveObjects: 0.686600 ms CreateObjectMapping: 0.407600 ms MarkObjects: 4.326600 ms  DeleteObjects: 0.023300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003946 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.28 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.293 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.1 MB.
-System memory in use after: 174.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4809.
-Total: 4.159200 ms (FindLiveObjects: 0.430500 ms CreateObjectMapping: 0.224600 ms MarkObjects: 3.479100 ms  DeleteObjects: 0.024100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005552 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.211 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.1 MB.
-System memory in use after: 174.4 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4812.
-Total: 5.038700 ms (FindLiveObjects: 0.522700 ms CreateObjectMapping: 0.268700 ms MarkObjects: 4.219900 ms  DeleteObjects: 0.026000 ms)
+  Time since last request: 4.495822 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '657d29b83da4079d6b467631f801c784') in 0.021295 seconds
+  Import took 0.029407 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 163.273752 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d2cf8cf2930d596abfe4200ef772f38') in 0.173793 seconds
-  Import took 0.205123 seconds .
+  Time since last request: 3.307349 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff89ae96842328a8bf00a9f687aaca79') in 0.015115 seconds
+  Import took 0.024748 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.057309 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d2cf8cf2930d596abfe4200ef772f38') in 0.012781 seconds
-  Import took 0.019616 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003361 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.194 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.3 MB.
-System memory in use after: 174.6 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4851.
-Total: 4.433800 ms (FindLiveObjects: 0.505900 ms CreateObjectMapping: 0.256600 ms MarkObjects: 3.643800 ms  DeleteObjects: 0.025700 ms)
+  Time since last request: 0.005638 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff89ae96842328a8bf00a9f687aaca79') in 0.019894 seconds
+  Import took 0.030234 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.997809 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5284eb7a2fef02726f8e3ab9929c34ec') in 0.169905 seconds
-  Import took 0.190746 seconds .
+  Time since last request: 1.722764 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec292862f43ddb3f463f058e5b6b3995') in 0.013311 seconds
+  Import took 0.019979 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.094430 seconds.
-  path: Assets/Objects Prefabs/Player/Multiplayer Player.prefab
-  artifactKey: Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects Prefabs/Player/Multiplayer Player.prefab using Guid(fd7eb1d77958f9c46b5d576a8a5cbc21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5284eb7a2fef02726f8e3ab9929c34ec') in 0.012363 seconds
-  Import took 0.020041 seconds .
+  Time since last request: 4.187398 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '235fddea91185e2299ba98ebd32c58a5') in 0.010106 seconds
+  Import took 0.019311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025979 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '235fddea91185e2299ba98ebd32c58a5') in 0.008886 seconds
+  Import took 0.015131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.044067 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b249227c505b438bee903c9bca6189c') in 0.013704 seconds
+  Import took 0.021951 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.804892 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a86204ec54d581950ff166174030a03') in 0.015015 seconds
+  Import took 0.023809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.428909 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33ca4b44b054d5d43059feae16842be8') in 0.009111 seconds
+  Import took 0.018564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.303557 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'befeb194eb6f34187a4a381770f6dd33') in 0.017054 seconds
+  Import took 0.027843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.230208 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddd345e4722f3506e24e99cfdcfd7998') in 0.018297 seconds
+  Import took 0.029043 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.378135 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a970aa34982c6c998196041d63e5a729') in 0.014322 seconds
+  Import took 0.023956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.764216 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae068840735619fa0e7190e03175dba6') in 0.009180 seconds
+  Import took 0.016871 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002963 seconds.
+Registered in 0.003959 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -1187,25 +635,28 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.218 seconds
+- Completed reload, in  1.112 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.4 MB.
-System memory in use after: 174.7 MB.
+Unloading 3789 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.0 MB.
+System memory in use after: 168.2 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4890.
-Total: 4.694300 ms (FindLiveObjects: 0.485000 ms CreateObjectMapping: 0.300200 ms MarkObjects: 3.876200 ms  DeleteObjects: 0.031300 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4541.
+Total: 5.412800 ms (FindLiveObjects: 0.621400 ms CreateObjectMapping: 0.267600 ms MarkObjects: 4.430700 ms  DeleteObjects: 0.091100 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003853 seconds.
+Registered in 0.003033 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.36 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -1220,25 +671,36 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.472 seconds
+- Completed reload, in  1.143 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.4 MB.
-System memory in use after: 174.7 MB.
+Unloading 3789 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.0 MB.
+System memory in use after: 168.3 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4893.
-Total: 3.969300 ms (FindLiveObjects: 0.432300 ms CreateObjectMapping: 0.221500 ms MarkObjects: 3.289100 ms  DeleteObjects: 0.024800 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4544.
+Total: 4.574400 ms (FindLiveObjects: 0.505900 ms CreateObjectMapping: 0.218700 ms MarkObjects: 3.768400 ms  DeleteObjects: 0.080200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.917488 seconds.
+  path: Assets/Objects Prefabs/Player/TestMultiplayer.prefab
+  artifactKey: Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects Prefabs/Player/TestMultiplayer.prefab using Guid(f290618a429ce9c42a20169db95ff23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '815cd4377a077a0a7dbc7bc060c51d10') in 0.233470 seconds
+  Import took 0.244656 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006079 seconds.
+Registered in 0.003063 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -1253,25 +715,28 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.352 seconds
+- Completed reload, in  1.435 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.79 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.90 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.4 MB.
-System memory in use after: 174.7 MB.
+Unloading 3789 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.2 MB.
+System memory in use after: 168.4 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4896.
-Total: 4.069600 ms (FindLiveObjects: 0.448600 ms CreateObjectMapping: 0.238000 ms MarkObjects: 3.357700 ms  DeleteObjects: 0.024100 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4583.
+Total: 8.468600 ms (FindLiveObjects: 1.240500 ms CreateObjectMapping: 0.549700 ms MarkObjects: 6.522600 ms  DeleteObjects: 0.152400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003233 seconds.
+Registered in 0.003331 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 4.27 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -1286,147 +751,15 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.476 seconds
+- Completed reload, in  1.440 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.5 MB.
-System memory in use after: 174.7 MB.
+Unloading 3789 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.2 MB.
+System memory in use after: 168.4 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4899.
-Total: 7.175000 ms (FindLiveObjects: 1.306400 ms CreateObjectMapping: 0.603300 ms MarkObjects: 5.222000 ms  DeleteObjects: 0.041500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002959 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.223 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.17 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.5 MB.
-System memory in use after: 174.7 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4902.
-Total: 4.019900 ms (FindLiveObjects: 0.416500 ms CreateObjectMapping: 0.228800 ms MarkObjects: 3.347300 ms  DeleteObjects: 0.026000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004227 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.736 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.5 MB.
-System memory in use after: 174.7 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4905.
-Total: 7.864500 ms (FindLiveObjects: 0.778200 ms CreateObjectMapping: 0.500000 ms MarkObjects: 6.543100 ms  DeleteObjects: 0.041400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003987 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.11 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.334 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.5 MB.
-System memory in use after: 174.7 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4908.
-Total: 7.548600 ms (FindLiveObjects: 1.046700 ms CreateObjectMapping: 1.000800 ms MarkObjects: 5.471400 ms  DeleteObjects: 0.027500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005011 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.96 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.559 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.56 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 174.5 MB.
-System memory in use after: 174.7 MB.
-
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4911.
-Total: 5.397400 ms (FindLiveObjects: 0.893300 ms CreateObjectMapping: 0.420100 ms MarkObjects: 4.057300 ms  DeleteObjects: 0.025200 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4586.
+Total: 6.150900 ms (FindLiveObjects: 0.824300 ms CreateObjectMapping: 0.313100 ms MarkObjects: 4.900700 ms  DeleteObjects: 0.110300 ms)
 
