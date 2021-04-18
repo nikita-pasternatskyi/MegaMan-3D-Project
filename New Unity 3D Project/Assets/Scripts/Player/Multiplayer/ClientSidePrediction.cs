@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player
         [SyncVar(hook = "OnServerStateChanged")]
         public PlayerTransformState State;
 
-        private Vector3 _velocity;
+        [SyncVar] private Vector3 _velocity;
         public Vector3 Velocity { get => _velocity; set => _velocity += value; }
 
         [SerializeField] private CharacterController _characterController;
@@ -21,14 +21,24 @@ namespace Assets.Scripts.Player
         [SerializeField] private float PlayerLerpSpacing;
         [SerializeField] private float PlayerLerpEasing;
 
+        [SyncVar] private Vector3 inputVelocity;
+
         private PlayerTransformState _predictedState;
-        private List<Vector3> _pendingVelocities;
+        [SyncVar] private List<Vector3> _pendingVelocities;
         public void ReceiveVelocity(Vector3 calculatedVelocity)
         {
             _pendingVelocities.Add(calculatedVelocity);
+            inputVelocity = calculatedVelocity;
             UpdatePredictedState();
             CmdMoveOnServer(calculatedVelocity);
         }
+
+        public void AddVelocity(Vector3 velocityToAdd)
+        {
+            if(_pendingVelocities != null)
+                _pendingVelocities.Add(velocityToAdd);
+        }
+
         private void Awake() => InitState();
         private void InitState()
         {

@@ -11,13 +11,15 @@ namespace Assets.Scripts.Player.Multiplayer
 {
     class PhysicsTest : NetworkBehaviour
     {
+        public ClientSidePrediction clientSidePrediction;
+
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private LayerMask _whatIsGround;
         [SerializeField] private float _gravity;
         [SerializeField] private float _mass;
         [SerializeField] private float _fixedDeltaTimeRate;
         [SerializeField] private float _jumpHeight;
-        [SerializeField] private Vector3 _velocity;
+        [SyncVar][SerializeField] private Vector3 _velocity;
         [SerializeField] private float _speed;
         [SerializeField] private CharacterController _characterController;
         [SyncVar] private bool _isGrounded;
@@ -31,20 +33,15 @@ namespace Assets.Scripts.Player.Multiplayer
 
         private IEnumerator WaitForGrounded()
         {
+            yield return new WaitForSeconds(.1f);
             do
             {
                 CheckGround();
                 ProcessPhysics();
-                CmdMoveServer();
+              //  clientSidePrediction.AddVelocity(_velocity);
                 yield return new WaitForFixedUpdate();
             }
             while (_isGrounded != true);
-        }
-
-        [Command]
-        private void CmdMoveServer()
-        {
-            _characterController.Move(_velocity * _fixedDeltaTimeRate);
         }
 
         [Command]
@@ -57,7 +54,7 @@ namespace Assets.Scripts.Player.Multiplayer
 
             if (!_isGrounded)
             {
-                _velocity.y += _gravity;       
+                _velocity.y += _gravity * _fixedDeltaTimeRate;            
             }
         }
 

@@ -199,3 +199,40 @@ Received Import Request.
 Start importing Assets/Scenes/Tests/Multiplayer_Test.unity using Guid(cb8d8b308bb85014b9a0e22b60dfa8a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '373fe3aae9f1f6a96e2e8aa458de5f0f') in 0.011240 seconds
   Import took 0.018632 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006904 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at F:/MyGames/MegaMan-3D-Project/New Unity 3D Project/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at F:/MyGames/MegaMan-3D-Project/New Unity 3D Project/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[F:/MyGames/MegaMan-3D-Project/New Unity 3D Project/Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.259 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 3.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3789 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 163.2 MB.
+System memory in use after: 163.4 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4406.
+Total: 7.572300 ms (FindLiveObjects: 0.650500 ms CreateObjectMapping: 0.468200 ms MarkObjects: 6.351300 ms  DeleteObjects: 0.100200 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
