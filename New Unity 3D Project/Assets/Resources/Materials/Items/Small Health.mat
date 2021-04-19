@@ -8,18 +8,25 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Small Health
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 84951cb5fce5bd4458485a6fea96a636, type: 3}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_661cd25bbf2b478eba4cd756f9fff039:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9494b2abb36a49acbaaac3a134d252a0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -77,6 +84,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_07c0600f59e043e9b43c70a54971e898: 0
+    - Vector1_2e3f08496e3b4eafa5b9b2b18685272d: 0.1
+    - Vector1_5a617ebc077b49898922b485cf23a505: 0
+    - Vector1_68bd72ec3a18473e974fbda58cc480e3: 0.05
+    - Vector1_ac86f822f29b4abda51cbf450fddac17: 1
+    - Vector1_b7b7e5a35c604aa6b63d48028c18ac5f: -0.05
+    - Vector1_d0426dd02ce14ac99de8fef606f77bc1: 0.2
+    - Vector1_f217473198dd4912ab9392a46c9f0150: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -104,6 +119,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_1f742be835484180b960e90fc04bc093: {r: 1, g: 0.69796455, b: 0, a: 0}
+    - Color_34f4be5703c1427e8817e7a738db5f34: {r: 1, g: 0.87711865, b: 0.8632076, a: 1}
+    - Color_98d6f25f2ab94ac68376efff7a06e7b8: {r: 0, g: 0, b: 0, a: 0}
+    - Color_e140be6c49c242c3823f1eb5bc33cfef: {r: 1, g: 0.9945125, b: 0.3160377, a: 0}
     - _BaseColor: {r: 1, g: 0.8832874, b: 0.3537736, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.3710889, g: 0.02002491, b: 0.4716981, a: 1}
