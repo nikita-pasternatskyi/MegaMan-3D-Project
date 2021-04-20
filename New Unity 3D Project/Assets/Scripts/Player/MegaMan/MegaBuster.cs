@@ -11,10 +11,16 @@ namespace Assets.Scripts.Player.MegaMan
         {
             base.OnAltFire();
         }
-
+       
         protected override void OnMainFire()
         {
             base.OnMainFire();
+        }
+
+        [Command]
+        protected override void CreateProjectile(GameObject projectile)
+        {
+            base.CreateProjectile(projectile);
         }
 
         public override void Refill(float ammoToRefill)

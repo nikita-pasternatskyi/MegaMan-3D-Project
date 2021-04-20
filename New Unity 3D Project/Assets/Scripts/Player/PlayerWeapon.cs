@@ -12,6 +12,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private Transform _referenceRotation;
         [SerializeField] private float _maxAmmo;
         [SerializeField] private float _currentAmmo;
+
         public virtual void Refill(float ammoToRefill)
         {
             _currentAmmo = _currentAmmo + ammoToRefill < _maxAmmo ? _currentAmmo + ammoToRefill : _maxAmmo;
@@ -22,20 +23,27 @@ namespace Assets.Scripts.Player
         { 
         
         }
+
         protected virtual void OnMainFire()
         {
             if (!LevelSettings.Instance.IsPaused)
             {
-                NetworkServer.Spawn(Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation));
+                CreateProjectile(_projectile);
             }
-
         }
+
         protected virtual void OnAltFire()
         {
             if (!LevelSettings.Instance.IsPaused)
             {
             
             }
+        }
+
+        [Command]
+        protected virtual void CreateProjectile(GameObject projectile)
+        {
+            NetworkServer.Spawn(Instantiate(_projectile, new Vector3(0,0,0), new Quaternion(0,0,0, transform.rotation.w)));
         }
    
     }

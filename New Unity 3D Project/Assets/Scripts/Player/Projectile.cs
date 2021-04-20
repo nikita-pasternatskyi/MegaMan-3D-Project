@@ -11,20 +11,17 @@ namespace Assets.Scripts.Player
         [SerializeField] private int _damage;
         [SerializeField] private float _lifeTime;
 
+        [Server]
         private void FixedUpdate()
         {
-            _lifeTime -= Time.fixedDeltaTime;
             transform.position += transform.forward * _speed * Time.fixedDeltaTime;
-            if (_lifeTime <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(this.gameObject, _lifeTime);
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            other.GetComponent<Health>()?.TakeDamage(_damage);
-        }
+        //private void OnTriggerEnter(Collider other)
+        //{
+        //    other.GetComponent<Health>()?.TakeDamage(_damage);
+        //}
 
     }
 }

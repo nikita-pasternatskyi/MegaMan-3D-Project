@@ -260,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124458465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08653762, y: -1.52, z: 5.4}
+  m_LocalPosition: {x: 0.08653762, y: -1.52, z: 6}
   m_LocalScale: {x: 10.15, y: 2.482, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -363,10 +363,51 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 6237848994139125929, guid: f290618a429ce9c42a20169db95ff23a, type: 3}
+  playerPrefab: {fileID: 6237848994139125929, guid: 118b3e65f4e1f6b4db221c31d101417f, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs: []
+--- !u!1 &1301057287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4133900963422864704, guid: 63f02c82656ae2748bf8fa06861d7548, type: 3}
+  m_PrefabInstance: {fileID: 1509714221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1301057288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301057287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7efc4548753b34e8d7dd3ad19e6fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _winScreen: {fileID: 0}
+  IsPaused: 0
+  _levelType: 2
+  _enemyToDefeat: {fileID: 0}
+  _itemToCollect: {fileID: 0}
+--- !u!114 &1301057289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301057287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1034474097
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 63f02c82656ae2748bf8fa06861d7548
+  hasSpawned: 0
 --- !u!1 &1490531678
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +558,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4133900963422864709, guid: 63f02c82656ae2748bf8fa06861d7548, type: 3}
+    - {fileID: 4133900963422864708, guid: 63f02c82656ae2748bf8fa06861d7548, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63f02c82656ae2748bf8fa06861d7548, type: 3}
 --- !u!1 &1560081523
 GameObject:
