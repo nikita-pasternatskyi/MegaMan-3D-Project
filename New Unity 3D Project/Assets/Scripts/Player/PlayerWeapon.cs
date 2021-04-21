@@ -23,13 +23,36 @@ namespace Assets.Scripts.Player
         { 
         
         }
-
+    
         protected virtual void OnMainFire()
         {
-            if (!LevelSettings.Instance.IsPaused)
+            if (isLocalPlayer)
             {
-                CreateProjectile(_projectile);
+                if (this.connectionToServer.isReady)
+                {
+                    Shoot();
+                }
+                else
+                {
+                    StartCoroutine(WaitForReady());
+                }
             }
+           
+        }
+
+        [Command]
+        protected virtual void Shoot()
+        {
+            CreateProjectile();
+        }
+
+        protected IEnumerator WaitForReady()
+        {
+            while (!connectionToClient.isReady)
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
+            CreateProjectile();
         }
 
         protected virtual void OnAltFire()
@@ -40,10 +63,11 @@ namespace Assets.Scripts.Player
             }
         }
 
-        [Command]
-        protected virtual void CreateProjectile(GameObject projectile)
+        [Server]
+        protected virtual void CreateProjectile()
         {
-            NetworkServer.Spawn(Instantiate(_projectile, new Vector3(0,0,0), new Quaternion(0,0,0, transform.rotation.w)));
+            GameObject projectile = Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
+            NetworkServer.Spawn(projectile);
         }
    
     }

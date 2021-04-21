@@ -355,6 +355,7 @@ MonoBehaviour:
   _referenceRotation: {fileID: 4465449458759643980}
   _maxAmmo: 10
   _currentAmmo: 10
+  ServerUpdateTime: 1
 --- !u!1 &7236163640293558216
 GameObject:
   m_ObjectHideFlags: 0

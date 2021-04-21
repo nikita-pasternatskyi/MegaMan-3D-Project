@@ -22,8 +22,6 @@ namespace Assets.Scripts.Player
         [Header("Class dependencies")]
         public ClientSidePrediction clientSidePrediction;
 
-        private void Awake() => InitState();
-
         private void FixedUpdate()
         {
             if (isLocalPlayer)
@@ -58,15 +56,6 @@ namespace Assets.Scripts.Player
 
         [ClientCallback]
         private void OnMove(InputValue value) => _currentInput = value.Get<Vector2>();
-
-        private void InitState()
-        {
-            //_state = new PlayerTransformState
-            //{
-            //    TimeStamp = 0,
-            //    Position = transform.position,
-            //};
-        }
 
     }
 }

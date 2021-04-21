@@ -11,11 +11,11 @@ namespace Assets.Scripts.Player
         [SerializeField] private int _damage;
         [SerializeField] private float _lifeTime;
 
-        [Server]
+        //[Server]
         private void FixedUpdate()
         {
             transform.position += transform.forward * _speed * Time.fixedDeltaTime;
-            Destroy(this.gameObject, _lifeTime);
+            //Destroy(this.gameObject, _lifeTime);
         }
 
         //private void OnTriggerEnter(Collider other)

@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: -2654363887655024549}
   - component: {fileID: 3513888062653642353}
   - component: {fileID: 6305872846083504977}
+  - component: {fileID: 7767951198909747404}
   m_Layer: 0
   m_Name: TestMultiplayer
   m_TagString: Untagged
@@ -401,6 +402,25 @@ MonoBehaviour:
   _velocity: {x: 0, y: 0, z: 0}
   _speed: 1
   _characterController: {fileID: 2696507584929440715}
+--- !u!114 &7767951198909747404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237848994139125929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d78c3ffeebcdcb45871db2b85b24142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _projectile: {fileID: 2781130001028705583, guid: a1aacaf5d48a41d4bacc751fb2caedaa, type: 3}
+  _whereToSpawn: {fileID: 4465449458759643980, guid: 118b3e65f4e1f6b4db221c31d101417f, type: 3}
+  _referenceRotation: {fileID: 4465449458759643980, guid: 118b3e65f4e1f6b4db221c31d101417f, type: 3}
+  _maxAmmo: 10
+  _currentAmmo: 10
 --- !u!1 &7236163640293558216
 GameObject:
   m_ObjectHideFlags: 0

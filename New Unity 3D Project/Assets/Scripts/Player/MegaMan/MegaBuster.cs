@@ -16,11 +16,16 @@ namespace Assets.Scripts.Player.MegaMan
         {
             base.OnMainFire();
         }
-
         [Command]
-        protected override void CreateProjectile(GameObject projectile)
+        protected override void Shoot()
         {
-            base.CreateProjectile(projectile);
+            base.CreateProjectile();
+        }
+
+        [Server]
+        protected override void CreateProjectile()
+        {
+            base.CreateProjectile();
         }
 
         public override void Refill(float ammoToRefill)
