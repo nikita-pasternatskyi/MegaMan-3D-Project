@@ -35,8 +35,22 @@ namespace Assets.Scripts.Player
 
         public void AddVelocity(Vector3 velocityToAdd)
         {
-            if(_pendingVelocities != null)
+
+            if (_pendingVelocities.Count == 0)
+            {
                 _pendingVelocities.Add(velocityToAdd);
+            }
+            else if (_pendingVelocities.Count > 0)
+            {
+                if (_pendingVelocities[_pendingVelocities.Count-1] != null)
+                {
+                    _pendingVelocities[_pendingVelocities.Count-1] += velocityToAdd;
+                }
+                else if (_pendingVelocities[_pendingVelocities.Count-1] == null)
+                {
+                    _pendingVelocities.Add(velocityToAdd);
+                }
+            }
         }
 
         private void Awake() => InitState();

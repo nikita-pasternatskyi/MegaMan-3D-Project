@@ -20,32 +20,22 @@ namespace Assets.Scripts.Player.Multiplayer
         [SerializeField] private float _fixedDeltaTimeRate;
         [SerializeField] private float _jumpHeight;
         [SyncVar][SerializeField] private Vector3 _velocity;
+        [SyncVar] private bool _isGrounded;
         [SerializeField] private float _speed;
         [SerializeField] private CharacterController _characterController;
-        [SyncVar] private bool _isGrounded;
+
+        [SyncVar] private bool _simulationRunning;
+
 
         public override void OnStartAuthority()
         {
             base.OnStartAuthority();
             enabled = true;
-            StartCoroutine(WaitForGrounded());
-        }
-
-        private IEnumerator WaitForGrounded()
-        {
-            yield return new WaitForSeconds(.1f);
-            do
-            {
-                CheckGround();
-                ProcessPhysics();
-              //  clientSidePrediction.AddVelocity(_velocity);
-                yield return new WaitForFixedUpdate();
-            }
-            while (_isGrounded != true);
+            StartCoroutine(ProcessPhysics());
         }
 
         [Command]
-        private void ProcessPhysics()
+        private void CalculatePhysics()
         {
             if (_isGrounded && _velocity.y < 0)
             {
@@ -67,6 +57,31 @@ namespace Assets.Scripts.Player.Multiplayer
                     _characterController.bounds.center.z);
 
             _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
+        }
+
+        private void OnMove()
+        {
+            CheckGround();
+            if (!_isGrounded && !_simulationRunning)
+            { 
+                StartCoroutine(ProcessPhysics());
+            }
+        }
+
+        private IEnumerator ProcessPhysics()
+        {
+            _simulationRunning = true;
+            yield return new WaitForSeconds(.25f);
+            do
+            {
+                CheckGround();
+                CalculatePhysics();
+                clientSidePrediction.AddVelocity(_velocity);
+                yield return new WaitForFixedUpdate();
+            }
+            while (_isGrounded != true);
+            _simulationRunning = false;
+            yield break;
         }
     }
 }

@@ -337,8 +337,10 @@ MonoBehaviour:
   syncInterval: 0.1
   _cameraToEnable: {fileID: 5869562541338364258}
   _componentsToEnable:
-  - {fileID: 0}
+  - {fileID: 7767951198909747404}
   - {fileID: -8507266611670444468}
+  - {fileID: 3513888062653642353}
+  - {fileID: -2654363887655024549}
 --- !u!114 &-2654363887655024549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237848994139125929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54a986f62697194488fbf0690e75b065, type: 3}
   m_Name: 
@@ -365,7 +367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237848994139125929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c55d70fe8d40e64e99f645c5be438b9, type: 3}
   m_Name: 
