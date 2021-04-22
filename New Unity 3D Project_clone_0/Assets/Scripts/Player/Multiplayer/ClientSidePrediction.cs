@@ -62,7 +62,11 @@ namespace Assets.Scripts.Player
                 Position = transform.position,
             };
         }
-        public override void OnStartLocalPlayer() => _pendingVelocities = new List<Vector3>();
+        public override void OnStartAuthority()
+        {
+            Debug.Log("Authority3");
+            _pendingVelocities = new List<Vector3>();
+        }
         private void FixedUpdate()
         {
             SyncState();

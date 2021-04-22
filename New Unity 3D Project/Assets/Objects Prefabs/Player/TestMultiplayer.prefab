@@ -156,7 +156,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4465449458759643980}
-  - component: {fileID: 5586082236272341472}
   - component: {fileID: 2696507584929440715}
   - component: {fileID: 9131721226719868116}
   - component: {fileID: 6534416300709446972}
@@ -189,20 +188,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5586082236272341472
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6237848994139125929}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &2696507584929440715
 CharacterController:
   m_ObjectHideFlags: 0
@@ -419,8 +404,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   _projectile: {fileID: 2781130001028705583, guid: a1aacaf5d48a41d4bacc751fb2caedaa, type: 3}
-  _whereToSpawn: {fileID: 4465449458759643980, guid: 118b3e65f4e1f6b4db221c31d101417f, type: 3}
-  _referenceRotation: {fileID: 4465449458759643980, guid: 118b3e65f4e1f6b4db221c31d101417f, type: 3}
+  _whereToSpawn: {fileID: 4465449458759643980}
+  _referenceRotation: {fileID: 4465449458759643980}
   _maxAmmo: 10
   _currentAmmo: 10
 --- !u!1 &7236163640293558216

@@ -14,6 +14,7 @@ namespace Assets.Scripts.Player.Multiplayer
         public override void OnStartAuthority()
         {
             EnableLocalObjects();
+            Debug.Log("Authority1");
         }
 
         [ClientCallback]

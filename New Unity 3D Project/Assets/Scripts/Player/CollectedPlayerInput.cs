@@ -10,6 +10,6 @@ namespace Assets.Scripts.Player
     public class CollectedPlayerInput
     {
         public Vector2 Direction;
-        public bool inAir;
+        public float JumpPower;
     }
 }

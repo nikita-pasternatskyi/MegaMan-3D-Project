@@ -16,6 +16,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private float _speed;
         [SerializeField] private float _sprintSpeedMultiplier;
         [SerializeField] private float _jumpHeight;
+        private float _currentJump;
         private Vector3 _velocity;
         private Vector2 _currentInput;
 
@@ -39,7 +40,7 @@ namespace Assets.Scripts.Player
             };
         }
 
-        private void CalculateVelocity(Vector2 input)
+        private void CalculateVelocity(Vector3 input)
         {
             var direction = _forwardDirectionReference.forward * input.y + _forwardDirectionReference.right * input.x;
             _velocity = new Vector3(direction.x * _speed, _velocity.y, direction.z * _speed);
@@ -49,6 +50,7 @@ namespace Assets.Scripts.Player
         {
             CollectedPlayerInput playerInput = new CollectedPlayerInput();
             playerInput.Direction = _currentInput;
+            playerInput.JumpPower = _currentJump;
             //if (playerInput.Direction == Vector2.zero)
             //    return null;
             return playerInput;
@@ -57,6 +59,13 @@ namespace Assets.Scripts.Player
         [ClientCallback]
         private void OnMove(InputValue value) => _currentInput = value.Get<Vector2>();
 
+        [ClientCallback]
+        private void OnJump() => Jump();
+
+        private void Jump()
+        {
+            _currentJump = _velocity.y + Mathf.Sqrt(_jumpHeight * -2f * -9.8f) * Time.fixedDeltaTime;
+        }
     }
 }
 

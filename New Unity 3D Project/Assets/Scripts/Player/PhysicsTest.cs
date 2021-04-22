@@ -30,7 +30,6 @@ namespace Assets.Scripts.Player.Multiplayer
         public override void OnStartAuthority()
         {
             base.OnStartAuthority();
-            enabled = true;
             StartCoroutine(ProcessPhysics());
         }
 
