@@ -360,7 +360,7 @@ MonoBehaviour:
   syncInterval: 0.1
   _playerPhysics: {fileID: 6305872846083504977}
   _forwardDirectionReference: {fileID: 7191847319424614092}
-  _speed: 0.5
+  _speed: 1
   _sprintSpeedMultiplier: 0
   _jumpHeight: 6
   _airMultiplier: 0.4

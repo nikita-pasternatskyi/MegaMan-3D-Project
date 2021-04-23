@@ -1,0 +1,5 @@
+OnDeserialize failed Exception=System.ArgumentOutOfRangeException (see below) object=TestMultiplayer(Clone) component=Assets.Scripts.Player.ClientSidePrediction sceneId=0 length=44. Possible Reasons:
+  * Do Assets.Scripts.Player.ClientSidePrediction's OnSerialize and OnDeserialize calls write the same amount of data(44 bytes)? 
+  * Was there an exception in Assets.Scripts.Player.ClientSidePrediction's OnSerialize/OnDeserialize code?
+  * Are the server and client the exact same project?
+  * Maybe this OnDeserialize call was meant for another GameObject? The sceneIds can easily get out of sync if the Hierarchy was modified only in the client OR the server. Try rebuilding both.

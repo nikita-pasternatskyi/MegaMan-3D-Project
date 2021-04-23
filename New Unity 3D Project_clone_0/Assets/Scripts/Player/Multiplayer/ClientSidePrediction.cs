@@ -20,16 +20,17 @@ namespace Assets.Scripts.Player
         [SerializeField] private float PlayerLerpSpacing;
         [SerializeField] private float PlayerLerpEasing;
 
-        [SyncVar] private Vector3 inputVelocity;
 
         private PlayerTransformState _predictedState;
-        [SyncVar] private List<Vector3> _pendingVelocities;
-        public void ReceiveVelocity(Vector3 calculatedVelocity)
+        private List<Vector3> _pendingVelocities;
+        public void ReceiveVelocity(Vector3 velocityToReceive, bool predict = true)
         {
-            _pendingVelocities.Add(calculatedVelocity);
-            inputVelocity = calculatedVelocity;
-            UpdatePredictedState();
-            CmdMoveOnServer(calculatedVelocity);
+            if (predict)
+            {
+                _pendingVelocities.Add(velocityToReceive);
+                UpdatePredictedState();
+            }
+            CmdMoveOnServer(velocityToReceive);    
         }
 
         private void Awake() => InitState();

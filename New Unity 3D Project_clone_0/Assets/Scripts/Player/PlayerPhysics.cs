@@ -47,7 +47,7 @@ namespace Assets.Scripts.Player
             if (_isGrounded && _velocity.y < 0)
             {
                 ApplyDrag(_groundDrag);
-                _velocity.y = -2f;
+                _velocity.y = 0;
             }
 
             if (!_isGrounded)
@@ -55,6 +55,29 @@ namespace Assets.Scripts.Player
                 ApplyDrag(_airDrag);
                 _velocity.y += _gravity * Time.fixedDeltaTime * _mass;
             }
+        }
+
+        private void PhysicsUpdate()
+        {
+            CheckGround();
+            CalculatePhysics();
+            _clientSidePrediction.ReceiveVelocity(_velocity);
+        }
+
+        private void FixedUpdate() 
+        {
+            if (isLocalPlayer)
+            {
+                CheckGround();
+                CalculatePhysics();
+                _clientSidePrediction.ReceiveVelocity(_velocity);
+            }
+        }
+
+        public void AddVelocity(Vector3 velocityToAdd)
+        { 
+            if (isLocalPlayer)
+                _velocity += velocityToAdd;
         }
 
         [Command]
@@ -66,25 +89,6 @@ namespace Assets.Scripts.Player
                     _characterController.bounds.center.z);
 
             _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
-        }
-
-        private void PhysicsUpdate()
-        {
-            CheckGround();
-            _clientSidePrediction.ReceiveVelocity(_velocity);
-            CalculatePhysics();
-        }
-
-        private void FixedUpdate() 
-        {
-            if (isLocalPlayer) 
-                PhysicsUpdate();
-        }
-
-        public void AddVelocity(Vector3 velocityToAdd)
-        { 
-            if (isLocalPlayer)
-                _velocity += velocityToAdd;
         }
     }
 }

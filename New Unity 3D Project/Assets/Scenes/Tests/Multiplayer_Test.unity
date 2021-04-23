@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &9282579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +561,7 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 6237848994139125929, guid: f290618a429ce9c42a20169db95ff23a, type: 3}
+  - {fileID: 2781130001028705583, guid: a1aacaf5d48a41d4bacc751fb2caedaa, type: 3}
 --- !u!1 &1301057287 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4133900963422864704, guid: 63f02c82656ae2748bf8fa06861d7548, type: 3}

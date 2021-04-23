@@ -66,7 +66,6 @@ namespace Assets.Scripts.Player
         [ClientCallback]
         private void OnJump() => Jump();
 
-        [Command]
         private void Jump()
         {
             if (isLocalPlayer && _playerPhysics.IsGrounded)
