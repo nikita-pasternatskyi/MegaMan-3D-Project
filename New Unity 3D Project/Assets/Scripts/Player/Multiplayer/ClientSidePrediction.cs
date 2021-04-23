@@ -14,7 +14,6 @@ namespace Assets.Scripts.Player
         public PlayerTransformState State;
 
         [SyncVar] private Vector3 _velocity;
-        public Vector3 Velocity { get => _velocity; set => _velocity += value; }
 
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private float PlayerFixedUpdateInterval;
@@ -33,26 +32,6 @@ namespace Assets.Scripts.Player
             CmdMoveOnServer(calculatedVelocity);
         }
 
-        public void AddVelocity(Vector3 velocityToAdd)
-        {
-
-            if (_pendingVelocities.Count == 0)
-            {
-                _pendingVelocities.Add(velocityToAdd);
-            }
-            else if (_pendingVelocities.Count > 0)
-            {
-                if (_pendingVelocities[_pendingVelocities.Count-1] != null)
-                {
-                    _pendingVelocities[_pendingVelocities.Count-1] += velocityToAdd;
-                }
-                else if (_pendingVelocities[_pendingVelocities.Count-1] == null)
-                {
-                    _pendingVelocities.Add(velocityToAdd);
-                }
-            }
-        }
-
         private void Awake() => InitState();
         private void InitState()
         {
@@ -64,7 +43,6 @@ namespace Assets.Scripts.Player
         }
         public override void OnStartAuthority()
         {
-            Debug.Log("Authority3");
             _pendingVelocities = new List<Vector3>();
         }
         private void FixedUpdate()

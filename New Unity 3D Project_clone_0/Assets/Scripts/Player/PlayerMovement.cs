@@ -19,9 +19,11 @@ namespace Assets.Scripts.Player
         private float _currentJump;
         private Vector3 _velocity;
         private Vector2 _currentInput;
+        public float airMultiplier = 0.4f;
 
         [Header("Class dependencies")]
         public ClientSidePrediction clientSidePrediction;
+        public PhysicsTest physicsTest;
 
         private void FixedUpdate()
         {
@@ -30,20 +32,24 @@ namespace Assets.Scripts.Player
                 SendInputs();
             }
         }
+
         private void SendInputs()
         {
             CollectedPlayerInput playerInput = CreatePlayerInput();
             if (playerInput != null)
             {
                 CalculateVelocity(playerInput.Direction);
-                clientSidePrediction.ReceiveVelocity(_velocity);
+                physicsTest.AddVelocity(_velocity);
             };
         }
 
         private void CalculateVelocity(Vector3 input)
         {
             var direction = _forwardDirectionReference.forward * input.y + _forwardDirectionReference.right * input.x;
-            _velocity = new Vector3(direction.x * _speed, _velocity.y, direction.z * _speed);
+            _velocity = new Vector3(direction.x * _speed, _currentJump, direction.z * _speed);
+            if (!physicsTest.IsGrounded)
+                _velocity *= airMultiplier;
+
         }
 
         private CollectedPlayerInput CreatePlayerInput()
@@ -51,20 +57,27 @@ namespace Assets.Scripts.Player
             CollectedPlayerInput playerInput = new CollectedPlayerInput();
             playerInput.Direction = _currentInput;
             playerInput.JumpPower = _currentJump;
-            //if (playerInput.Direction == Vector2.zero)
-            //    return null;
+            if (playerInput.Direction == Vector2.zero && playerInput.JumpPower == 0)
+                return null;
             return playerInput;
         }
 
         [ClientCallback]
-        private void OnMove(InputValue value) => _currentInput = value.Get<Vector2>();
+        private void OnMove(InputValue value)
+        {      
+            _currentInput = value.Get<Vector2>();
+        }
 
         [ClientCallback]
         private void OnJump() => Jump();
 
+        [Command]
         private void Jump()
         {
-            _currentJump = _velocity.y + Mathf.Sqrt(_jumpHeight * -2f * -9.8f) * Time.fixedDeltaTime;
+            if (isLocalPlayer && physicsTest.IsGrounded)
+            {                            
+                physicsTest.AddVelocity(transform.up * _jumpHeight);
+            }
         }
     }
 }

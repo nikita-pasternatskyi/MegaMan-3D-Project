@@ -161,8 +161,8 @@ GameObject:
   - component: {fileID: 6534416300709446972}
   - component: {fileID: -8507266611670444468}
   - component: {fileID: 4652929696606165648}
-  - component: {fileID: -2654363887655024549}
   - component: {fileID: 3513888062653642353}
+  - component: {fileID: -2654363887655024549}
   - component: {fileID: 6305872846083504977}
   - component: {fileID: 7767951198909747404}
   m_Layer: 0
@@ -326,25 +326,6 @@ MonoBehaviour:
   - {fileID: -8507266611670444468}
   - {fileID: 3513888062653642353}
   - {fileID: -2654363887655024549}
---- !u!114 &-2654363887655024549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6237848994139125929}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54a986f62697194488fbf0690e75b065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  _forwardDirectionReference: {fileID: 7191847319424614092}
-  _speed: 1
-  _sprintSpeedMultiplier: 0
-  _jumpHeight: 0
-  clientSidePrediction: {fileID: 3513888062653642353}
 --- !u!114 &3513888062653642353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +344,27 @@ MonoBehaviour:
   PlayerFixedUpdateInterval: 0.02
   PlayerLerpSpacing: 1
   PlayerLerpEasing: 0.1
+--- !u!114 &-2654363887655024549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237848994139125929}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a986f62697194488fbf0690e75b065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _forwardDirectionReference: {fileID: 7191847319424614092}
+  _speed: 1
+  _sprintSpeedMultiplier: 0
+  _jumpHeight: 12
+  airMultiplier: 0.4
+  clientSidePrediction: {fileID: 3513888062653642353}
+  physicsTest: {fileID: 6305872846083504977}
 --- !u!114 &6305872846083504977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  clientSidePrediction: {fileID: 3513888062653642353}
+  _clientSidePrediction: {fileID: 3513888062653642353}
+  _characterController: {fileID: 2696507584929440715}
   _groundCheckRadius: 0.1
   _whatIsGround:
     serializedVersion: 2
@@ -385,10 +388,8 @@ MonoBehaviour:
   _gravity: -9.8
   _mass: 1
   _fixedDeltaTimeRate: 0.02
-  _jumpHeight: 1
-  _velocity: {x: 0, y: 0, z: 0}
-  _speed: 1
-  _characterController: {fileID: 2696507584929440715}
+  _groundDrag: 6
+  _airDrag: 3
 --- !u!114 &7767951198909747404
 MonoBehaviour:
   m_ObjectHideFlags: 0
