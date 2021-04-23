@@ -11,7 +11,7 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<PlayerMove>() != null)
+            if (other.GetComponent<PlayerMovement>() != null)
             {
                // other.GetComponent<PlayerMove>().Jump(_jumpHeight);
             }

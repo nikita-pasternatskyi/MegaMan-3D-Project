@@ -358,13 +358,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  _playerPhysics: {fileID: 6305872846083504977}
   _forwardDirectionReference: {fileID: 7191847319424614092}
-  _speed: 1
+  _speed: 0.5
   _sprintSpeedMultiplier: 0
-  _jumpHeight: 12
-  airMultiplier: 0.4
-  clientSidePrediction: {fileID: 3513888062653642353}
-  physicsTest: {fileID: 6305872846083504977}
+  _jumpHeight: 6
+  _airMultiplier: 0.4
 --- !u!114 &6305872846083504977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,15 +380,15 @@ MonoBehaviour:
   syncInterval: 0.1
   _clientSidePrediction: {fileID: 3513888062653642353}
   _characterController: {fileID: 2696507584929440715}
-  _groundCheckRadius: 0.1
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
+  _groundCheckRadius: 0.1
   _gravity: -9.8
-  _mass: 1
+  _mass: 1.5
   _fixedDeltaTimeRate: 0.02
   _groundDrag: 6
-  _airDrag: 3
+  _airDrag: 2
 --- !u!114 &7767951198909747404
 MonoBehaviour:
   m_ObjectHideFlags: 0

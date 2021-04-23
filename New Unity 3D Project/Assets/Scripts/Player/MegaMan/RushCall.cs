@@ -13,7 +13,6 @@ namespace Assets.Scripts.Player.MegaMan
 
         [SerializeField] private PlayerCamera _playerCamera;
         [SerializeField] private float _spawnDistance;
-        [SerializeField] PlayerMove _playerMove;
         [SerializeField] RushMode _currentRushState = RushMode.None;
         [SerializeField] GameObject _rushCoil;
         [SerializeField] GameObject _rushJet;
@@ -33,7 +32,7 @@ namespace Assets.Scripts.Player.MegaMan
         public void MountRushJet()
         {
             _currentRushState = RushMode.RushJet;
-            _playerMove.enabled = false;
+//            _playerMove.enabled = false;
             _playerCamera.ChangeCameraMode(CameraModes.AroundPoint);
             OnRushJet?.Invoke();
         }

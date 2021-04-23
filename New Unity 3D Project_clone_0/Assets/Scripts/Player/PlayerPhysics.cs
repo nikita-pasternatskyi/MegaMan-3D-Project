@@ -6,45 +6,39 @@ using System.Threading.Tasks;
 using Mirror;
 using UnityEngine;
 
+
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
-    class PlayerPhysics : NetworkBehaviour
-    {        
-        [SerializeField] private CharacterController _characterController;
-        [SerializeField] private float _groundCheckRadius;
-        [SerializeField] private LayerMask _whatIsGround;
-        [SerializeField] private float _gravity;
-        [SerializeField] private float _mass;
-        public float jumpHeight;
-        public Vector3 _velocity;
+    [RequireComponent(typeof(ClientSidePrediction))]
+    public class PlayerPhysics : NetworkBehaviour
+    {
 
-        private bool _isGrounded;
+        [SerializeField] private ClientSidePrediction _clientSidePrediction;
+        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private LayerMask _whatIsGround;
+        [SerializeField] private float _groundCheckRadius = 0.1f;
+        [SerializeField] private float _gravity = -9.8f;
+        [SerializeField] private float _mass = 1;
+        [SerializeField] private float _fixedDeltaTimeRate = .02f;
+        [SerializeField] private float _groundDrag = 6;
+        [SerializeField] private float _airDrag = 3;
+
+        [SyncVar] private Vector3 _velocity;
+        [SyncVar] private bool _isGrounded;
+
+        public bool IsGrounded { get => _isGrounded; }
+
+        private void ApplyDrag(float drag)
+        {
+            float multiplier = 1.0f - drag * _fixedDeltaTimeRate;
+            if (multiplier < 0.0f) multiplier = 0.0f;
+            _velocity = multiplier * _velocity;
+        }
 
         public override void OnStartAuthority()
         {
             base.OnStartAuthority();
-            enabled = true;
-        }
-
-        [ClientCallback]
-        private void FixedUpdate()
-        {
-            if (isLocalPlayer)
-            {
-                CheckGround();
-                CalculatePhysics();
-            }
-        }
-
-        [Server]
-        private void CmdMoveOnServer()
-        {
-            if (isLocalPlayer)
-            {
-                _velocity.y += _gravity * Time.fixedDeltaTime;
-                _characterController.Move(_velocity * Time.fixedDeltaTime);
-            }
         }
 
         [Command]
@@ -52,13 +46,14 @@ namespace Assets.Scripts.Player
         {
             if (_isGrounded && _velocity.y < 0)
             {
+                ApplyDrag(_groundDrag);
                 _velocity.y = -2f;
             }
 
-            else if (!_isGrounded)
+            if (!_isGrounded)
             {
-                _velocity.y += _gravity * Time.fixedDeltaTime;
-                CmdMoveOnServer();
+                ApplyDrag(_airDrag);
+                _velocity.y += _gravity * Time.fixedDeltaTime * _mass;
             }
         }
 
@@ -73,14 +68,23 @@ namespace Assets.Scripts.Player
             _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
         }
 
-        //[ClientCallback]
-        //private void OnJump()
-        //{
-        //    //if (_isGrounded)
-        //    //{
-        //    //    _velocity.y = Mathf.Sqrt(jumpHeight * -2 * _gravity);
-        //    //}
-        //}
+        private void PhysicsUpdate()
+        {
+            CheckGround();
+            _clientSidePrediction.ReceiveVelocity(_velocity);
+            CalculatePhysics();
+        }
 
+        private void FixedUpdate() 
+        {
+            if (isLocalPlayer) 
+                PhysicsUpdate();
+        }
+
+        public void AddVelocity(Vector3 velocityToAdd)
+        { 
+            if (isLocalPlayer)
+                _velocity += velocityToAdd;
+        }
     }
 }

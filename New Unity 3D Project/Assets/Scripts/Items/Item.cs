@@ -29,7 +29,7 @@ namespace Assets.Scripts.Items
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if(other.GetComponent<PlayerMove>() != null)
+            if(other.GetComponent<PlayerMovement>() != null)
             PickedUp?.Invoke();
         }
         protected virtual IEnumerator Fall()

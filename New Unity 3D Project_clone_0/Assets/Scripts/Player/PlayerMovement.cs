@@ -7,23 +7,18 @@ using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.Player
 {
-    [AddComponentMenu("Player/Base/PlayerMovement")]
-    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(PlayerPhysics))]
     public class PlayerMovement : NetworkBehaviour
     {
-        [Header("Movement Parameters")]
+        [SerializeField] private PlayerPhysics _playerPhysics;
         [SerializeField] private Transform _forwardDirectionReference;
-        [SerializeField] private float _speed;
+        [SerializeField] private float _speed = .5f;
         [SerializeField] private float _sprintSpeedMultiplier;
-        [SerializeField] private float _jumpHeight;
-        private float _currentJump;
+        [SerializeField] private float _jumpHeight = 3;
+        [SerializeField] private float _airMultiplier = 0.4f;
+
         private Vector3 _velocity;
         private Vector2 _currentInput;
-        public float airMultiplier = 0.4f;
-
-        [Header("Class dependencies")]
-        public ClientSidePrediction clientSidePrediction;
-        public PhysicsTest physicsTest;
 
         private void FixedUpdate()
         {
@@ -33,33 +28,33 @@ namespace Assets.Scripts.Player
             }
         }
 
+        [ClientCallback]
         private void SendInputs()
         {
-            CollectedPlayerInput playerInput = CreatePlayerInput();
-            if (playerInput != null)
+            Vector2 direction = CreatePlayerInputDirection();
+            if (direction != Vector2.zero)
             {
-                CalculateVelocity(playerInput.Direction);
-                physicsTest.AddVelocity(_velocity);
+                CalculateVelocity(direction);
+                _playerPhysics.AddVelocity(_velocity);
             };
         }
 
         private void CalculateVelocity(Vector3 input)
         {
             var direction = _forwardDirectionReference.forward * input.y + _forwardDirectionReference.right * input.x;
-            _velocity = new Vector3(direction.x * _speed, _currentJump, direction.z * _speed);
-            if (!physicsTest.IsGrounded)
-                _velocity *= airMultiplier;
-
+            _velocity = new Vector3(direction.x * _speed, _velocity.y, direction.z * _speed);
+            if (!_playerPhysics.IsGrounded)
+                _velocity *= _airMultiplier;
         }
 
-        private CollectedPlayerInput CreatePlayerInput()
+        [ClientCallback]
+        private Vector2 CreatePlayerInputDirection()
         {
-            CollectedPlayerInput playerInput = new CollectedPlayerInput();
-            playerInput.Direction = _currentInput;
-            playerInput.JumpPower = _currentJump;
-            if (playerInput.Direction == Vector2.zero && playerInput.JumpPower == 0)
-                return null;
-            return playerInput;
+            Vector2 input = _currentInput;
+            input.Normalize();
+            if (input == Vector2.zero)
+                return Vector2.zero;
+            return input;
         }
 
         [ClientCallback]
@@ -74,11 +69,13 @@ namespace Assets.Scripts.Player
         [Command]
         private void Jump()
         {
-            if (isLocalPlayer && physicsTest.IsGrounded)
+            if (isLocalPlayer && _playerPhysics.IsGrounded)
             {                            
-                physicsTest.AddVelocity(transform.up * _jumpHeight);
+                _playerPhysics.AddVelocity(transform.up * _jumpHeight);
             }
         }
+
+
     }
 }
 
