@@ -5,7 +5,7 @@ using Mirror;
 
 namespace Assets.Scripts.Player
 {
-    class PlayerSpecialAbility : NetworkBehaviour
+    public class PlayerSpecialAbility : NetworkBehaviour
     {
         protected virtual void OnSpecialAbility()
         {
