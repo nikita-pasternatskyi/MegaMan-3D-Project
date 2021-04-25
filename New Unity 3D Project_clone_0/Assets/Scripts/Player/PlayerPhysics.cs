@@ -10,7 +10,6 @@ using UnityEngine;
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(ClientSidePrediction))]
     public class PlayerPhysics : NetworkBehaviour
     {
 
@@ -47,7 +46,7 @@ namespace Assets.Scripts.Player
             if (_isGrounded && _velocity.y < 0)
             {
                 ApplyDrag(_groundDrag);
-                _velocity.y = 0;
+                _velocity.y = -2;
             }
 
             if (!_isGrounded)

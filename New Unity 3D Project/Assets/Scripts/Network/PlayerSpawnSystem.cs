@@ -21,10 +21,23 @@ namespace Assets.Scripts.Network
         }
         public static void RemoveSpawnPoint(Transform transform) => spawnPoints.Remove(transform);
 
-        public override void OnStartServer() => CustomNetworkManager.OnServerReadied += SpawnPlayer;
+        public override void OnStartServer()
+        {
+            CustomNetworkManager.OnServerDisconnected += DespawnPlayer;
+            CustomNetworkManager.OnServerReadied += SpawnPlayer;
+        }
 
         [ServerCallback]
-        private void OnDestroy() => CustomNetworkManager.OnServerReadied -= SpawnPlayer;
+        private void OnDestroy()
+        {
+            CustomNetworkManager.OnServerReadied -= SpawnPlayer;
+            CustomNetworkManager.OnServerDisconnected -= DespawnPlayer;
+        }
+
+        private void DespawnPlayer(NetworkConnection conn)
+        {
+            NetworkServer.RemovePlayerForConnection(conn, true);
+        }
 
         [Server]
         public void SpawnPlayer(NetworkConnection conn)

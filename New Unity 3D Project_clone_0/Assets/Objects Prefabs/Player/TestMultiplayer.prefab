@@ -161,10 +161,10 @@ GameObject:
   - component: {fileID: 6534416300709446972}
   - component: {fileID: -8507266611670444468}
   - component: {fileID: 4652929696606165648}
-  - component: {fileID: 3513888062653642353}
   - component: {fileID: -2654363887655024549}
   - component: {fileID: 6305872846083504977}
   - component: {fileID: 7767951198909747404}
+  - component: {fileID: -1823011954648704247}
   m_Layer: 0
   m_Name: TestMultiplayer
   m_TagString: Untagged
@@ -324,26 +324,8 @@ MonoBehaviour:
   _componentsToEnable:
   - {fileID: 7767951198909747404}
   - {fileID: -8507266611670444468}
-  - {fileID: 3513888062653642353}
+  - {fileID: 0}
   - {fileID: -2654363887655024549}
---- !u!114 &3513888062653642353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6237848994139125929}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c55d70fe8d40e64e99f645c5be438b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  _characterController: {fileID: 2696507584929440715}
-  PlayerFixedUpdateInterval: 0.02
-  PlayerLerpSpacing: 1
-  PlayerLerpEasing: 0.1
 --- !u!114 &-2654363887655024549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237848994139125929}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54a986f62697194488fbf0690e75b065, type: 3}
   m_Name: 
@@ -359,10 +341,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   _playerPhysics: {fileID: 6305872846083504977}
-  _forwardDirectionReference: {fileID: 7191847319424614092}
+  _forwardDirectionReference: {fileID: 1382550705978931047}
   _speed: 1
   _sprintSpeedMultiplier: 0
-  _jumpHeight: 6
+  _jumpHeight: 5
   _airMultiplier: 0.4
 --- !u!114 &6305872846083504977
 MonoBehaviour:
@@ -378,17 +360,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  _clientSidePrediction: {fileID: 3513888062653642353}
+  _clientSidePrediction: {fileID: -1823011954648704247}
   _characterController: {fileID: 2696507584929440715}
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
   _groundCheckRadius: 0.1
   _gravity: -9.8
-  _mass: 1.5
+  _mass: 1
   _fixedDeltaTimeRate: 0.02
   _groundDrag: 6
-  _airDrag: 2
+  _airDrag: 3
 --- !u!114 &7767951198909747404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +390,24 @@ MonoBehaviour:
   _referenceRotation: {fileID: 4465449458759643980}
   _maxAmmo: 10
   _currentAmmo: 10
+--- !u!114 &-1823011954648704247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237848994139125929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c55d70fe8d40e64e99f645c5be438b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _characterController: {fileID: 2696507584929440715}
+  PlayerFixedUpdateInterval: 0.02
+  PlayerLerpSpacing: 1
+  PlayerLerpEasing: 0.1
 --- !u!1 &7236163640293558216
 GameObject:
   m_ObjectHideFlags: 0
