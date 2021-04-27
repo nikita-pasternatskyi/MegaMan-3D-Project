@@ -45,15 +45,15 @@ namespace Assets.Scripts.Player
         {
             var direction = _forwardDirectionReference.forward * input.y + _forwardDirectionReference.right * input.x;
             _velocity = new Vector3(direction.x * _currentClassConfiguration.Speed, _velocity.y, direction.z * _currentClassConfiguration.Speed);
-            //if (!_playerPhysics.IsGrounded)
-            //    _velocity *= _currentClassConfiguration.AirMovementControlMultiplier;
+            if (!_playerPhysics.IsGrounded)
+                _velocity *= _currentClassConfiguration.AirMovementControlMultiplier;
         }
 
         [ClientCallback]
         private Vector2 CreatePlayerInputDirection()
         {
             Vector2 input = _currentInput;
-            //input.Normalize();
+            input.Normalize();
             if (input == Vector2.zero)
                 return Vector2.zero;
             return input;
@@ -61,7 +61,8 @@ namespace Assets.Scripts.Player
 
         [ClientCallback]
         private void OnMove(InputValue value)
-        {      
+        {
+            Debug.Log(value.Get<Vector2>());
             _currentInput = value.Get<Vector2>();
         }
 

@@ -76,11 +76,11 @@ namespace Assets.Scripts.Player
                 }
                 else if (isClient)
                 {
-                    if (velocity.y == -2 && plPh.IsGrounded)
-                    {
-                        velocity.y = 0;
-                    }
-                    newPosition = state.Position + velocity * PlayerFixedUpdateInterval;
+                    //if (velocity.y == -0.1f && plPh.IsGrounded)
+                    //{
+                    //    velocity.y = 0;
+                    //}
+                newPosition = state.Position + velocity * PlayerFixedUpdateInterval;
                 }
             return new PlayerTransformState
             {

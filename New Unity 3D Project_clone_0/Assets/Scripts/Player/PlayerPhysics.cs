@@ -42,7 +42,7 @@ namespace Assets.Scripts.Player
             if (_isGrounded && _velocity.y < 0)
             {
                 ApplyDrag(_currentClassConfiguration.GroundDrag);
-                _velocity.y = -2;
+                _velocity.y = -0.1f;
             }
 
             if (!_isGrounded)
@@ -52,7 +52,6 @@ namespace Assets.Scripts.Player
             }
         }
 
-        [ClientCallback]
         private void FixedUpdate() 
         {
             if (isLocalPlayer)

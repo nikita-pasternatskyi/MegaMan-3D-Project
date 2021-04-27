@@ -11,9 +11,9 @@ namespace Assets.Scripts.Player.Multiplayer
        
         [SerializeField] GameObject _cameraToEnable;
         [SerializeField] MonoBehaviour[] _componentsToEnable;
-        public override void OnStartAuthority()
+        public override void OnStartLocalPlayer()
         {
-            EnableLocalObjects();
+            StartCoroutine(WaitForReady());
         }
 
         [ClientCallback]
@@ -28,6 +28,15 @@ namespace Assets.Scripts.Player.Multiplayer
                     component.enabled = true;
                 }
             }
+        }
+
+        private IEnumerator WaitForReady()
+        {
+            while (!NetworkClient.ready)
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
+            EnableLocalObjects();
         }
 
     }
