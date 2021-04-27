@@ -5,7 +5,7 @@ using UnityEngine;
 using Mirror;
 namespace Assets.Scripts.Player
 {
-    class PlayerWeapon : NetworkBehaviour
+    public class PlayerWeapon : NetworkBehaviour
     {
         [SerializeField] private GameObject _projectile;
         [SerializeField] private Transform _whereToSpawn;

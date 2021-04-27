@@ -10,26 +10,28 @@ namespace Assets.Scripts.Player
     [RequireComponent(typeof(PlayerPhysics))]
     public class PlayerMovement : NetworkBehaviour
     {
+        [SerializeField] private PlayerClass _playerClassConfiguration;
         [SerializeField] private PlayerPhysics _playerPhysics;
         [SerializeField] private Transform _forwardDirectionReference;
-        [SerializeField] private float _speed = .5f;
-        [SerializeField] private float _sprintSpeedMultiplier;
-        [SerializeField] private float _jumpHeight = 3;
-        [SerializeField] private float _airMultiplier = 0.4f;
-
         private Vector3 _velocity;
         private Vector2 _currentInput;
+        private PlayerClassConfiguration _currentClassConfiguration;
+
+        private void Awake()
+        {
+            _currentClassConfiguration = _playerClassConfiguration.CurrentPlayerClass;
+        }
 
         private void FixedUpdate()
         {
             if (isLocalPlayer)
             {
-                SendInputs();
+                SendVelocityToPhysics();
             }
         }
 
         [ClientCallback]
-        private void SendInputs()
+        private void SendVelocityToPhysics()
         {
             Vector2 direction = CreatePlayerInputDirection();
             if (direction != Vector2.zero)
@@ -42,16 +44,16 @@ namespace Assets.Scripts.Player
         private void CalculateVelocity(Vector3 input)
         {
             var direction = _forwardDirectionReference.forward * input.y + _forwardDirectionReference.right * input.x;
-            _velocity = new Vector3(direction.x * _speed, _velocity.y, direction.z * _speed);
-            if (!_playerPhysics.IsGrounded)
-                _velocity *= _airMultiplier;
+            _velocity = new Vector3(direction.x * _currentClassConfiguration.Speed, _velocity.y, direction.z * _currentClassConfiguration.Speed);
+            //if (!_playerPhysics.IsGrounded)
+            //    _velocity *= _currentClassConfiguration.AirMovementControlMultiplier;
         }
 
         [ClientCallback]
         private Vector2 CreatePlayerInputDirection()
         {
             Vector2 input = _currentInput;
-            input.Normalize();
+            //input.Normalize();
             if (input == Vector2.zero)
                 return Vector2.zero;
             return input;
@@ -63,16 +65,15 @@ namespace Assets.Scripts.Player
             _currentInput = value.Get<Vector2>();
         }
 
-        [ClientCallback]
-        private void OnJump() => Jump();
+        //private void OnJump() => Jump();
 
-        private void Jump()
-        {
-            if (isLocalPlayer && _playerPhysics.IsGrounded)
-            {                            
-                _playerPhysics.AddVelocity(transform.up * _jumpHeight);
-            }
-        }
+        //private void Jump()
+        //{
+        //    if (isLocalPlayer && _playerPhysics.IsGrounded)
+        //    {                            
+        //        _playerPhysics.AddVelocity(transform.up * _currentClassConfiguration.JumpHeight);
+        //    }
+        //}
 
 
     }

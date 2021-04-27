@@ -13,23 +13,19 @@ namespace Assets.Scripts.Player
         [SyncVar(hook = "OnServerStateChanged")]
         public PlayerTransformState State;
 
-        [SyncVar] private Vector3 _velocity;
-
+        public PlayerPhysics plPh;
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private float PlayerFixedUpdateInterval;
         [SerializeField] private float PlayerLerpSpacing;
         [SerializeField] private float PlayerLerpEasing;
 
-
         private PlayerTransformState _predictedState;
         private List<Vector3> _pendingVelocities;
-        public void ReceiveVelocity(Vector3 velocityToReceive, bool predict = true)
+
+        public void ReceiveVelocity(Vector3 velocityToReceive)
         {
-            if (predict)
-            {
-                _pendingVelocities.Add(velocityToReceive);
-                UpdatePredictedState();
-            }
+            _pendingVelocities.Add(velocityToReceive);
+            UpdatePredictedState();
             CmdMoveOnServer(velocityToReceive);    
         }
 
@@ -50,32 +46,6 @@ namespace Assets.Scripts.Player
         {
             SyncState();
         }
-        private PlayerTransformState PredictMovement(PlayerTransformState state, Vector3 velocity)
-        {
-            Vector3 newPosition = state.Position;
-            if (!_velocity.Equals(new Vector3(0, -2f, 0)))
-            {
-                if (isServer)
-                {
-                    if (isLocalPlayer)
-                        _characterController.Move(velocity * PlayerFixedUpdateInterval / 2);
-                    else
-                    {
-                        _characterController.Move(velocity * PlayerFixedUpdateInterval);
-                    }
-                    newPosition = transform.position;
-                }
-                else if (isClient)
-                {
-                    newPosition = state.Position += velocity * PlayerFixedUpdateInterval;
-                }
-            }
-            return new PlayerTransformState
-            {
-                TimeStamp = state.TimeStamp + 1,
-                Position = newPosition,
-            };
-        }
         public void OnServerStateChanged(PlayerTransformState oldState, PlayerTransformState newState)
         {
             State = newState;
@@ -88,8 +58,37 @@ namespace Assets.Scripts.Player
                 UpdatePredictedState();
             }
         }
+
         [Command]
         private void CmdMoveOnServer(Vector3 velocity) => State = PredictMovement(State, velocity);
+        private PlayerTransformState PredictMovement(PlayerTransformState state, Vector3 velocity)
+        {
+            Vector3 newPosition = state.Position;
+            if (isServer)
+                {
+                    if (isLocalPlayer)
+                        _characterController.Move(velocity * PlayerFixedUpdateInterval / 2f);
+                    else
+                    {
+                        _characterController.Move(velocity * PlayerFixedUpdateInterval);
+                    }
+                    newPosition = transform.position;
+                }
+                else if (isClient)
+                {
+                    if (velocity.y == -2 && plPh.IsGrounded)
+                    {
+                        velocity.y = 0;
+                    }
+                    newPosition = state.Position + velocity * PlayerFixedUpdateInterval;
+                }
+            return new PlayerTransformState
+            {
+                TimeStamp = state.TimeStamp + 1,
+                Position = newPosition,
+            };
+        }
+
         private void UpdatePredictedState()
         {
             _predictedState = State;
@@ -110,7 +109,6 @@ namespace Assets.Scripts.Player
             PlayerTransformState stateToShow = isLocalPlayer ? _predictedState : State;
             transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
         }
-
     }
 }
 
