@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
-    public class ClientSidePrediction : NetworkBehaviour
+    public class ClientSidePredictionBeta : NetworkBehaviour
     {
         [SyncVar(hook = "OnServerStateChanged")]
         public PlayerTransformState State;
@@ -26,7 +26,7 @@ namespace Assets.Scripts.Player
         {
             _pendingVelocities.Add(velocityToReceive);
             UpdatePredictedState();
-            CmdMoveOnServer(velocityToReceive);    
+            CmdMoveOnServer(velocityToReceive);
         }
 
         private void Awake() => InitState();
@@ -65,23 +65,23 @@ namespace Assets.Scripts.Player
         {
             Vector3 newPosition = state.Position;
             if (isServer)
+            {
+                if (isLocalPlayer)
+                    _characterController.Move(velocity * PlayerFixedUpdateInterval / 2f);
+                else
                 {
-                    if (isLocalPlayer)
-                        _characterController.Move(velocity * PlayerFixedUpdateInterval / 2f);
-                    else
-                    {
-                        _characterController.Move(velocity * PlayerFixedUpdateInterval);
-                    }
-                    newPosition = transform.position;
+                    _characterController.Move(velocity * PlayerFixedUpdateInterval);
                 }
-                else if (isClient)
-                {
-                    if (velocity.y < 0)
-                    {
-                        velocity.y = State.Position.y;
-                    }
+                newPosition = transform.position;
+            }
+            else if (isClient)
+            {
+                //if (velocity.y == -0.1f && plPh.IsGrounded)
+                //{
+                //    velocity.y = 0;
+                //}
                 newPosition = state.Position + velocity * PlayerFixedUpdateInterval;
-                }
+            }
             return new PlayerTransformState
             {
                 TimeStamp = state.TimeStamp + 1,
@@ -107,12 +107,12 @@ namespace Assets.Scripts.Player
             }
 
             PlayerTransformState stateToShow = isLocalPlayer ? _predictedState : State;
-            transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
-            //transform.position = State.Position;
+            //transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
+            transform.position = State.Position;
         }
+
     }
 }
-
 
 
 
