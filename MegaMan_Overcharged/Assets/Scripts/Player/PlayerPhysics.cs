@@ -54,7 +54,7 @@ namespace Assets.Scripts.Player
 
         private void FixedUpdate() 
         {
-            if (isLocalPlayer)
+            if (isLocalPlayer && NetworkClient.ready)
             {
                 CheckGround();
                 CalculatePhysics();

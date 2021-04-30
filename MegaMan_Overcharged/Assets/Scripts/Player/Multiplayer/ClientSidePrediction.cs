@@ -26,7 +26,7 @@ namespace Assets.Scripts.Player
         {
             _pendingVelocities.Add(velocityToReceive);
             UpdatePredictedState();
-            CmdMoveOnServer(velocityToReceive);    
+            CmdMoveOnServer(velocityToReceive);
         }
 
         private void Awake() => InitState();

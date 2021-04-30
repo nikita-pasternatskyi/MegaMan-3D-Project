@@ -149,7 +149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9282578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f653df29a50738b49919d7f5e3c8ffe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 51727ab4ba14cb94d881dbe8818e3d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &9282580
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 362390168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f653df29a50738b49919d7f5e3c8ffe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 51727ab4ba14cb94d881dbe8818e3d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &538364160
@@ -284,12 +284,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 538364160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7cac5f77d1f034287ad5eab0d89bcc, type: 3}
+  m_Script: {fileID: 11500000, guid: d8616865e2093374b99b87f049b81a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  playerPrefab: {fileID: 1007269143696277747, guid: ddea51620b3a29b478237e0841577b7e, type: 3}
+  playerPrefab: {fileID: 1007269143696277747, guid: 7ecd5dea887367a4dabd01434e2b8922, type: 3}
 --- !u!114 &538364162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 628015931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f653df29a50738b49919d7f5e3c8ffe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 51727ab4ba14cb94d881dbe8818e3d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &628015933
@@ -791,14 +791,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243558278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291fb0ac1fe57354198d08f390fe733d, type: 3}
+  m_Script: {fileID: 11500000, guid: 598f5cf531bb06a41aebc641e38eabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   PersistNetworkManagerToOfflineScene: 0
   runInBackground: 1
   autoStartServerBuild: 1
-  serverTickRate: 30
+  serverTickRate: 60
   serverBatching: 1
   serverBatchInterval: 0
   offlineScene: 
@@ -809,11 +809,11 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 1007269143696277747, guid: ddea51620b3a29b478237e0841577b7e, type: 3}
+  playerPrefab: {fileID: 1007269143696277747, guid: 7ecd5dea887367a4dabd01434e2b8922, type: 3}
   autoCreatePlayer: 0
   playerSpawnMethod: 0
   spawnPrefabs:
-  - {fileID: 1007269143696277747, guid: ddea51620b3a29b478237e0841577b7e, type: 3}
+  - {fileID: 1007269143696277747, guid: 7ecd5dea887367a4dabd01434e2b8922, type: 3}
 --- !u!1 &1275902198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430752698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f653df29a50738b49919d7f5e3c8ffe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 51727ab4ba14cb94d881dbe8818e3d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1560081523

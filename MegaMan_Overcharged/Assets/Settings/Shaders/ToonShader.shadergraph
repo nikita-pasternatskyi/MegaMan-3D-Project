@@ -4248,7 +4248,7 @@
     },
     "m_SourceType": 0,
     "m_FunctionName": "AddAdditionalLights",
-    "m_FunctionSource": "f2c903affd9b66242a88c96fed84d292",
+    "m_FunctionSource": "39e790929aab42e43880537c22e6cdf2",
     "m_FunctionBody": "Enter function body here..."
 }
 
@@ -5420,7 +5420,7 @@
     },
     "m_SourceType": 0,
     "m_FunctionName": "GetLightingInformation",
-    "m_FunctionSource": "f2c903affd9b66242a88c96fed84d292",
+    "m_FunctionSource": "39e790929aab42e43880537c22e6cdf2",
     "m_FunctionBody": "Enter function body here..."
 }
 
