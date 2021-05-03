@@ -5,13 +5,12 @@ using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.Player
 {
-    [AddComponentMenu("Player/Base/Camera Control")]
-
     class PlayerCamera : NetworkBehaviour
     {
         public float speed;
         [SerializeField] private Transform _bodyToYRotate;
         [SerializeField] private Transform _cameraPivot;
+        [SerializeField] private Transform _endRotation;
         [SerializeField] private Camera _camera;
         [SerializeField] private float _shakeSpeed;
         [SerializeField] private float _amplitude;
@@ -32,7 +31,7 @@ namespace Assets.Scripts.Player
             {
                 case CameraModes.AroundPoint:
                     _rotateWithPivot = true;
-                    _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);                   
+                    _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);
                     _bodyToYRotate.rotation = Quaternion.Euler(0, 0, 0);
                     _camera.transform.rotation = Quaternion.Euler(0, 0, 0);
                     _mouseCanLookAround = false;
@@ -49,46 +48,53 @@ namespace Assets.Scripts.Player
             Cursor.lockState = _lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
         }
 
+        private void Start()
+        {
+            
+        }
+
         [ClientCallback]
         private void OnLook(InputValue value)
         {
             Vector2 mouseInput = value.Get<Vector2>();
 
-                if (_mouseCanLookAround)
+            if (_mouseCanLookAround && isLocalPlayer)
+            {
+                if (_bodyToYRotate != null)
                 {
-                    if (_bodyToYRotate != null)
+                    mouseInput *= Time.deltaTime * speed;
+
+                    _cameraXRotation -= mouseInput.y;
+                    _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
+
+                    if (_rotateWithPivot)
                     {
-                        mouseInput *= Time.deltaTime * speed;
-
-                        _cameraXRotation -= mouseInput.y;
-                        _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
-
-                        if (_rotateWithPivot)
-                        {
-                            _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                        }
-                        else
-                        {
-                            _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                        }
-                        RotateBodyYAxis(mouseInput);
-                        RotateCameraYAxis(mouseInput);
+                        _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                    }
+                    else
+                    {
+                        _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
                     }
 
+                    RotateCameraYAxis(mouseInput);
+                    Rotate(_camera.transform.rotation.eulerAngles, mouseInput);
                 }
-            
+
+            }
+
         }
 
         [ClientCallback]
         private void RotateCameraYAxis(Vector2 mouseInput)
         {
-            _cameraPivot.transform.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+            _cameraPivot.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
         }
 
         [Command]
-        private void RotateBodyYAxis(Vector2 mouseInput)
+        private void Rotate(Vector3 rotation, Vector2 mouseInput)
         {
             _bodyToYRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+            _endRotation.rotation = Quaternion.Euler(rotation);
         }
 
         [ClientCallback]

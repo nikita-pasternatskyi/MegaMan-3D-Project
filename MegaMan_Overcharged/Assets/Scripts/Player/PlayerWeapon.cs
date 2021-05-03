@@ -13,6 +13,11 @@ namespace Assets.Scripts.Player
         [SerializeField] private float _maxAmmo;
         [SerializeField] private float _currentAmmo;
 
+        private void Start()
+        {
+            
+        }
+
         public virtual void Refill(float ammoToRefill)
         {
             _currentAmmo = _currentAmmo + ammoToRefill < _maxAmmo ? _currentAmmo + ammoToRefill : _maxAmmo;

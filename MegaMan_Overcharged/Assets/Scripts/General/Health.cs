@@ -18,6 +18,11 @@ namespace Assets.Scripts.General
         [SerializeField] private int _maximumHealth;
         [SyncVar] [SerializeField] private int _currentHealth;
 
+        private void Start()
+        {
+            
+        }
+
         [ClientCallback]
         protected virtual void Awake()
         {

@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SpecialAbility",
+                    "type": "Button",
+                    "id": "fc7e4252-d92a-4e25-8daa-3943eb7ed65f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -181,6 +189,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "AltFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54bfbb71-fea9-4223-8fce-f55cfaa2097f",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpecialAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

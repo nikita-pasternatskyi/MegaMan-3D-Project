@@ -9,10 +9,8 @@ namespace Assets.Scripts.Player
     {
         protected virtual void OnSpecialAbility()
         {
-            if (!LevelSettings.Instance.IsPaused)
-            {
+
                 throw new NotImplementedException();
-            }
         }
     }
 }
