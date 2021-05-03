@@ -22,6 +22,7 @@ namespace Assets.Scripts.Player
         [Server]
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log(other.GetComponent<Health>());
             other.GetComponent<Health>()?.TakeDamage(_damage);
         }
 

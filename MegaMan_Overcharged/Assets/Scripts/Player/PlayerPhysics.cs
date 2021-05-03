@@ -58,7 +58,7 @@ namespace Assets.Scripts.Player
             {
                 CheckGround();
                 CalculatePhysics();
-                _clientSidePrediction.ReceiveVelocity(_velocity);
+                _clientSidePrediction.ReceiveVelocity(_velocity * Time.fixedDeltaTime);
             }
         }
         

@@ -16,7 +16,7 @@ namespace Assets.Scripts
         {
              if (other.GetComponent<Health>() != null)
              {
-                other.GetComponent<Health>().TakeDamage(_damage);
+                //other.GetComponent<Health>().TakeDamage(_damage);
              }
         }
 

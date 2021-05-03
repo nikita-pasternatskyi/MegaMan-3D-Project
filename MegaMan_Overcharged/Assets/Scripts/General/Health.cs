@@ -16,30 +16,23 @@ namespace Assets.Scripts.General
         public event OnKilled Killed;
 
         [SerializeField] private int _maximumHealth;
-        [SyncVar] [SerializeField] private int _currentHealth;
+        [SyncVar(hook = "HealthChangedHook")] [SerializeField] private int _currentHealth;
 
         private void Start()
         {
-            
-        }
 
+        }
         [ClientCallback]
         protected virtual void Awake()
         {
             HealthChanged?.Invoke(_maximumHealth, 1);
         }
 
-        [Command]
-        public virtual void TakeDamage(int damage)
+        [ClientCallback]
+        public void HealthChangedHook(int oldHealth, int currentHealth)
         {
-            _currentHealth -= damage;
-
-            if (_currentHealth <= 0)
-            {
-                Die();
-            }
-
-            HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maximumHealth);
+            _currentHealth = currentHealth;
+            HealthChanged?.Invoke(currentHealth, (float)currentHealth / _maximumHealth);
         }
 
         [Command]
@@ -54,5 +47,17 @@ namespace Assets.Scripts.General
         {
             Killed?.Invoke();
         }
+        public virtual void TakeDamage(int damage)
+        {
+            _currentHealth -= damage;
+
+            if (_currentHealth <= 0)
+            {
+                Die();
+            }
+
+            HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maximumHealth);
+        }
     }
+
 }
