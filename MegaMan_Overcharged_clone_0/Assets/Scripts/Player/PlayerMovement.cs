@@ -13,8 +13,9 @@ namespace Assets.Scripts.Player
         [SerializeField] private PlayerClass _playerClassConfiguration;
         [SerializeField] private PlayerPhysics _playerPhysics;
         [SerializeField] private Transform _forwardDirectionReference;
-        private Vector3 _velocity;
+        [SyncVar] private Vector3 _velocity;
         private Vector2 _currentInput;
+        public float Speed;
         private PlayerClassConfiguration _currentClassConfiguration;
 
         private void Awake()
@@ -41,10 +42,11 @@ namespace Assets.Scripts.Player
             };
         }
 
+        //[Command]
         private void CalculateVelocity(Vector3 input)
         {
             var direction = _forwardDirectionReference.forward * input.y + _forwardDirectionReference.right * input.x;
-            _velocity = new Vector3(direction.x * _currentClassConfiguration.Speed, _velocity.y, direction.z * _currentClassConfiguration.Speed);
+            _velocity = new Vector3(direction.x * Speed, _velocity.y, direction.z * Speed);
             if (!_playerPhysics.IsGrounded)
                 _velocity *= _currentClassConfiguration.AirMovementControlMultiplier;
         }
@@ -62,7 +64,7 @@ namespace Assets.Scripts.Player
         [ClientCallback]
         private void OnMove(InputValue value)
         {
-            Debug.Log(value.Get<Vector2>());
+           // Debug.Log(value.Get<Vector2>());
             _currentInput = value.Get<Vector2>();
         }
 

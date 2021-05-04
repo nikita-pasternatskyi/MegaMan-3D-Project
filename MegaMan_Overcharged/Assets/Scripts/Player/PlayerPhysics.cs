@@ -25,22 +25,23 @@ namespace Assets.Scripts.Player
         
         private PlayerClassConfiguration _currentClassConfiguration;
         public bool IsGrounded { get => _isGrounded; }
-        private void ApplyDrag(float drag)
-        {
-            float multiplier = 1.0f - drag * _fixedDeltaTimeRate;
-            if (multiplier < 0.0f) multiplier = 0.0f;
-            _velocity = multiplier * _velocity;
-        }
         private void Awake()
         {
             _currentClassConfiguration = _playerClassConfiguration.CurrentPlayerClass;
         }
 
-        [Command]
+        private void ApplyDrag(float drag)
+        {
+            float multiplier = 1.0f - drag * Time.fixedDeltaTime;
+            if (multiplier < 0.0f) multiplier = 0.0f;
+            _velocity *= multiplier;
+        }
+
+        //[Command]
         private void CalculatePhysics()
         {
             if (_isGrounded && _velocity.y < 0)
-            {
+            {                
                 ApplyDrag(_currentClassConfiguration.GroundDrag);
                 _velocity.y = -2f;
             }
@@ -48,7 +49,7 @@ namespace Assets.Scripts.Player
             if (!_isGrounded)
             {
                 ApplyDrag(_currentClassConfiguration.AirDrag);
-                _velocity.y += _currentClassConfiguration.Gravity * _fixedDeltaTimeRate * _currentClassConfiguration.Mass;
+                _velocity.y += _currentClassConfiguration.Gravity * Time.fixedDeltaTime * _currentClassConfiguration.Mass;
             }
         }
 
@@ -58,7 +59,7 @@ namespace Assets.Scripts.Player
             {
                 CheckGround();
                 CalculatePhysics();
-                _clientSidePrediction.ReceiveVelocity(_velocity * Time.fixedDeltaTime);
+                _clientSidePrediction.ReceiveVelocity(_velocity);
             }
         }
         
@@ -72,11 +73,10 @@ namespace Assets.Scripts.Player
 
             _isGrounded = Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
         }
-
+       
         public void AddVelocity(Vector3 velocityToAdd)
-        { 
-            if (isLocalPlayer)
-                _velocity += velocityToAdd;
+        {
+            _velocity += velocityToAdd;
         }
     }
 }

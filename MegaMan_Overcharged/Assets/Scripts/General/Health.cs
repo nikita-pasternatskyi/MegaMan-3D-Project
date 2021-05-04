@@ -5,7 +5,6 @@ using Mirror;
 
 namespace Assets.Scripts.General
 {
-    [AddComponentMenu("Player/Base/Health")]
 
     public class Health : NetworkBehaviour
     {
@@ -16,7 +15,7 @@ namespace Assets.Scripts.General
         public event OnKilled Killed;
 
         [SerializeField] private int _maximumHealth;
-        [SyncVar(hook = "HealthChangedHook")] [SerializeField] private int _currentHealth;
+        [SyncVar(hook = "OnServerHealthChanged")] [SerializeField] private int _currentHealth;
 
         private void Start()
         {
@@ -29,7 +28,7 @@ namespace Assets.Scripts.General
         }
 
         [ClientCallback]
-        public void HealthChangedHook(int oldHealth, int currentHealth)
+        public void OnServerHealthChanged(int oldHealth, int currentHealth)
         {
             _currentHealth = currentHealth;
             HealthChanged?.Invoke(currentHealth, (float)currentHealth / _maximumHealth);
@@ -55,8 +54,6 @@ namespace Assets.Scripts.General
             {
                 Die();
             }
-
-            HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maximumHealth);
         }
     }
 
