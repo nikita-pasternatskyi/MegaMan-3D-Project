@@ -303,10 +303,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1007269143696277756}
   - component: {fileID: -2821726693035017243}
-  - component: {fileID: 8214140379025061533}
-  - component: {fileID: -8982525957019966389}
-  - component: {fileID: -3455917773901069341}
-  - component: {fileID: 7779220127845672210}
   - component: {fileID: 1007269143696277754}
   - component: {fileID: 6328389675129356287}
   - component: {fileID: 1909329227607127187}
@@ -318,6 +314,7 @@ GameObject:
   - component: {fileID: 7233274795325026517}
   - component: {fileID: 896853005819117945}
   - component: {fileID: -8403694219284687019}
+  - component: {fileID: 3816416387813542113}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -350,86 +347,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007269143696277747}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45374039389f5474cb79f88d0c1a5d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  _clientSidePrediction: {fileID: 7779220127845672210}
+  _currentClassConfiguration: {fileID: 11400000, guid: ad2c858fdf163374b919f35e6b61b0bf, type: 2}
+  _clientSidePrediction: {fileID: 3816416387813542113}
   _characterController: {fileID: 1007269143696277755}
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
   _groundCheckRadius: 0.1
   _fixedDeltaTimeRate: 0.02
---- !u!114 &8214140379025061533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007269143696277747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7740d300c315d4f867e2861a1a0e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  inputCollector: {fileID: -3455917773901069341}
-  playerPhysics: {fileID: -2821726693035017243}
-  Speed: 0
---- !u!114 &-8982525957019966389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007269143696277747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae858631f95d5d46938d59016fc6286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
---- !u!114 &-3455917773901069341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007269143696277747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677ecf4352aef5c49864d6d87bcea4c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  _inputHandler: {fileID: -8982525957019966389}
-  _sendRate: 3
---- !u!114 &7779220127845672210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007269143696277747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7df05ea52cda434ab152079cc54c8c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  _playerPhysics: {fileID: -2821726693035017243}
-  _characterController: {fileID: 1007269143696277755}
-  PlayerFixedUpdateInterval: 0
-  PlayerLerpSpacing: 0
-  PlayerLerpEasing: 0
 --- !u!114 &1007269143696277754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +487,43 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d38dbc6b-a10a-4020-b61b-da13b93970aa
+    m_ActionName: Gameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fabedbfb-0f7c-44a5-affb-ec5e47449fb2
+    m_ActionName: Gameplay/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 39dc809a-45c4-4fea-874a-f4723060762e
+    m_ActionName: Gameplay/MainFire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8dc652bf-db68-4181-b7e9-bcf333d75458
+    m_ActionName: Gameplay/AltFire[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 639f4c04-d44d-40f1-9720-1aad6919c830
+    m_ActionName: Gameplay/CompanionSpecialOne[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7e8c0967-b794-429f-9736-d1878d05d2e2
+    m_ActionName: Gameplay/CompanionSpecialTwo[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1870bd9d-dba6-4c46-913d-a1ea9075be2c
+    m_ActionName: Gameplay/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fc7e4252-d92a-4e25-8daa-3943eb7ed65f
+    m_ActionName: Gameplay/SpecialAbility[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 361760b8-1b6f-4234-a5b3-c531cba4433a
+    m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Gameplay
@@ -624,11 +592,7 @@ MonoBehaviour:
   _componentsToEnable:
   - {fileID: 1007269143696277748}
   - {fileID: 2882799487170152087}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2821726693035017243}
   - {fileID: 6902806246248246219}
 --- !u!114 &896853005819117945
 MonoBehaviour:
@@ -685,6 +649,27 @@ MonoBehaviour:
     localRotation: {x: 0, y: 0, z: 0, w: 0}
     localScale: {x: 0, y: 0, z: 0}
     movementSpeed: 0
+--- !u!114 &3816416387813542113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007269143696277747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cabe0b60f4f444a382959bcb77cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _playerPhysics: {fileID: -2821726693035017243}
+  _characterController: {fileID: 1007269143696277755}
+  _speed: 1
+  _jumpHeight: 3
+  PlayerFixedUpdateInterval: 0.02
+  PlayerLerpSpacing: 1
+  PlayerLerpEasing: 0.1
 --- !u!1 &1253742290013444694
 GameObject:
   m_ObjectHideFlags: 0

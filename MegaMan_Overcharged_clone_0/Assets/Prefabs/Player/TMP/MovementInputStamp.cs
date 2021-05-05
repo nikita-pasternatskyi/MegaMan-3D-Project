@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace Assets.Prefabs.Player.TMP
 {
-    public struct InputStamp
+    public class MovementInputStamp
     {
-        public int TimeStamp;
-        public Action<Vector2> MethodToExecute;
-        public Vector2 MovementDirection;
+        public Vector2 MovementInput;
+        public Vector2 CameraLookDirection;
+        public bool JumpState;
     }
 }
