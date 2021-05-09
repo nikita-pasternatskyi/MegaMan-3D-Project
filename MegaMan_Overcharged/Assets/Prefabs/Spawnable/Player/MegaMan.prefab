@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 5846195263004870484}
   - component: {fileID: 4401117218726775404}
   - component: {fileID: 8491261643963837548}
+  - component: {fileID: 802352474}
   m_Layer: 0
   m_Name: MegaMan
   m_TagString: Untagged
@@ -272,6 +273,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiPauseMenu: {fileID: 3729678606957198662}
   _currentPauseMenuState: 0
+--- !u!114 &802352474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846195263004870510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f91cf0d8d73769b49807fcb114d11fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5846195263108808865
 GameObject:
   m_ObjectHideFlags: 0

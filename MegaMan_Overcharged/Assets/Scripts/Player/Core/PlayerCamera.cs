@@ -1,4 +1,5 @@
 ﻿using Core.Levels;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,8 @@ namespace Core.Player
 
     class PlayerCamera : MonoBehaviour
     {
-        [SerializeField] private Transform _bodyToXRotate;
+        [SerializeField] private List<Transform> _bodyToXRotate;
+        [SerializeField] private List<Transform> _bodyToYRotate;
         [SerializeField] private Transform _cameraPivot;
         [SerializeField] private Camera _camera;
         [SerializeField] private float _minimumMouseRotation;
@@ -29,7 +31,8 @@ namespace Core.Player
                 case CameraModes.AroundPoint:
                     _rotateWithPivot = true;
                     _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);                   
-                    _bodyToXRotate.rotation = Quaternion.Euler(0, 0, 0);
+                    foreach(var item in _bodyToXRotate)
+                        item.rotation = Quaternion.Euler(0, 0, 0);
                     _camera.transform.rotation = Quaternion.Euler(0, 0, 0);
                     _mouseCanLookAround = false;
                     break;
@@ -64,9 +67,11 @@ namespace Core.Player
                             _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
                         }
                         else {
-                            _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                            foreach(var item in _bodyToYRotate)
+                                item.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
                         }
-                        _bodyToXRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+                        foreach (var item in _bodyToXRotate)
+                            item.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
                     }
 
                 }

@@ -15,3 +15,4 @@ Disabled keywords: DOTS_INSTANCING_ON _SCREEN_SPACE_OCCLUSION LIGHTMAP_ON DIRLIG
 
 Cmd: initializeCompiler
 
+Cmd: shutdown
