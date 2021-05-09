@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -13,21 +14,28 @@ namespace Assets.Prefabs.Player.TMP
     public class ClientMovementPrediction : NetworkBehaviour
     {
         [SyncVar(hook = "OnServerStateChanged")]
-        public PlayerTransformState State;
-        [SerializeField] private PlayerPhysics _playerPhysics;
+        private PlayerTransformState _serverCurrentState;
+        private PlayerTransformState _clientPredictionState;
+        [SyncVar] private Vector3 _serverPosition;
+
+        private List<MovementInputStamp> _pendingMovementInputs;
+        [SerializeField] private float PlayerLerpSpacing;
+        [SerializeField] private float PlayerLerpEasing;
+
+        private Vector3 _clientVelocity;
+        [SyncVar] private Vector3 _serverVelocity;
+
+        [SerializeField] private LayerMask _whatIsGround;
+        [SerializeField] private PlayerClassConfiguration _currentClassConfiguration;
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpHeight;
-        [SerializeField] private float PlayerFixedUpdateInterval;
-        [SerializeField] private float PlayerLerpSpacing;
-        [SerializeField] private float PlayerLerpEasing;
-        private PlayerTransformState _predictedState;
-        private List<MovementInputStamp> _pendingMovementInputs;
-        private Vector3 velocity;
+        [SerializeField] private float _groundCheckRadius;
+        [SyncVar] private bool _isGrounded;
+
+        private bool _currentJumpState;
         private Vector2 _currentMovementInput;
         private Vector2 _currentMouseInput;
-        private bool _currentJumpState;
-
 
         private void Awake()
         {
@@ -37,13 +45,60 @@ namespace Assets.Prefabs.Player.TMP
         {
             if (isLocalPlayer)
             {
+                StartCoroutine(CheckState());
                 _pendingMovementInputs = new List<MovementInputStamp>();
             }
+        }
+
+        private void InitializeState()
+        {
+            _serverCurrentState = new PlayerTransformState
+            {
+                TimeStamp = 0,
+                Position = transform.position,
+                Rotation = transform.rotation,
+                Velocity = Vector3.zero,
+            };
+        }
+        public void UpdatePredictedState()
+        {
+            _clientPredictionState = _serverCurrentState;
+
+            foreach (MovementInputStamp movementInputStamp in _pendingMovementInputs)
+            {
+                _clientPredictionState = PredictMovement(_clientPredictionState, movementInputStamp);
+            }
+        }
+        private void SyncState()
+        {
+            if (isServer)
+            {
+                transform.position = _serverCurrentState.Position;
+                transform.rotation = _serverCurrentState.Rotation;
+                return;
+            }
+
+            PlayerTransformState stateToShow = isLocalPlayer ? _clientPredictionState : _serverCurrentState;
+            transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
+        }
+
+        [Command]
+        private void CacheServerPosition()
+        {
+            _serverPosition = transform.position;
+        }
+
+        [Command]
+        private void CmdMoveOnServer(MovementInputStamp inputStamp)
+        {
+            _serverCurrentState = PredictMovement(_serverCurrentState, inputStamp);
         }
         private void FixedUpdate()
         {
             if (isLocalPlayer)
             {
+                PhysicsStep();
+                PhysicsStepClient();
                 MovementInputStamp inputStamp = CreateInputStamp();
                 if (inputStamp != null)
                 {
@@ -52,77 +107,93 @@ namespace Assets.Prefabs.Player.TMP
                     CmdMoveOnServer(inputStamp);
                 }
             }
-
+         
             SyncState();
         }
-        private void InitializeState()
-        {
-            State = new PlayerTransformState
-            {
-                TimeStamp = 0,
-                Position = transform.position,
-                Rotation = transform.rotation,
-            };
-        }
-        public void UpdatePredictedState()
-        {
-            _predictedState = State;
 
-            foreach (MovementInputStamp movementInputStamp in _pendingMovementInputs)
-            {
-                _predictedState = PredictMovement(_predictedState, movementInputStamp);
-            }
-        }
-        private void SyncState()
-        {
-            if (isServer)
-            {
-                transform.position = State.Position;
-                transform.rotation = State.Rotation;
-                return;
-            }
-
-            PlayerTransformState stateToShow = isLocalPlayer ? _predictedState : State;
-            transform.position = Vector3.Lerp(transform.position, stateToShow.Position * PlayerLerpSpacing, PlayerLerpEasing);
-        }
 
         [Command]
-        private void CmdMoveOnServer(MovementInputStamp inputStamp)
+        private void PhysicsStep()
         {
-            State = PredictMovement(State, inputStamp);
+            CheckGround();
+            _serverVelocity.y += _currentClassConfiguration.Gravity * Time.fixedDeltaTime * _currentClassConfiguration.Mass;
+            if (_serverVelocity.y < 0 && _isGrounded)
+            {
+                _serverVelocity.y = 0;
+            }
+            _characterController.Move(_serverVelocity * Time.fixedDeltaTime);
+            _serverCurrentState.Position = transform.position;
         }
-        private void CalculateVelocity(Vector2 movementInput, bool jumped)
+        private void PhysicsStepClient()
         {
-            velocity = new Vector3(movementInput.x * _speed, 0, movementInput.y * _speed);
-            //velocity.y = jumped ? _jumpHeight : 0;
+            CheckGround();
+            _clientVelocity.y += _currentClassConfiguration.Gravity * Time.fixedDeltaTime * _currentClassConfiguration.Mass;
+            if (_clientVelocity.y < 0 && _isGrounded)
+            {
+                _clientPredictionState.Position.y = _serverCurrentState.Position.y;
+                _clientVelocity.y = 0;
+            }
+            else
+            {
+                _clientPredictionState.Position += _clientVelocity * Time.fixedDeltaTime;
+            }
         }
+        private void ResyncStates()
+        {
+            CacheServerPosition();
+            _clientPredictionState.Position = _serverPosition;
+            _clientPredictionState.Velocity = Vector3.zero;
+            transform.position = _serverPosition;
+        }
+
+
+        private void CalculateVelocity(Vector2 movementInput, bool jumped, ref Vector3 velocityToOutput, ref Vector3 referenceVelocity)
+        {
+            velocityToOutput = new Vector3(movementInput.x * _speed, referenceVelocity.y, movementInput.y * _speed);
+        }
+
         private PlayerTransformState PredictMovement(PlayerTransformState playerTransformState, MovementInputStamp movementInputStamp)
         {
             Vector3 newPosition = playerTransformState.Position;
             Quaternion newRotation = playerTransformState.Rotation;
-            CalculateVelocity(movementInputStamp.MovementInput, movementInputStamp.JumpState);
-            //newPosition = playerTransformState.Position + velocity * Time.fixedDeltaTime;
+            
             if (isServer)
             {
-                _characterController.Move(velocity * Time.fixedDeltaTime);
-                //newPosition = playerTransformState.Position += velocity * Time.fixedDeltaTime;
+                CalculateVelocity(movementInputStamp.MovementInput, movementInputStamp.JumpState, ref _serverVelocity, ref _serverVelocity);
+                if (movementInputStamp.JumpState)
+                {
+                    _serverVelocity.y += _jumpHeight * Time.fixedDeltaTime;
+                }
+                _characterController.Move(_serverVelocity * Time.fixedDeltaTime);
                 newPosition = transform.position;
             }
-            else
+            else if (isClient)
             {
+                CalculateVelocity(movementInputStamp.MovementInput, movementInputStamp.JumpState, ref _clientVelocity, ref _clientVelocity);
                 if (movementInputStamp.JumpState)
-                    velocity.y = _jumpHeight;
-
-                newPosition = playerTransformState.Position + velocity * Time.fixedDeltaTime;
+                {
+                    _clientVelocity.y += _jumpHeight * Time.fixedDeltaTime;
+                }
+                newPosition = playerTransformState.Position + _clientVelocity * Time.fixedDeltaTime;
 
             }
             _currentJumpState = false;
-
-            return new PlayerTransformState
+            if (isServer)
             {
-                Position = newPosition,
-                TimeStamp = playerTransformState.TimeStamp + 1
-            };
+                return new PlayerTransformState
+                {
+                    Position = newPosition,
+                    TimeStamp = playerTransformState.TimeStamp + 1,
+                    Velocity = _serverVelocity,
+                };
+            }
+            else {
+                return new PlayerTransformState
+                {
+                    Position = newPosition,
+                    TimeStamp = playerTransformState.TimeStamp + 1,
+                };
+            }
 
         }
         private MovementInputStamp CreateInputStamp()
@@ -139,20 +210,30 @@ namespace Assets.Prefabs.Player.TMP
             else
                 return movementInputStamp;
         }
+        private IEnumerator CheckState()
+        {
+            yield return new WaitForSeconds(1/60f);
+            Vector3 difference = transform.position - _serverPosition;
+            ResyncStates();
 
-
+            yield return CheckState();
+        }
         public void OnServerStateChanged(PlayerTransformState oldState, PlayerTransformState newState)
         {
-            State = newState;
+            _serverCurrentState = newState;
             if (_pendingMovementInputs != null)
             {
-                while (_pendingMovementInputs.Count > _predictedState.TimeStamp - State.TimeStamp)
+                while (_pendingMovementInputs.Count > _clientPredictionState.TimeStamp - _serverCurrentState.TimeStamp)
                 {
                     _pendingMovementInputs.RemoveAt(0);
                 }
                 UpdatePredictedState();
             }
         }
+
+
+
+        #region Input_Processing
         private void OnMove(InputValue value)
         {
             _currentMovementInput = value.Get<Vector2>();
@@ -163,23 +244,40 @@ namespace Assets.Prefabs.Player.TMP
         }
         private void OnJump()
         {
-            if (_playerPhysics.IsGrounded)
+
+            if (_isGrounded)
             {
-                //Debug.Log("make it true!");
                 _currentJumpState = true;
-                _playerPhysics.AddVelocity(_jumpHeight * transform.up);
+                MovementInputStamp inputStamp = CreateInputStamp();
+                _pendingMovementInputs.Add(inputStamp);
+                UpdatePredictedState();
+                CmdMoveOnServer(inputStamp);
             }
         }
+        #endregion
 
-        
+        #region Physics
+        //private void ApplyDrag(float drag, float delta)
+        //{
+        //    float multiplier = 1.0f - drag * delta;
+        //    if (multiplier < 0.0f) multiplier = 0.0f;
+        //    _physicsVelocity.x *= multiplier;
+        //    _physicsVelocity.z *= multiplier;
+        //}
 
-    } 
+        public void CheckGround()
+        {
+            Vector3 groundCheckPosition = new Vector3
+                    (_characterController.bounds.center.x,
+                    _characterController.bounds.center.y - _characterController.height / 2,
+                    _characterController.bounds.center.z);
+
+            _isGrounded = UnityEngine.Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
+        }
+
+        #endregion
+    }
 }
-
-
-
-
-
 
 
 
