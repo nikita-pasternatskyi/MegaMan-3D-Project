@@ -1,16 +1,16 @@
 ﻿using Assets.Scripts.Levels;
 using UnityEngine;
-using Mirror;
-using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.Player
 {
-    class PlayerCamera : NetworkBehaviour
+    [AddComponentMenu("Player/Base/Camera Control")]
+
+
+
+    class PlayerCamera : MonoBehaviour
     {
-        public float speed;
-        [SerializeField] private Transform _bodyToYRotate;
+        [SerializeField] private Transform _bodyToXRotate;
         [SerializeField] private Transform _cameraPivot;
-        [SerializeField] private Transform _endRotation;
         [SerializeField] private Camera _camera;
         [SerializeField] private float _shakeSpeed;
         [SerializeField] private float _amplitude;
@@ -31,8 +31,8 @@ namespace Assets.Scripts.Player
             {
                 case CameraModes.AroundPoint:
                     _rotateWithPivot = true;
-                    _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);
-                    _bodyToYRotate.rotation = Quaternion.Euler(0, 0, 0);
+                    _camera.transform.localPosition = new Vector3(0, 0, _pivotModeZOffset);                   
+                    _bodyToXRotate.rotation = Quaternion.Euler(0, 0, 0);
                     _camera.transform.rotation = Quaternion.Euler(0, 0, 0);
                     _mouseCanLookAround = false;
                     break;
@@ -42,64 +42,54 @@ namespace Assets.Scripts.Player
                     break;
             }
         }
-        public override void OnStartAuthority()
+
+        private void OnEnable()
         {
             Invoke("EnableCameraLook", 0.5f);
             Cursor.lockState = _lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            Input.MouseMoved += MouseLook;      
         }
 
-        private void Start()
+        private void FixedUpdate()
         {
-            
+           //ShakeCam();
         }
 
-        [ClientCallback]
-        private void OnLook(InputValue value)
-        {
-            Vector2 mouseInput = value.Get<Vector2>();
+        private void OnDisable() => Input.MouseMoved -= MouseLook;
 
-            if (_mouseCanLookAround && isLocalPlayer)
+        private void MouseLook(Vector2 mouseInput)
+        {
+            if (!LevelSettings.Instance.IsPaused)
             {
-                if (_bodyToYRotate != null)
+                if (_mouseCanLookAround)
                 {
-                    mouseInput *= Time.deltaTime * speed;
-
-                    _cameraXRotation -= mouseInput.y;
-                    _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
-
-                    if (_rotateWithPivot)
+                    if (_bodyToXRotate != null)
                     {
-                        _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
-                    }
-                    else
-                    {
-                        _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                        mouseInput *= Time.deltaTime;
+
+                        _cameraXRotation -= mouseInput.y;
+                        _cameraXRotation = Mathf.Clamp(_cameraXRotation, _minimumMouseRotation, _maximumMouseRotation);
+
+                        if (_rotateWithPivot)
+                        {
+                            _cameraPivot.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                        }
+                        else {
+                            _camera.transform.localRotation = Quaternion.Euler(_cameraXRotation, 0, 0);
+                        }
+                        _bodyToXRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
                     }
 
-                    RotateCameraYAxis(mouseInput);
-                    Rotate(_camera.transform.rotation.eulerAngles, mouseInput);
                 }
-
             }
-
         }
 
-        [ClientCallback]
-        private void RotateCameraYAxis(Vector2 mouseInput)
+        private void ShakeCam()
         {
-            _cameraPivot.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
+            float shake = Mathf.Sin(Time.time * _shakeSpeed) * _amplitude;
+            _camera.transform.position = new Vector3(_camera.transform.position.x, _cameraPivot.position.y + shake, _camera.transform.position.z);
         }
 
-        [Command]
-        private void Rotate(Vector3 rotation, Vector2 mouseInput)
-        {
-            _bodyToYRotate.rotation *= Quaternion.Euler(0, mouseInput.x, 0);
-            _endRotation.rotation = Quaternion.Euler(rotation);
-        }
-
-        [ClientCallback]
         public void EnableCameraLook() => _mouseCanLookAround = true;
-
-
     }
 }

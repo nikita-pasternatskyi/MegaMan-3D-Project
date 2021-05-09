@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Mirror;
 
 namespace Assets.Scripts.General
 {
-    class ItemSpawner : NetworkBehaviour
+    class ItemSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject _itemToSpawn;
         [SerializeField] private List<GameObject> _itemsToSpawn;

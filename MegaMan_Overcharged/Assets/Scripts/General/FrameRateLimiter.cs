@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
-
 
 namespace Assets.Scripts.General
 {
-    public class FrameRateLimiter : NetworkBehaviour
+    public class FrameRateLimiter : MonoBehaviour
     {
         public int TargetFrameRate;
         // Start is called before the first frame update

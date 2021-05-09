@@ -1,31 +1,29 @@
 ﻿using UnityEngine;
 using Assets.Scripts.General;
-using Mirror;
-using System.Collections;
 
 namespace Assets.Scripts.Player
 {
     [AddComponentMenu("Objects/Projectile")]
-    public class Projectile : NetworkBehaviour
+    public class Projectile : MonoBehaviour
     {
         [SerializeField] private float _speed;
         [SerializeField] private int _damage;
         [SerializeField] private float _lifeTime;
 
-        [Server]
         private void FixedUpdate()
         {
+            _lifeTime -= Time.fixedDeltaTime;
             transform.position += transform.forward * _speed * Time.fixedDeltaTime;
-            Destroy(this.gameObject, _lifeTime);
+            if (_lifeTime <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
 
-        [Server]
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other.GetComponent<Health>());
             other.GetComponent<Health>()?.TakeDamage(_damage);
         }
-
 
     }
 }

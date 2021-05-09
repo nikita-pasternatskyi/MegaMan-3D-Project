@@ -2,14 +2,18 @@ using Assets.Scripts.Levels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
 namespace Assets.Scripts.Player.UI
 {
-    public class MenuControl : NetworkBehaviour
+    public class MenuControl : MonoBehaviour
     {
         public GameObject _uiPauseMenu;
         [SerializeField] private PauseMenuState _currentPauseMenuState;
+
+        private void OnEnable()
+        {
+            Input.PauseButtonPressed += TogglePauseMenu;
+        }
 
         private void TogglePauseMenu()
         {
@@ -38,5 +42,9 @@ namespace Assets.Scripts.Player.UI
             _uiPauseMenu?.SetActive(false);
         }
 
+        private void OnDisable()
+        {
+            Input.PauseButtonPressed -= TogglePauseMenu;
+        }
     }
 }

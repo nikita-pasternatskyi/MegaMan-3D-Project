@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Mirror;
+
 namespace Assets.Scripts.Player.MegaMan
 {
-    class RushJet : NetworkBehaviour
+    class RushJet : MonoBehaviour
     {
         [SerializeField] private float _flightTime;
         [SerializeField] private float _currentFlightTime;

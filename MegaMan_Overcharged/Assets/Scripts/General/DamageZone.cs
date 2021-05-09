@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.General;
 using Assets.Scripts.Levels;
-using Mirror;
-
 
 namespace Assets.Scripts
 {
-    public class DamageZone : NetworkBehaviour
+    public class DamageZone : MonoBehaviour
     {
         [SerializeField] private int _damage;
 
@@ -16,7 +14,7 @@ namespace Assets.Scripts
         {
              if (other.GetComponent<Health>() != null)
              {
-                //other.GetComponent<Health>().TakeDamage(_damage);
+                other.GetComponent<Health>().TakeDamage(_damage);
              }
         }
 

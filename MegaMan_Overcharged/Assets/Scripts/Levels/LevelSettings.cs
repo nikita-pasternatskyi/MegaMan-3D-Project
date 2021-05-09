@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Items;
 using Assets.Scripts.General;
-using Mirror;
 
 namespace Assets.Scripts.Levels
 {
-    class LevelSettings : NetworkBehaviour
+    class LevelSettings : MonoBehaviour
     {
         [SerializeField] private GameObject _winScreen;
 

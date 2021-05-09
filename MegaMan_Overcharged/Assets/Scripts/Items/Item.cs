@@ -2,11 +2,10 @@
 using System.Collections;
 using UnityEngine;
 using Assets.Scripts.Player;
-using Mirror;
 
 namespace Assets.Scripts.Items
 {
-    class Item : NetworkBehaviour
+    class Item : MonoBehaviour
     {
         public delegate void OnPickUp();
         public event OnPickUp PickedUp;
@@ -29,7 +28,7 @@ namespace Assets.Scripts.Items
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if(other.GetComponent<PlayerMovement>() != null)
+            if(other.GetComponent<PlayerMove>() != null)
             PickedUp?.Invoke();
         }
         protected virtual IEnumerator Fall()

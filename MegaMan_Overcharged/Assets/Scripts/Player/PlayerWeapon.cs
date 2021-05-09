@@ -2,75 +2,49 @@ using Assets.Scripts.Levels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
+
 namespace Assets.Scripts.Player
 {
-    public class PlayerWeapon : NetworkBehaviour
+    class PlayerWeapon : MonoBehaviour
     {
         [SerializeField] private GameObject _projectile;
         [SerializeField] private Transform _whereToSpawn;
         [SerializeField] private Transform _referenceRotation;
         [SerializeField] private float _maxAmmo;
         [SerializeField] private float _currentAmmo;
-
-        private void Start()
-        {
-            
-        }
-
         public virtual void Refill(float ammoToRefill)
         {
             _currentAmmo = _currentAmmo + ammoToRefill < _maxAmmo ? _currentAmmo + ammoToRefill : _maxAmmo;
             RefreshWeaponUI();
         }
 
+        protected virtual void OnEnable()
+        {
+            Input.FirePressed += MainFire;
+        }
         protected virtual void RefreshWeaponUI()
         { 
         
         }
-    
-        protected virtual void OnMainFire()
+        protected virtual void MainFire()
         {
-            if (isLocalPlayer)
+            if (!LevelSettings.Instance.IsPaused)
             {
-                if (this.connectionToServer.isReady)
-                {
-                    Shoot();
-                }
-                else
-                {
-                    StartCoroutine(WaitForReady());
-                }
+                Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
             }
-           
         }
-
-        [Command]
-        protected virtual void Shoot()
+        protected virtual void AltFire()
         {
-            CreateProjectile();
-        }
-
-        protected IEnumerator WaitForReady()
-        {
-            while (!connectionToServer.isReady)
+            if (!LevelSettings.Instance.IsPaused)
             {
-                yield return new WaitForSeconds(0.25f);
+            
             }
-            CreateProjectile();
         }
-
-        protected virtual void OnAltFire()
+        protected virtual void OnDisable()
         {
-
+            Input.FirePressed -= MainFire;
         }
 
-        [Server]
-        protected virtual void CreateProjectile()
-        {
-            GameObject projectile = Instantiate(_projectile, _whereToSpawn.position, _referenceRotation.rotation);
-            NetworkServer.Spawn(projectile);
-        }
    
     }
 }

@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.General;
-using Mirror;
-
 
 namespace Assets.Scripts.Enemies
 {
     [RequireComponent(typeof(Health))]
-    class Enemy : NetworkBehaviour
+    class Enemy : MonoBehaviour
     {
 
         [SerializeField] private Health _health;

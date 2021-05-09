@@ -1,22 +1,32 @@
 ﻿using Assets.Scripts.Levels;
-using Mirror;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.MegaMan
 {
 
 
-    class RushCall : NetworkBehaviour
+    class RushCall : MonoBehaviour
     {
         public delegate void OnRushJetted();
         public static event OnRushJetted OnRushJet;
 
         [SerializeField] private PlayerCamera _playerCamera;
         [SerializeField] private float _spawnDistance;
+        [SerializeField] PlayerMove _playerMove;
         [SerializeField] RushMode _currentRushState = RushMode.None;
         [SerializeField] GameObject _rushCoil;
         [SerializeField] GameObject _rushJet;
 
+        private void OnEnable()
+        {
+            Input.CompanionSpecialOnePressed += CallRushCoil;
+            Input.CompanionSpecialTwoPressed += CallRushJet;
+        }
 
         private void Update()
         {
@@ -32,7 +42,7 @@ namespace Assets.Scripts.Player.MegaMan
         public void MountRushJet()
         {
             _currentRushState = RushMode.RushJet;
-//            _playerMove.enabled = false;
+            _playerMove.enabled = false;
             _playerCamera.ChangeCameraMode(CameraModes.AroundPoint);
             OnRushJet?.Invoke();
         }
@@ -71,6 +81,12 @@ namespace Assets.Scripts.Player.MegaMan
                 position.y = raycastHit.point.y + 0.5f;
             }
             Instantiate(whichRush, position, transform.rotation);
+        }
+
+        private void OnDisable()
+        {
+            Input.CompanionSpecialOnePressed -= CallRushCoil;
+            Input.CompanionSpecialTwoPressed -= CallRushJet;
         }
 
     }
