@@ -1,19 +1,19 @@
-﻿using Unity;
-using UnityEngine;
+﻿using UnityEngine;
+using Core.Player;
 
-namespace Assets.Scripts.Player.MegaMan
+namespace NonCore.Player.MegaMan
 {
     [AddComponentMenu("Player/Mega Man/Mega Buster")]
     class MegaBuster : PlayerWeapon
     {
-        protected override void AltFire()
+        protected override void OnAltFire()
         {
-            base.AltFire();
+            base.OnAltFire();
         }
 
-        protected override void MainFire()
+        protected override void OnMainFire()
         {
-            base.MainFire();
+            base.OnMainFire();
         }
 
         public override void Refill(float ammoToRefill)

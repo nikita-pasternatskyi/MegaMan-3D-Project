@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.General;
-namespace Assets.Scripts.Enemies
+using Core.General;
+namespace Core.Enemies
 {
     [RequireComponent(typeof(ItemSpawner))]
     class Mettool : Enemy

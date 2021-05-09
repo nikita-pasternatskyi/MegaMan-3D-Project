@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.Player;
+using Core.Player;
 
-namespace Assets.Scripts.Items
+namespace Core.Items
 {
     [AddComponentMenu("Items/Weapon Refill")]
     class WeaponRefill_Item : Item

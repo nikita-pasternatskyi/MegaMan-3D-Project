@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Assets.Scripts.General;
+using Core.General;
 
-namespace Assets.Scripts.Player
+namespace Core.Player.UI
 {
     public class UIPlayerHealth : MonoBehaviour
     {

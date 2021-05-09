@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using Assets.Scripts.Player;
+using Core.Player;
 
-namespace Assets.Scripts.Items
+namespace Core.Items
 {
     class Item : MonoBehaviour
     {
@@ -28,7 +28,7 @@ namespace Assets.Scripts.Items
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if(other.GetComponent<PlayerMove>() != null)
+            if(other.GetComponent<CurrentPlayerClass>() != null)
             PickedUp?.Invoke();
         }
         protected virtual IEnumerator Fall()

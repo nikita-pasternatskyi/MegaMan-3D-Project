@@ -1,8 +1,6 @@
-﻿using Assets.Scripts.Levels;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Player.MegaMan
+namespace NonCore.Player.MegaMan
 {
     class RushCoil : MonoBehaviour
     {
@@ -10,16 +8,10 @@ namespace Assets.Scripts.Player.MegaMan
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<PlayerMove>() != null)
-            {
-                other.GetComponent<PlayerMove>().Jump(_jumpHeight);
-            }
-
-            else
-            {
-
-            }
-
+            //if (other.GetComponent<PlayerMove>() != null)
+            //{
+            //    other.GetComponent<PlayerMove>().Jump(_jumpHeight);
+            //}
         }
 
     }

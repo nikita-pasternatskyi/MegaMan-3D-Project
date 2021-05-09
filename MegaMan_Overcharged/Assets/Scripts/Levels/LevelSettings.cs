@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.Items;
-using Assets.Scripts.General;
+using Core.Items;
+using Core.General;
 
-namespace Assets.Scripts.Levels
+namespace Core.Levels
 {
     class LevelSettings : MonoBehaviour
     {

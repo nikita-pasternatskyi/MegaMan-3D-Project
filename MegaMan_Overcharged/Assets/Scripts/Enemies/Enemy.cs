@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.General;
+using Core.General;
 
-namespace Assets.Scripts.Enemies
+namespace Core.Enemies
 {
     [RequireComponent(typeof(Health))]
     class Enemy : MonoBehaviour

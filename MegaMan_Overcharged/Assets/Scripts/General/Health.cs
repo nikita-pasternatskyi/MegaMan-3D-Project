@@ -1,8 +1,8 @@
-﻿using Assets.Scripts.Levels;
+﻿using Core.Levels;
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.General
+namespace Core.General
 {
     [AddComponentMenu("Player/Base/Health")]
 
@@ -15,11 +15,12 @@ namespace Assets.Scripts.General
         public event OnKilled Killed;
 
         [SerializeField] private int _maximumHealth;
-        [SerializeField] private int _currentHealth;
+        private int _currentHealth;
 
         protected virtual void Awake()
         {
             HealthChanged?.Invoke(_maximumHealth, 1);
+            _currentHealth = _maximumHealth;
         }
 
         public virtual void TakeDamage(int damage)

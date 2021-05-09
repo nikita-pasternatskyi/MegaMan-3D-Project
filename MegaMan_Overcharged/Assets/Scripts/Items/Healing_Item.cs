@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.General;
+using Core.General;
 
-namespace Assets.Scripts.Items
+namespace Core.Items
 {
     [AddComponentMenu("Items/Healing Item")]
     class Healing_Item : Item

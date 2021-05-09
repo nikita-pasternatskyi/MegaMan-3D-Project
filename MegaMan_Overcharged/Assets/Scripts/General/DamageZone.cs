@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.General;
-using Assets.Scripts.Levels;
 
-namespace Assets.Scripts
+namespace Core.General
 {
     public class DamageZone : MonoBehaviour
     {

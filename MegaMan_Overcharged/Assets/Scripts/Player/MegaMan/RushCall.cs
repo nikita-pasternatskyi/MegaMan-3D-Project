@@ -1,15 +1,9 @@
-﻿using Assets.Scripts.Levels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Levels;
 using UnityEngine;
+using Core.Player;
 
-namespace Assets.Scripts.Player.MegaMan
+namespace NonCore.Player.MegaMan
 {
-
-
     class RushCall : MonoBehaviour
     {
         public delegate void OnRushJetted();
@@ -17,15 +11,14 @@ namespace Assets.Scripts.Player.MegaMan
 
         [SerializeField] private PlayerCamera _playerCamera;
         [SerializeField] private float _spawnDistance;
-        [SerializeField] PlayerMove _playerMove;
         [SerializeField] RushMode _currentRushState = RushMode.None;
         [SerializeField] GameObject _rushCoil;
         [SerializeField] GameObject _rushJet;
 
-        private void OnEnable()
-        {
-            Input.CompanionSpecialOnePressed += CallRushCoil;
-            Input.CompanionSpecialTwoPressed += CallRushJet;
+        
+        private void OnCallRush()
+        { 
+        
         }
 
         private void Update()
@@ -42,7 +35,7 @@ namespace Assets.Scripts.Player.MegaMan
         public void MountRushJet()
         {
             _currentRushState = RushMode.RushJet;
-            _playerMove.enabled = false;
+            //_playerMove.enabled = false;
             _playerCamera.ChangeCameraMode(CameraModes.AroundPoint);
             OnRushJet?.Invoke();
         }
@@ -83,11 +76,6 @@ namespace Assets.Scripts.Player.MegaMan
             Instantiate(whichRush, position, transform.rotation);
         }
 
-        private void OnDisable()
-        {
-            Input.CompanionSpecialOnePressed -= CallRushCoil;
-            Input.CompanionSpecialTwoPressed -= CallRushJet;
-        }
 
     }
 }

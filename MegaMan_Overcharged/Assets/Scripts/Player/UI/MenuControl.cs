@@ -1,18 +1,16 @@
-using Assets.Scripts.Levels;
-using System.Collections;
-using System.Collections.Generic;
+using Core.Levels;
 using UnityEngine;
 
-namespace Assets.Scripts.Player.UI
+namespace Core.Player.UI
 {
     public class MenuControl : MonoBehaviour
     {
         public GameObject _uiPauseMenu;
         [SerializeField] private PauseMenuState _currentPauseMenuState;
 
-        private void OnEnable()
+        private void OnPauseGame()
         {
-            Input.PauseButtonPressed += TogglePauseMenu;
+            TogglePauseMenu();
         }
 
         private void TogglePauseMenu()
@@ -40,11 +38,6 @@ namespace Assets.Scripts.Player.UI
             LevelSettings.Instance.ResumeGame();
             _currentPauseMenuState = PauseMenuState.Closed;
             _uiPauseMenu?.SetActive(false);
-        }
-
-        private void OnDisable()
-        {
-            Input.PauseButtonPressed -= TogglePauseMenu;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using Assets.Scripts.General;
+using Core.General;
 
-namespace Assets.Scripts.Player
+namespace Core.Projectile
 {
     [AddComponentMenu("Objects/Projectile")]
     public class Projectile : MonoBehaviour
@@ -12,12 +12,8 @@ namespace Assets.Scripts.Player
 
         private void FixedUpdate()
         {
-            _lifeTime -= Time.fixedDeltaTime;
             transform.position += transform.forward * _speed * Time.fixedDeltaTime;
-            if (_lifeTime <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject, _lifeTime);
         }
 
         private void OnTriggerEnter(Collider other)
