@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9898639dbdc5ae0438bf4f60769cadab, type: 3}
-  m_Name: MegaMan
+  m_Script: {fileID: 11500000, guid: 7e5056f1e7fd3394cbb6be8e2db6bab9, type: 3}
+  m_Name: MegaBuster
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  Mass: 2
-  WalkSpeed: 0.5
-  RunSpeed: 1
-  AirDrag: 4
-  GroundDrag: 6
-  JumpHeight: 400
+  MainFireProjectile: {fileID: 5922346639194795697, guid: 9af1286f6f25b7d4d94d104f9b8dee3d, type: 3}
+  AlternateFireProjectile: {fileID: 0}
+  MaximumAmmo: 10
