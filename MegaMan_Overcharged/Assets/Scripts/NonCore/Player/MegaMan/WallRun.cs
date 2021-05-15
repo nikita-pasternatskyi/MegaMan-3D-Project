@@ -21,6 +21,7 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private float WallJumpNormalForce;
         [SerializeField] private float WallJumpForwardForce;
         [SerializeField] private float _cameraTransitionDuration;
+        [SerializeField] private PlayerCamera _playerCamera;
 
         private Transform _referenceRotation;
         private PlayerPhysics _playerPhysics;
@@ -62,7 +63,14 @@ namespace NonCore.Player.MegaMan
 
         private void StartWallRun( Vector3 movementInputDirection,  RaycastHit wallHit) 
         {
-            if(!_cameraInTransition) _parentMonoBehaviour.StartCoroutine(RotateCamera(_maxAngleRoll));
+            var targetZ = _maxAngleRoll;
+            bool rightSide = false;
+            Debug.Log(_lastWallNormal);
+            if (_lastWallNormal.x > 0)
+            {
+                targetZ *= -1;
+            }
+            _playerCamera.RotateCamera(PlayerCamera.Axis.Z, _cameraTransitionDuration, targetZ, rightSide);
             if (_playerPhysics.Velocity.y < 0)
                 _playerPhysics.ResetYVelocity();
             _lastInputDirection = movementInputDirection;
@@ -86,7 +94,7 @@ namespace NonCore.Player.MegaMan
                 _playerPhysics.AddVelocity(wallRunVelocity);
             }
             else {
-                _parentMonoBehaviour.StartCoroutine(RotateCamera(0));
+                _playerCamera.RotateCamera(PlayerCamera.Axis.Z, _cameraTransitionDuration, 0, true);
                 isWallRunning = false;
             }
             return;
