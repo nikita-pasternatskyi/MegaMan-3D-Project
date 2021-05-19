@@ -5,14 +5,15 @@ namespace Core.Player
     [System.Serializable]
     public class PlayerMovement
     {
-        private PlayerPhysics _playerPhysics;
-        private Transform _body;
-        private float _walkingSpeed;
-        private float _runSpeed;
-        private float _jumpHeight;
-        private float _deltaTime;
+        protected PlayerPhysics _playerPhysics;
+        protected Transform _body;
+        protected float _walkingSpeed;
+        protected float _runSpeed;
+        protected float _jumpHeight;
+        protected float _deltaTime;
+        protected bool _isRunning;
 
-        private Vector3 _velocity;
+        protected Vector3 _velocity;
 
         public PlayerMovement(in PlayerPhysics playerPhysics, in Transform body, float jumpHeight, float walkingSpeed, float runSpeed)
         {
@@ -25,7 +26,7 @@ namespace Core.Player
 
         public void FixedUpdate(Vector2 movementInput, float deltaTime)
         {
-            _deltaTime = deltaTime;
+            _deltaTime = Time.fixedDeltaTime;
             CalculateVelocity(movementInput);
             _playerPhysics.AddVelocity(_velocity);
         }
@@ -42,7 +43,8 @@ namespace Core.Player
         {
             var direction = _body.forward * movementInput.y + _body.right * movementInput.x;
             direction.Normalize();
-            _velocity = new Vector3(direction.x * _runSpeed, _velocity.y, direction.z * _runSpeed);
+            var speed = _isRunning ? _runSpeed : _walkingSpeed;
+            _velocity = new Vector3(direction.x * speed, _velocity.y, direction.z * speed);
         }
     }
 

@@ -8,6 +8,7 @@ namespace NonCore.Player.MegaMan
     [System.Serializable]
     public class Slide : PlayerSpecialAbility
     {
+        [SerializeField] private float _slideBurst;
         [SerializeField] private float _slideForce;
         [SerializeField] private float _slideTime;
         [SerializeField] private float _slideColliderHeight;
@@ -39,15 +40,16 @@ namespace NonCore.Player.MegaMan
         private IEnumerator AddSlideVelocity()
         {
             _isSliding = true;
-            
+            _characterControllerToShrink.height = _slideColliderHeight;
             float currentTime = _slideTime;
+            _playerPhysics.AddVelocity(_referenceTransform.forward * _slideBurst);
             while (currentTime > 0)
             {
                 currentTime -= Time.fixedDeltaTime;
-                _characterControllerToShrink.height = _slideColliderHeight;
-                _playerPhysics.AddVelocity(_referenceTransform.forward * _slideForce * Time.fixedDeltaTime);
+                _playerPhysics.AddVelocity(_referenceTransform.forward * _slideForce);
                 yield return new WaitForFixedUpdate();
             }
+            _isSliding = false;
             while (_characterControllerToShrink.height < _normalColliderHeight)
             {
                 _characterControllerToShrink.height += Time.fixedDeltaTime * _recoverySpeed;
@@ -55,7 +57,6 @@ namespace NonCore.Player.MegaMan
             }
             _characterControllerToShrink.height = _normalColliderHeight;
 
-            _isSliding = false;
             yield break;
         }
 

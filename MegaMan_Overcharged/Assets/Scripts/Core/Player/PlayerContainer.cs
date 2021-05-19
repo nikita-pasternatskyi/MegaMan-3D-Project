@@ -13,7 +13,7 @@ namespace Core.Player
         [SerializeField] protected Transform _referenceTransform;
         [SerializeField] protected PlayerPhysics _playerPhysics;
         [SerializeField] protected PlayerHealthWithUI _playerHealth;
-        protected PlayerMovement _playerMovement;
+        protected virtual PlayerMovement _playerMovement { get; set; }
 
         protected Vector2 _movementInput;
         public void TakeDamage(int damage)
@@ -37,20 +37,12 @@ namespace Core.Player
 
         protected new virtual void OnJump() => _playerMovement.Jump();
 
-        protected void OnDisable()
+        protected virtual void OnDisable()
         {
             _playerHealth.OnDisable();
         }
-        private void InitializeComponents()
+        protected virtual void InitializeComponents()
         {
-            _playerMovement = new PlayerMovement(
-                            in _playerPhysics,
-                            in _referenceTransform,
-                            _playerClassConfiguration.JumpHeight,
-                            _playerClassConfiguration.WalkSpeed,
-                            _playerClassConfiguration.RunSpeed);
-            _playerHealth.Start(_playerClassConfiguration.MaxHealth);
-            _playerPhysics.Start(_playerClassConfiguration.Mass, _playerClassConfiguration.AirDrag, _playerClassConfiguration.GroundDrag, in _characterController);
         }
 
     }

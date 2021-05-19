@@ -11,14 +11,15 @@ namespace NonCore.Player.MegaMan
 {
     public class MegaManContainer : PlayerContainer
     {
+        [SerializeField] private new MegaManMovement playerMove;
         [SerializeField] private Slide _slide;
         [SerializeField] private WallRun _wallRun;
 
         protected override void Start()
         {
             base.Start();
-            _wallRun.Start( this, this.transform, _referenceTransform, in _playerPhysics);
-            _slide.Start(in _referenceTransform, in _playerPhysics, this, ref _characterController);
+            _wallRun.Start(this.transform, _referenceTransform,  _playerPhysics);
+            _slide.Start( _referenceTransform,  _playerPhysics, this, ref _characterController);
         }
 
         protected override void FixedUpdate()
@@ -32,6 +33,18 @@ namespace NonCore.Player.MegaMan
             _slide.UseSpecialAbility();
         }
 
+        protected override void InitializeComponents()
+        {
+            playerMove = new MegaManMovement(
+                            in _playerPhysics,
+                            in _referenceTransform,
+                            _playerClassConfiguration.JumpHeight,
+                            _playerClassConfiguration.WalkSpeed,
+                            _playerClassConfiguration.RunSpeed);
+            _playerHealth.Start(_playerClassConfiguration.MaxHealth);
+            _playerPhysics.Start(_playerClassConfiguration.Mass, _playerClassConfiguration.AirDrag, _playerClassConfiguration.GroundDrag, in _characterController);
+        }
+
         protected override void OnMovement(InputValue value)
         {
             base.OnMovement(value);
@@ -43,6 +56,11 @@ namespace NonCore.Player.MegaMan
             base.OnJump();
             _wallRun.Jump();
 
+        }
+
+        protected override void OnSprint()
+        {
+            playerMove.Sprint();
         }
     }
 }

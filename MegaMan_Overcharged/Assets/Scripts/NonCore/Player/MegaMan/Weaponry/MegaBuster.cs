@@ -7,14 +7,13 @@ namespace NonCore.Player.MegaMan
 
     public class MegaBuster : Weapon
     {
-        
-        private Transform _whereToSpawn;
-        private Transform _referenceRotation;
-        public override void AlternateFire()
+        [SerializeField] private Transform _whereToSpawn;
+        [SerializeField] private Transform _referenceRotation;
+        public override void OnAlternateFire()
         {            
         }
 
-        public override void MainFire()
+        public override void OnMainFire()
         {
             ObjectSpawner.SpawnObject(MainFireProjectile, _whereToSpawn.position, _referenceRotation.rotation);
         }

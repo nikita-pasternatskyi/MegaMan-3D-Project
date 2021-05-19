@@ -1,15 +1,14 @@
 using UnityEngine;
 using Core.Player;
 using Core.General;
-using System.Threading;
 using Core.Levels;
 
 namespace NonCore.Player.MegaMan
 {
     public class MegaArm : Weapon
     {
-        private Transform _whereToSpawn;
-        private Transform _referenceRotation;
+        [SerializeField] private Transform _whereToSpawn;
+        [SerializeField] private Transform _referenceRotation;
 
         private GameObject _currentArmProjectile;
 
@@ -19,7 +18,7 @@ namespace NonCore.Player.MegaMan
             _referenceRotation = referenceRotation;
         }
 
-        public override void AlternateFire()
+        public override void OnAlternateFire()
         {
             if (_currentArmProjectile == null && !LevelSettings.Instance.IsPaused)
             {

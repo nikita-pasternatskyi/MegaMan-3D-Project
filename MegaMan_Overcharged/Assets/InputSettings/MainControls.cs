@@ -97,6 +97,22 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchWeapon"",
+                    ""type"": ""Value"",
+                    ""id"": ""a6611806-7377-43ba-a3f8-5c87d96a7b82"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchWeaponType"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a6df967-5cf8-49a5-8c3b-afa9d1fbd63f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -253,6 +269,61 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""action"": ""Pause Game"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bde272f7-7c11-4c25-b472-7c41a11449d7"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""SwitchWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Buttons"",
+                    ""id"": ""603a71d8-1e3a-4fc2-8bf7-2df9c69f9c3d"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchWeapon"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7ecd3749-b027-4f19-a82b-f663fc4ea31d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""c7ad41c8-42c1-4cd7-bbe4-61a9d539288f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f8c2773-79ab-4b74-8cfe-96521e345bac"",
+                    ""path"": ""<Mouse>/forwardButton"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""SwitchWeaponType"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -288,6 +359,8 @@ public class @MainControls : IInputActionCollection, IDisposable
         m_Gameplay_MouseLook = m_Gameplay.FindAction("Mouse Look", throwIfNotFound: true);
         m_Gameplay_SpecialAbility = m_Gameplay.FindAction("Special Ability", throwIfNotFound: true);
         m_Gameplay_PauseGame = m_Gameplay.FindAction("Pause Game", throwIfNotFound: true);
+        m_Gameplay_SwitchWeapon = m_Gameplay.FindAction("SwitchWeapon", throwIfNotFound: true);
+        m_Gameplay_SwitchWeaponType = m_Gameplay.FindAction("SwitchWeaponType", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -347,6 +420,8 @@ public class @MainControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_MouseLook;
     private readonly InputAction m_Gameplay_SpecialAbility;
     private readonly InputAction m_Gameplay_PauseGame;
+    private readonly InputAction m_Gameplay_SwitchWeapon;
+    private readonly InputAction m_Gameplay_SwitchWeaponType;
     public struct GameplayActions
     {
         private @MainControls m_Wrapper;
@@ -361,6 +436,8 @@ public class @MainControls : IInputActionCollection, IDisposable
         public InputAction @MouseLook => m_Wrapper.m_Gameplay_MouseLook;
         public InputAction @SpecialAbility => m_Wrapper.m_Gameplay_SpecialAbility;
         public InputAction @PauseGame => m_Wrapper.m_Gameplay_PauseGame;
+        public InputAction @SwitchWeapon => m_Wrapper.m_Gameplay_SwitchWeapon;
+        public InputAction @SwitchWeaponType => m_Wrapper.m_Gameplay_SwitchWeaponType;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -400,6 +477,12 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @PauseGame.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPauseGame;
                 @PauseGame.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPauseGame;
                 @PauseGame.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPauseGame;
+                @SwitchWeapon.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeapon;
+                @SwitchWeapon.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeapon;
+                @SwitchWeapon.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeapon;
+                @SwitchWeaponType.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponType;
+                @SwitchWeaponType.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponType;
+                @SwitchWeaponType.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponType;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -434,6 +517,12 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
+                @SwitchWeapon.started += instance.OnSwitchWeapon;
+                @SwitchWeapon.performed += instance.OnSwitchWeapon;
+                @SwitchWeapon.canceled += instance.OnSwitchWeapon;
+                @SwitchWeaponType.started += instance.OnSwitchWeaponType;
+                @SwitchWeaponType.performed += instance.OnSwitchWeaponType;
+                @SwitchWeaponType.canceled += instance.OnSwitchWeaponType;
             }
         }
     }
@@ -459,5 +548,7 @@ public class @MainControls : IInputActionCollection, IDisposable
         void OnMouseLook(InputAction.CallbackContext context);
         void OnSpecialAbility(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnSwitchWeapon(InputAction.CallbackContext context);
+        void OnSwitchWeaponType(InputAction.CallbackContext context);
     }
 }

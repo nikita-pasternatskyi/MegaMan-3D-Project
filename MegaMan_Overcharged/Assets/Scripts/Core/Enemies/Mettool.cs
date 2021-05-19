@@ -9,14 +9,6 @@ namespace Core.Enemies
         [SerializeField] private float _timeToWait;
 
         private float _currentTime;
-        
-        protected override void Attack()
-        {
-        }
-
-        protected override void Die()
-        {
-
-        }
+      
     }
 }

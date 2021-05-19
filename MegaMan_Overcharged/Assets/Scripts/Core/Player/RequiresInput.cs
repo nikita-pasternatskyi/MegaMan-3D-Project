@@ -25,6 +25,7 @@ namespace Core.Player
         { 
         
         }
+
         protected virtual void OnCrouch()
         { 
         
@@ -45,5 +46,13 @@ namespace Core.Player
         {
 
         }
+
+        protected virtual void OnSwitchWeaponType()
+        { 
+        
+        }
+
+        protected virtual void OnSwitchWeapon(InputValue value)
+        { }
     }
 }

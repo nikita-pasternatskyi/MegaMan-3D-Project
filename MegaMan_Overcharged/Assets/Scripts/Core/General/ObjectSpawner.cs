@@ -6,7 +6,7 @@ namespace Core.General
 {
     public static class ObjectSpawner
     {
-        public static GameObject SpawnObject(GameObject projectile, Vector3 spawnPosition, Quaternion spawnRotation)
+        public static GameObject SpawnObject(in GameObject projectile, in Vector3 spawnPosition, in Quaternion spawnRotation)
         {
             if (!LevelSettings.Instance.IsPaused)
             {
@@ -15,7 +15,7 @@ namespace Core.General
             return null;
         }
 
-        public static GameObject SpawnRandomObject(GameObject[] gameObjects, Vector3 spawnPosition, Quaternion spawnRotation)
+        public static GameObject SpawnRandomObject(in GameObject[] gameObjects, in Vector3 spawnPosition, in Quaternion spawnRotation)
         {
             if (!LevelSettings.Instance.IsPaused)
             {
@@ -25,7 +25,7 @@ namespace Core.General
             return null;
         }
 
-        private static GameObject PickRandomObject(GameObject[] gameObjects)
+        private static GameObject PickRandomObject(in GameObject[] gameObjects)
         {
             return gameObjects[UnityEngine.Random.Range(0, gameObjects.Length)];
         }
