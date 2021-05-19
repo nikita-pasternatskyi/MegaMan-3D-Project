@@ -6,13 +6,13 @@ using Core.General;
 namespace Core.Player
 {
     [System.Serializable]
-    public class PlayerHealthWithUI
+    public class PlayerHealthWithUI : MonoBehaviour
     {
         [SerializeField] private Image _energyMeter;
         [SerializeField] private TextMeshProUGUI _energyMeterText;
         public InternalHealth _health { get; private set; }
 
-        public void Start(int maxHealth)
+        public void Initialize(int maxHealth)
         {
             _health = new InternalHealth(maxHealth);
             _health.HealthChanged += RefreshUI;

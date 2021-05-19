@@ -3,29 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Interfaces;
 using Core.Player;
+using Core.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace NonCore.Player.MegaMan
 {
-    public class MegaManContainer : PlayerContainer
+    public class MegaManContainer : RequiresInput, IHasHealth
     {
-        [SerializeField] private new MegaManMovement playerMove;
+        [SerializeField] private PlayerClassConfiguration _playerClassConfiguration;
+        [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private MegaManMovement _megaManMovement;
         [SerializeField] private Slide _slide;
         [SerializeField] private WallRun _wallRun;
+        [SerializeField] private Transform _referenceTransform;
+        [SerializeField] private PlayerHealthWithUI _playerHealth;
 
-        protected override void Start()
+        [Header("Check ground")]
+        [SerializeField] private CapsuleCollider _capsuleCollider;
+        [SerializeField] private float _groundCheckRadius;
+        [SerializeField] private LayerMask _whatIsGround;
+        private float _groundDrag;
+        private float _airDrag;
+
+        private Vector2 _currentMovementInput;
+
+        private void Start()
         {
-            base.Start();
-            _wallRun.Start(this.transform, _referenceTransform,  _playerPhysics);
-            _slide.Start( _referenceTransform,  _playerPhysics, this, ref _characterController);
+
+            InitializeComponents();
         }
 
-        protected override void FixedUpdate()
+        private void FixedUpdate()
         {
-            base.FixedUpdate();
+            if (isGrounded())
+                _rigidbody.drag = _groundDrag;
+            else
+                _rigidbody.drag = _airDrag;
             _wallRun.FixedUpdate();
+            _megaManMovement.Move(_currentMovementInput, isGrounded());
         }
 
         protected override void OnSpecialAbility()
@@ -33,34 +51,57 @@ namespace NonCore.Player.MegaMan
             _slide.UseSpecialAbility();
         }
 
-        protected override void InitializeComponents()
+        private void InitializeComponents()
         {
-            playerMove = new MegaManMovement(
-                            in _playerPhysics,
-                            in _referenceTransform,
+            _groundDrag = _playerClassConfiguration.GroundDrag;
+            _airDrag = _playerClassConfiguration.AirDrag;
+            _wallRun.Start(this.transform, _referenceTransform, _rigidbody);
+            _slide.Start(isGrounded(), _referenceTransform, _rigidbody, this, ref _capsuleCollider);
+            _megaManMovement.Start(
+                            _rigidbody,
+                            _referenceTransform,
                             _playerClassConfiguration.JumpHeight,
                             _playerClassConfiguration.WalkSpeed,
-                            _playerClassConfiguration.RunSpeed);
-            _playerHealth.Start(_playerClassConfiguration.MaxHealth);
-            _playerPhysics.Start(_playerClassConfiguration.Mass, _playerClassConfiguration.AirDrag, _playerClassConfiguration.GroundDrag, in _characterController);
+                            _playerClassConfiguration.RunSpeed,
+                            _playerClassConfiguration.AirControlMultiplier);
+            _playerHealth.Initialize(_playerClassConfiguration.MaxHealth);
         }
 
         protected override void OnMovement(InputValue value)
         {
-            base.OnMovement(value);
+            _currentMovementInput = value.Get<Vector2>();
             _wallRun.OnMovement(value.Get<Vector2>());
         }
 
         protected override void OnJump()
         {
-            base.OnJump();
+            if(isGrounded())
+                _megaManMovement.Jump();
             _wallRun.Jump();
-
         }
 
         protected override void OnSprint()
         {
-            playerMove.Sprint();
+            _megaManMovement.Sprint();
+        }
+
+        private bool isGrounded()
+        {
+            Vector3 groundCheckPosition = new Vector3
+                            (_capsuleCollider.bounds.center.x,
+                            _capsuleCollider.bounds.center.y - _capsuleCollider.height / 2,
+                            _capsuleCollider.bounds.center.z);
+            return Physics.CheckSphere(groundCheckPosition, _groundCheckRadius, _whatIsGround);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Heal(int healCount)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -15,47 +15,50 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private float _recoverySpeed;
 
         private bool _isSliding;
+        private bool _isGrounded;
         private float _normalColliderHeight;
 
-        private CharacterController _characterControllerToShrink;
+
+        private CapsuleCollider _colliderToShrink;
         private MonoBehaviour _parentMonoBehaviour;
-        private PlayerPhysics _playerPhysics;
+        private Rigidbody _playerRigidbody;
         private Transform _referenceTransform;
 
-        public void Start(in Transform referenceTransform, in PlayerPhysics playerPhysics, in MonoBehaviour parentMonoBehaviour, ref CharacterController characterController)
+        public void Start(in bool isGrounded,in Transform referenceTransform, in Rigidbody playerRigidbody, in MonoBehaviour parentMonoBehaviour, ref CapsuleCollider colliderToShrink)
         {
-            _characterControllerToShrink = characterController;
-            _normalColliderHeight = _characterControllerToShrink.height;
+            _isGrounded = isGrounded;
+            _colliderToShrink = colliderToShrink;
+            _normalColliderHeight = _colliderToShrink.height;
             _referenceTransform = referenceTransform;
-            _playerPhysics = playerPhysics;
+            _playerRigidbody = playerRigidbody;
             _parentMonoBehaviour = parentMonoBehaviour;
         }
 
         public override void UseSpecialAbility()
         {
-            if (!_isSliding && _playerPhysics.IsGrounded && !LevelSettings.Instance.IsPaused)
+            if (!_isSliding && _isGrounded && !LevelSettings.Instance.IsPaused)
                 _parentMonoBehaviour.StartCoroutine(AddSlideVelocity());
         }
 
         private IEnumerator AddSlideVelocity()
         {
             _isSliding = true;
-            _characterControllerToShrink.height = _slideColliderHeight;
+            _colliderToShrink.height = _slideColliderHeight;
             float currentTime = _slideTime;
-            _playerPhysics.AddVelocity(_referenceTransform.forward * _slideBurst);
+            _playerRigidbody.AddForce(_referenceTransform.forward * _slideBurst, ForceMode.Impulse);
             while (currentTime > 0)
             {
                 currentTime -= Time.fixedDeltaTime;
-                _playerPhysics.AddVelocity(_referenceTransform.forward * _slideForce);
+                _playerRigidbody.AddForce(_referenceTransform.forward * _slideForce);
                 yield return new WaitForFixedUpdate();
             }
             _isSliding = false;
-            while (_characterControllerToShrink.height < _normalColliderHeight)
+            while (_colliderToShrink.height < _normalColliderHeight)
             {
-                _characterControllerToShrink.height += Time.fixedDeltaTime * _recoverySpeed;
+                _colliderToShrink.height += Time.fixedDeltaTime * _recoverySpeed;
                 yield return new WaitForFixedUpdate();
             }
-            _characterControllerToShrink.height = _normalColliderHeight;
+            _colliderToShrink.height = _normalColliderHeight;
 
             yield break;
         }

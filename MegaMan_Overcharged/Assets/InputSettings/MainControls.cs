@@ -208,7 +208,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""de0975ad-dec4-4a7e-9b9c-47edeb123b83"",
                     ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Sprint"",

@@ -10,6 +10,7 @@ namespace Core.ScriptableObjects
         public float WalkSpeed;
         public float RunSpeed;
         public float AirDrag;
+        public float AirControlMultiplier;
         public float GroundDrag;
         public float JumpHeight;
     }

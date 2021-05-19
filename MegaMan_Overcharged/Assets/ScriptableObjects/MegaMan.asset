@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: MegaMan
   m_EditorClassIdentifier: 
   MaxHealth: 10
-  Mass: 2
-  WalkSpeed: 0.5
-  RunSpeed: 1
-  AirDrag: 4
+  Mass: 4
+  WalkSpeed: 1
+  RunSpeed: 2
+  AirDrag: 1
+  AirControlMultiplier: 0.4
   GroundDrag: 6
-  JumpHeight: 400
+  JumpHeight: 8
