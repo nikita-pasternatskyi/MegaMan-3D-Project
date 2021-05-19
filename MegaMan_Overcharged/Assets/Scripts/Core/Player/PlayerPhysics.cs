@@ -44,9 +44,9 @@ namespace Core.Player
         {
             _velocity += velocityToAdd;
         }
-        public void FixedUpdate(float deltaTime)
+        public void FixedUpdate()
         {
-            CalculateGravity(deltaTime);
+            CalculateGravity(Time.fixedDeltaTime);
             _characterController.Move(_velocity * Time.fixedDeltaTime);
         }
         public void ResetYVelocity()

@@ -1,3 +1,4 @@
+using Core.ScriptableObjects;
 using UnityEngine;
 
 namespace Core.Player
@@ -10,23 +11,30 @@ namespace Core.Player
         protected float _walkingSpeed;
         protected float _runSpeed;
         protected float _jumpHeight;
-        protected float _deltaTime;
         protected bool _isRunning;
 
         protected Vector3 _velocity;
 
-        public PlayerMovement(in PlayerPhysics playerPhysics, in Transform body, float jumpHeight, float walkingSpeed, float runSpeed)
+        public virtual void Start(in PlayerPhysics playerPhysics, in Transform body, PlayerClassConfiguration playerClassConfiguration)
         {
             _playerPhysics = playerPhysics;
-            _jumpHeight = jumpHeight;
-            _walkingSpeed = walkingSpeed;
-            _runSpeed = runSpeed;
+            _jumpHeight = playerClassConfiguration.JumpHeight;
+            _walkingSpeed = playerClassConfiguration.WalkSpeed;
+            _runSpeed = playerClassConfiguration.RunSpeed;
             _body = body;
         }
 
-        public void FixedUpdate(Vector2 movementInput, float deltaTime)
+        public PlayerMovement(in PlayerPhysics playerPhysics, in Transform body, PlayerClassConfiguration playerClassConfiguration)
         {
-            _deltaTime = Time.fixedDeltaTime;
+            _playerPhysics = playerPhysics;
+            _jumpHeight = playerClassConfiguration.JumpHeight;
+            _walkingSpeed = playerClassConfiguration.WalkSpeed;
+            _runSpeed = playerClassConfiguration.RunSpeed;
+            _body = body;
+        }
+
+        public void FixedUpdate(Vector2 movementInput)
+        {
             CalculateVelocity(movementInput);
             _playerPhysics.AddVelocity(_velocity);
         }
@@ -35,7 +43,7 @@ namespace Core.Player
         {
             if (_playerPhysics.IsGrounded)
             {
-                _playerPhysics.AddVelocity(_jumpHeight * _body.up * _deltaTime);
+                _playerPhysics.AddVelocity(_jumpHeight * _body.up);
             }
         }
 
@@ -43,7 +51,9 @@ namespace Core.Player
         {
             var direction = _body.forward * movementInput.y + _body.right * movementInput.x;
             direction.Normalize();
-            var speed = _isRunning ? _runSpeed : _walkingSpeed;
+            var speed = _walkingSpeed;
+            if (_playerPhysics.IsGrounded)
+                speed = _isRunning ? _runSpeed : _walkingSpeed;
             _velocity = new Vector3(direction.x * speed, _velocity.y, direction.z * speed);
         }
     }

@@ -56,7 +56,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""id"": ""871ba738-e1b6-4afa-9045-a1db73861470"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press(behavior=2)""
                 },
                 {
                     ""name"": ""Crouch"",

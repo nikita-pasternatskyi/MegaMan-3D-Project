@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Player;
+using Core.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,56 +12,61 @@ namespace NonCore.Player.MegaMan
 {
     public class MegaManContainer : PlayerContainer
     {
-        [SerializeField] private new MegaManMovement playerMove;
+        [SerializeField] private PlayerClassConfiguration _playerClassConfiguration;
+        [SerializeField] private Transform _referenceTransform;
+        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private MegaManMovement _playerMovement;
+        [SerializeField] private PlayerPhysics _playerPhysics;
         [SerializeField] private Slide _slide;
         [SerializeField] private WallRun _wallRun;
+        [SerializeField] private PlayerHealthWithUI _playerHealthWithUI;
+        [SerializeField] private VFXCaller _speedLineEffect;
 
-        protected override void Start()
+        private Vector2 _movementInput;
+
+        private void Start()
         {
-            base.Start();
-            _wallRun.Start(this.transform, _referenceTransform,  _playerPhysics);
-            _slide.Start( _referenceTransform,  _playerPhysics, this, ref _characterController);
+            InitializeComponents();
         }
 
-        protected override void FixedUpdate()
+        private void FixedUpdate()
         {
-            base.FixedUpdate();
+            _playerMovement.FixedUpdate(_movementInput);
+            _playerPhysics.FixedUpdate();
             _wallRun.FixedUpdate();
         }
 
+        private void InitializeComponents()
+        {
+            _playerMovement.Start(
+                            in _playerPhysics,
+                            in _referenceTransform,
+                            _playerClassConfiguration, _speedLineEffect);
+
+            _wallRun.Start(this.transform, _referenceTransform, _playerPhysics, _speedLineEffect);
+            _slide.Start(_referenceTransform, _playerPhysics, this, ref _characterController, _speedLineEffect);
+            _playerHealthWithUI.Start(_playerClassConfiguration.MaxHealth);
+            _playerPhysics.Start(_playerClassConfiguration.Mass, _playerClassConfiguration.AirDrag, _playerClassConfiguration.GroundDrag, in _characterController);
+        }
         protected override void OnSpecialAbility()
         {
             _slide.UseSpecialAbility();
         }
-
-        protected override void InitializeComponents()
-        {
-            playerMove = new MegaManMovement(
-                            in _playerPhysics,
-                            in _referenceTransform,
-                            _playerClassConfiguration.JumpHeight,
-                            _playerClassConfiguration.WalkSpeed,
-                            _playerClassConfiguration.RunSpeed);
-            _playerHealth.Start(_playerClassConfiguration.MaxHealth);
-            _playerPhysics.Start(_playerClassConfiguration.Mass, _playerClassConfiguration.AirDrag, _playerClassConfiguration.GroundDrag, in _characterController);
-        }
-
         protected override void OnMovement(InputValue value)
         {
-            base.OnMovement(value);
+            _movementInput = value.Get<Vector2>();
             _wallRun.OnMovement(value.Get<Vector2>());
         }
 
         protected override void OnJump()
         {
-            base.OnJump();
             _wallRun.Jump();
-
+            _playerMovement.Jump();
         }
 
         protected override void OnSprint()
         {
-            playerMove.Sprint();
+            _playerMovement.Sprint();
         }
     }
 }

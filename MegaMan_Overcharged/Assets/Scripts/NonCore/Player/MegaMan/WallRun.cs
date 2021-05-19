@@ -6,7 +6,6 @@ namespace NonCore.Player.MegaMan
     [System.Serializable]
     public class WallRun
     {
-        [SerializeField] private ParticleSystem _runSpeedLines;
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private LayerMask WhatIsWall;
         [SerializeField] private float ClosestWallDistance;
@@ -20,6 +19,8 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private float _cameraTransitionDuration;
         [SerializeField] private CameraControl _playerCamera;
 
+
+        private VFXCaller _speedLineEffect;
         private Transform _referenceRotation;
         private PlayerPhysics _playerPhysics;
         private Transform _parentTransform;
@@ -30,12 +31,20 @@ namespace NonCore.Player.MegaMan
         private Vector3 _lastInputDirection;
         private bool isWallRunning;
 
-        public void Start(in Transform parentTransform, in Transform referenceTransform, in PlayerPhysics playerPhysics)
+        public void Start(in Transform parentTransform, in Transform referenceTransform, in PlayerPhysics playerPhysics, VFXCaller speedLineEffect)
         {
+            _speedLineEffect = speedLineEffect;
+            _unprocessedMovementInput = new Vector2();
             _playerPhysics = playerPhysics;
             _parentTransform = parentTransform;
             _referenceRotation = referenceTransform;
         }
+
+        public WallRun(Transform _child)
+        {
+            _referenceRotation = _child;
+        }
+
         public void FixedUpdate()
         {
             Vector3 movementInputDirection = CurrentMovementInputDirection();
@@ -58,7 +67,7 @@ namespace NonCore.Player.MegaMan
 
         private void StartWallRun(in Vector3 movementInputDirection, in RaycastHit wallHit)
         {
-            _runSpeedLines.Play();
+            _speedLineEffect.EnableVFX();
             var targetZ = _maxAngleRoll;
             _lastInputDirection = movementInputDirection;
             _lastWallNormal = wallHit.normal;
@@ -85,7 +94,7 @@ namespace NonCore.Player.MegaMan
             }
             else
             {
-                _runSpeedLines.Stop();
+                _speedLineEffect.DisableVFX();
                 _playerCamera.CallRotateZCamera(0);
                 isWallRunning = false;
             }

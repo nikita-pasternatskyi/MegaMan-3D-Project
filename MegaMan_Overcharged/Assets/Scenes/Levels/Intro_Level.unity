@@ -756,6 +756,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!198 &1722831742 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1526336835, guid: cdea20a33c712954ba94b158c782ec4b, type: 3}
+  m_PrefabInstance: {fileID: 6889014878231795256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1735004091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +3973,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MegaMan
       objectReference: {fileID: 0}
+    - target: {fileID: 6889014877515545443, guid: cdea20a33c712954ba94b158c782ec4b, type: 3}
+      propertyPath: _slide._speedParticles
+      value: 
+      objectReference: {fileID: 1722831742}
+    - target: {fileID: 6889014877515545443, guid: cdea20a33c712954ba94b158c782ec4b, type: 3}
+      propertyPath: _wallRun.ClosestWallDistance
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889014877515545443, guid: cdea20a33c712954ba94b158c782ec4b, type: 3}
+      propertyPath: _speedLineEffect._particleSystem
+      value: 
+      objectReference: {fileID: 1722831742}
     - target: {fileID: 6889014877515545446, guid: cdea20a33c712954ba94b158c782ec4b, type: 3}
       propertyPath: m_RootOrder
       value: 1

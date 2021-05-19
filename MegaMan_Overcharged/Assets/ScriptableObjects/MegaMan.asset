@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   Mass: 2
-  WalkSpeed: 0.5
-  RunSpeed: 1
+  WalkSpeed: 1
+  RunSpeed: 2
   AirDrag: 4
   GroundDrag: 6
-  JumpHeight: 400
+  JumpHeight: 8

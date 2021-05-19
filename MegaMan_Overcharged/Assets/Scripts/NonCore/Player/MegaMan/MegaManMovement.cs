@@ -1,25 +1,33 @@
 ﻿using Core.Player;
+using Core.ScriptableObjects;
 using UnityEngine;
 
 namespace NonCore.Player.MegaMan
 {
+    [System.Serializable]
     class MegaManMovement : PlayerMovement
     {
-        public MegaManMovement(in PlayerPhysics playerPhysics, in Transform body, float jumpHeight, float walkingSpeed, float runSpeed) : base(playerPhysics, body, jumpHeight, walkingSpeed, runSpeed) { }
-        [SerializeField] private ParticleSystem _runSpeedLines;
+        public MegaManMovement(in PlayerPhysics playerPhysics, in Transform body, PlayerClassConfiguration playerClassConfiguration, VFXCaller speedLines) : 
+            base(playerPhysics, body, playerClassConfiguration) { _speedLineEffect = speedLines; }
+        public void Start(in PlayerPhysics playerPhysics, in Transform body, PlayerClassConfiguration playerClassConfiguration, VFXCaller speedLines)
+        {
+            base.Start(playerPhysics, body, playerClassConfiguration);
+            _speedLineEffect = speedLines;
+        }
+
+        private VFXCaller _speedLineEffect;
+
 
         public void Sprint()
         {
             if (!_isRunning)
-            {
+            {           
                 _isRunning = true;
-                if (!_runSpeedLines.isPlaying)
-                    _runSpeedLines.Play();
+                _speedLineEffect.EnableVFX();
             }
             else
             {
-                if (_runSpeedLines.isPlaying)
-                    _runSpeedLines.Stop();
+                _speedLineEffect.DisableVFX();
                 _isRunning = false;
             }
         }

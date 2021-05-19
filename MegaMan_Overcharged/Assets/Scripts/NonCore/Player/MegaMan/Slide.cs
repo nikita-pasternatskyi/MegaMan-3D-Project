@@ -17,13 +17,15 @@ namespace NonCore.Player.MegaMan
         private bool _isSliding;
         private float _normalColliderHeight;
 
+        private VFXCaller _speedLineEffect;
         private CharacterController _characterControllerToShrink;
         private MonoBehaviour _parentMonoBehaviour;
         private PlayerPhysics _playerPhysics;
         private Transform _referenceTransform;
 
-        public void Start(in Transform referenceTransform, in PlayerPhysics playerPhysics, in MonoBehaviour parentMonoBehaviour, ref CharacterController characterController)
+        public void Start(in Transform referenceTransform, in PlayerPhysics playerPhysics, in MonoBehaviour parentMonoBehaviour, ref CharacterController characterController, VFXCaller speedLineEffect)
         {
+            _speedLineEffect = speedLineEffect;
             _characterControllerToShrink = characterController;
             _normalColliderHeight = _characterControllerToShrink.height;
             _referenceTransform = referenceTransform;
@@ -39,7 +41,8 @@ namespace NonCore.Player.MegaMan
 
         private IEnumerator AddSlideVelocity()
         {
-            _isSliding = true;
+            _speedLineEffect.EnableVFX();
+               _isSliding = true;
             _characterControllerToShrink.height = _slideColliderHeight;
             float currentTime = _slideTime;
             _playerPhysics.AddVelocity(_referenceTransform.forward * _slideBurst);
@@ -50,14 +53,18 @@ namespace NonCore.Player.MegaMan
                 yield return new WaitForFixedUpdate();
             }
             _isSliding = false;
+            _speedLineEffect.DisableVFX();
+            yield return ReturnNormalHeight();
+        }
+
+        private IEnumerator ReturnNormalHeight()
+        {
             while (_characterControllerToShrink.height < _normalColliderHeight)
             {
                 _characterControllerToShrink.height += Time.fixedDeltaTime * _recoverySpeed;
                 yield return new WaitForFixedUpdate();
             }
             _characterControllerToShrink.height = _normalColliderHeight;
-
-            yield break;
         }
 
     }
