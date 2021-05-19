@@ -6218,7 +6218,6 @@ GameObject:
   - component: {fileID: 1960999666}
   - component: {fileID: -823493133997550647}
   - component: {fileID: 4203220413056024260}
-  - component: {fileID: 628078496569430406}
   m_Layer: 0
   m_Name: MegaMan
   m_TagString: Untagged
@@ -6301,7 +6300,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerClassConfiguration: {fileID: 11400000, guid: 585f20668d9e2ab47ba4c9b5ae8f6975, type: 2}
-  _rigidbody: {fileID: -823493133997550647}
+  _characterController: {fileID: 0}
+  _referenceTransform: {fileID: 6889014878391397839}
+  _playerPhysics:
+    _whatIsGround:
+      serializedVersion: 2
+      m_Bits: 128
+    _groundCheckRadius: 0.2
+    _gravity: -9.8
+  _playerHealth:
+    _energyMeter: {fileID: 6889014878318717388}
+    _energyMeterText: {fileID: 6889014877635380338}
   _slide:
     _slideBurst: 25
     _slideForce: 2
@@ -6323,13 +6332,6 @@ MonoBehaviour:
     WallJumpForwardForce: 4
     _cameraTransitionDuration: 1
     _playerCamera: {fileID: 1960999665}
-  _referenceTransform: {fileID: 6889014878391397839}
-  _playerHealth: {fileID: 628078496569430406}
-  _capsuleCollider: {fileID: 4203220413056024260}
-  _groundCheckRadius: 0
-  _whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1960999664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6419,20 +6421,6 @@ CapsuleCollider:
   m_Height: 2.0952196
   m_Direction: 1
   m_Center: {x: 0, y: -0.046785593, z: 0}
---- !u!114 &628078496569430406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6889014877515545441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f582a39256bb2134793b78fb1c9b8cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _energyMeter: {fileID: 6889014878318717388}
-  _energyMeterText: {fileID: 6889014877635380338}
 --- !u!1 &6889014877635380336
 GameObject:
   m_ObjectHideFlags: 0

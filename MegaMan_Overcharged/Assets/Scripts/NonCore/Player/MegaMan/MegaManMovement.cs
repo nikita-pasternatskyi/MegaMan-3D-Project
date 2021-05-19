@@ -3,11 +3,9 @@ using UnityEngine;
 
 namespace NonCore.Player.MegaMan
 {
-    [System.Serializable]
     class MegaManMovement : PlayerMovement
     {
-        public MegaManMovement(in Rigidbody rigidbody, in Transform body, float jumpHeight, float walkingSpeed, float runSpeed, float airMultiplier) 
-            : base(rigidbody, body, jumpHeight, walkingSpeed, runSpeed, airMultiplier) { }
+        public MegaManMovement(in PlayerPhysics playerPhysics, in Transform body, float jumpHeight, float walkingSpeed, float runSpeed) : base(playerPhysics, body, jumpHeight, walkingSpeed, runSpeed) { }
         [SerializeField] private ParticleSystem _runSpeedLines;
 
         public void Sprint()
@@ -20,9 +18,9 @@ namespace NonCore.Player.MegaMan
             }
             else
             {
-                _isRunning = false;
                 if (_runSpeedLines.isPlaying)
                     _runSpeedLines.Stop();
+                _isRunning = false;
             }
         }
 

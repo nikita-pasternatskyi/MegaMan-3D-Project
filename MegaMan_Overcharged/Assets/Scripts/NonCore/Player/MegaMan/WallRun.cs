@@ -21,7 +21,7 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private CameraControl _playerCamera;
 
         private Transform _referenceRotation;
-        private Rigidbody _rigidBody;
+        private PlayerPhysics _playerPhysics;
         private Transform _parentTransform;
 
         private Vector2 _unprocessedMovementInput;
@@ -30,9 +30,9 @@ namespace NonCore.Player.MegaMan
         private Vector3 _lastInputDirection;
         private bool isWallRunning;
 
-        public void Start(in Transform parentTransform, in Transform referenceTransform, in Rigidbody rigidBody)
+        public void Start(in Transform parentTransform, in Transform referenceTransform, in PlayerPhysics playerPhysics)
         {
-            _rigidBody = rigidBody;
+            _playerPhysics = playerPhysics;
             _parentTransform = parentTransform;
             _referenceRotation = referenceTransform;
         }
@@ -51,8 +51,8 @@ namespace NonCore.Player.MegaMan
         {
             if (isWallRunning)
             {
-                //_rigidBody.velocity.y = 0;
-                _rigidBody.AddForce(WallJumpDirection());
+                _playerPhysics.ResetYVelocity();
+                _playerPhysics.AddVelocity(WallJumpDirection());
             }
         }
 
@@ -71,17 +71,17 @@ namespace NonCore.Player.MegaMan
             if (_lastWallNormal.z == 0) //if its not forward hit/backward then rotate
                 _playerCamera.CallRotateZCamera(targetZ);
 
-            if (_rigidBody.velocity.y < 0) ;
-               // _rigidBody.ResetYVelocity();
+            if (_playerPhysics.Velocity.y < 0)
+                _playerPhysics.ResetYVelocity();
         }
         private void WallRunning()
         {
             if (Physics.Raycast(_referenceRotation.position, _lastInputDirection, 1f, WhatIsWall))
             {
                 Vector3 wallRunVelocity = Vector3.zero;
-                if (_rigidBody.velocity.y < 0)
+                if (_playerPhysics.Velocity.y < 0)
                     wallRunVelocity.y = WallRunGravity * Time.fixedDeltaTime;
-                _rigidBody.AddForce(wallRunVelocity);
+                _playerPhysics.AddVelocity(wallRunVelocity);
             }
             else
             {
