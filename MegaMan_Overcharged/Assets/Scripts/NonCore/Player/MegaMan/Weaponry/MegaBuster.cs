@@ -1,22 +1,38 @@
 ﻿using Core.General;
 using Core.Player;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NonCore.Player.MegaMan
 {
+    enum ChargeState { 
+        Zero, First, Second, Third,
+    }
 
     public class MegaBuster : Weapon
     {
+        [SerializeField] private GameObject _zeroProjectile;
+        [SerializeField] private GameObject _firstStepPrefab;
+        [SerializeField] private GameObject _secondStepPrefab;
+        [SerializeField] private GameObject _thirdStepPrefab;
         [SerializeField] private Transform _whereToSpawn;
         [SerializeField] private Transform _referenceRotation;
-        private GameObject _firstStepPrefab;
-        private GameObject _secondStepPrefab;
-        private GameObject _thirdStepPrefab;
+        [SerializeField] private VFXCaller _firstStepVFX;
+        [SerializeField] private VFXCaller _secondStepVFX;
+        [SerializeField] private VFXCaller _thirdStepVFX;
+        private GameObject _currentProjectile;
+        private bool pressed = false;
+        private ChargeState _currentChargeState;
 
-        private float _firstStep;
-        private float _secondStep;
-        private float _thirdStep;
+        [SerializeField] private int _firstStep;
+        [SerializeField] private int _secondStep;
+        [SerializeField] private int _thirdStep;
+
+        private void Start()
+        {
+            _currentProjectile = _zeroProjectile;
+        }
 
         public override void OnAlternateFire()
         {            
@@ -24,8 +40,26 @@ namespace NonCore.Player.MegaMan
 
         public override void OnMainFire()
         {
-            //ChargeBuster();
-            ObjectSpawner.SpawnObject(MainFireProjectile, _whereToSpawn.position, _referenceRotation.rotation);
+            pressed = pressed ? false : true;
+            if (!pressed && _currentProjectile != _zeroProjectile)
+            {
+                _firstStepVFX.DisableVFX();
+                _secondStepVFX.DisableVFX();
+                _thirdStepVFX.DisableVFX();
+                StopAllCoroutines();
+                ObjectSpawner.SpawnObject(_currentProjectile, _whereToSpawn.position, _referenceRotation.rotation);
+                _currentProjectile = _zeroProjectile;
+            }
+            else if (pressed)
+            {
+                _firstStepVFX.DisableVFX();
+                _secondStepVFX.DisableVFX();
+                _thirdStepVFX.DisableVFX();
+                StopAllCoroutines();
+                _currentProjectile = _zeroProjectile;
+                ObjectSpawner.SpawnObject(_currentProjectile, _whereToSpawn.position, _referenceRotation.rotation);
+                StartCoroutine(ChargeBuster());
+            }
         }
 
         public override void Refill(int refillValue)
@@ -33,28 +67,57 @@ namespace NonCore.Player.MegaMan
             base.Refill(refillValue);
         }
 
-
-        private async void ChargeBuster()
+        private void SwitchChargeState(ChargeState chargeStateToSwitchTo)
         {
-            await Timer(_firstStep);
-            
-            await Timer(_secondStep);
-            
-            await Timer(_thirdStep);
-            
-        }
-
-        public static async Task<bool> Timer(float duration)
-        {
-            while (duration > 0)
+            _currentChargeState = chargeStateToSwitchTo;
+            switch (chargeStateToSwitchTo)
             {
-                duration-= Time.fixedDeltaTime;
-                await Task.Yield();
+                case ChargeState.Zero:
+                    _currentProjectile = _zeroProjectile;
+                    break;
+                case ChargeState.First:
+                    _firstStepVFX.EnableVFX();
+                    _currentProjectile = _firstStepPrefab;
+                    break;
+                case ChargeState.Second:
+                    _firstStepVFX.DisableVFX();
+                    _secondStepVFX.EnableVFX();
+                    _currentProjectile = _secondStepPrefab;
+                    break;
+                case ChargeState.Third:
+                    _secondStepVFX.DisableVFX();
+                    _thirdStepVFX.EnableVFX();
+                    _currentProjectile = _thirdStepPrefab;
+                    break;
+
+
             }
-            if (duration <= 0)
-                return true;
-            return false;
         }
+
+        private IEnumerator ChargeBuster()
+        {
+
+                SwitchChargeState(ChargeState.Zero);
+                for (int i = 0; i < _firstStep; i++)
+                {
+                    if(pressed)
+                    yield return new WaitForFixedUpdate();
+                }
+                SwitchChargeState(ChargeState.First);
+                for (int i = 0; i < _secondStep; i++)
+                {
+                    if (pressed)
+                    yield return new WaitForFixedUpdate();
+                }
+                SwitchChargeState(ChargeState.Second);
+                for (int i = 0; i < _thirdStep; i++)
+                {
+                    if (pressed)
+                    yield return new WaitForFixedUpdate();
+                }
+                SwitchChargeState(ChargeState.Third);
+        }
+
 
     }
 }

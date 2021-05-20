@@ -32,7 +32,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""id"": ""f3597f7f-bbaf-4582-ad06-f84e235c6713"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press(behavior=2)""
                 },
                 {
                     ""name"": ""Alternate Fire"",
