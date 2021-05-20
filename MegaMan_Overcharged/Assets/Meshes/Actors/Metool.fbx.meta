@@ -1,32 +1,8 @@
 fileFormatVersion: 2
-guid: c55c5a3db3f7f4847a1d5dbde8096178
+guid: 654484307ecef2d4bab8b917d783088c
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: 4743084820616853705
-    second: Armature|CameraAction
-  - first:
-      74: 1176067512148809445
-    second: Armature|Cylinder.002Action
-  - first:
-      74: -7082745615850405094
-    second: Armature|Cylinder.003Action
-  - first:
-      74: -750964168965617161
-    second: Armature|Cylinder.007Action
-  - first:
-      74: -8945691123924629249
-    second: Armature|Idle
-  - first:
-      74: -7420831677865308036
-    second: Armature|Point.001Action
-  - first:
-      74: 2230705934079479343
-    second: Armature|Sphere.002Action
-  - first:
-      74: 8039437375205953329
-    second: Armature|SunAction
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2

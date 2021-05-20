@@ -10,7 +10,7 @@ namespace Core.General
         public event Action<int, float> HealthChanged;
 
         private int _maximumHealth;
-        private int _currentHealth;
+        public int _currentHealth;
 
         public InternalHealth(int maximumHealth)
         {

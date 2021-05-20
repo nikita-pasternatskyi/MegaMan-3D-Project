@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Interfaces;
 using Core.Player;
 using Core.ScriptableObjects;
 using UnityEngine;
@@ -10,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace NonCore.Player.MegaMan
 {
-    public class MegaManContainer : PlayerContainer
+    public class MegaManContainer : PlayerContainer, IHasHealth
     {
         [SerializeField] private PlayerClassConfiguration _playerClassConfiguration;
         [SerializeField] private Transform _referenceTransform;
@@ -67,6 +63,16 @@ namespace NonCore.Player.MegaMan
         protected override void OnSprint()
         {
             _playerMovement.Sprint();
+        }
+
+        public void TakeDamage(int damage)
+        {
+            _playerHealthWithUI._health.TakeDamage(damage);
+        }
+
+        public void Heal(int healCount)
+        {
+            _playerHealthWithUI._health.Heal(healCount);
         }
     }
 }

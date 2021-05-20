@@ -32,6 +32,7 @@ namespace NonCore.Player.MegaMan
         private void Start()
         {
             _currentProjectile = _zeroProjectile;
+            _currentChargeState = ChargeState.Zero;
         }
 
         public override void OnAlternateFire()
@@ -43,19 +44,19 @@ namespace NonCore.Player.MegaMan
             pressed = pressed ? false : true;
             if (!pressed && _currentProjectile != _zeroProjectile)
             {
+                StopAllCoroutines();
                 _firstStepVFX.DisableVFX();
                 _secondStepVFX.DisableVFX();
                 _thirdStepVFX.DisableVFX();
-                StopAllCoroutines();
                 ObjectSpawner.SpawnObject(_currentProjectile, _whereToSpawn.position, _referenceRotation.rotation);
                 _currentProjectile = _zeroProjectile;
             }
             else if (pressed)
             {
-                _firstStepVFX.DisableVFX();
-                _secondStepVFX.DisableVFX();
-                _thirdStepVFX.DisableVFX();
                 StopAllCoroutines();
+                //_firstStepVFX.DisableVFX();
+                //_secondStepVFX.DisableVFX();
+                //_thirdStepVFX.DisableVFX();
                 _currentProjectile = _zeroProjectile;
                 ObjectSpawner.SpawnObject(_currentProjectile, _whereToSpawn.position, _referenceRotation.rotation);
                 StartCoroutine(ChargeBuster());
@@ -73,6 +74,9 @@ namespace NonCore.Player.MegaMan
             switch (chargeStateToSwitchTo)
             {
                 case ChargeState.Zero:
+                    _firstStepVFX.DisableVFX();
+                    _secondStepVFX.DisableVFX();
+                    _thirdStepVFX.DisableVFX();
                     _currentProjectile = _zeroProjectile;
                     break;
                 case ChargeState.First:

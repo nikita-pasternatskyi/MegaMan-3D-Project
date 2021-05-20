@@ -19,19 +19,23 @@ namespace Core.General
         {
             _health = new InternalHealth(_maxHealth);
             _health.Start();
+            _health.ActorKilled += ObjectKilled.Invoke;
+            _health.HealthChanged += ObjectHealthChanged.Invoke;
+            _health.ActorKilled += Kill;
         }
         public void TakeDamage(int damage) => _health.TakeDamage(damage);
         public void Heal(int healCount) => _health.Heal(healCount);
 
-        private void OnEnable()
+        protected virtual void Kill()
         {
-            _health.ActorKilled += ObjectKilled.Invoke;
-            _health.HealthChanged += ObjectHealthChanged.Invoke;
+            Destroy(this.gameObject);
         }
+
         private void OnDisable()
         {
             _health.ActorKilled -= ObjectKilled.Invoke;
             _health.HealthChanged -= ObjectHealthChanged.Invoke;
+            _health.ActorKilled -= Kill;
         }
     }
 }

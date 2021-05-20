@@ -17,5 +17,5 @@ MonoBehaviour:
   WalkSpeed: 1
   RunSpeed: 2
   AirDrag: 4
-  GroundDrag: 6
-  JumpHeight: 8
+  GroundDrag: 7
+  JumpHeight: 7
