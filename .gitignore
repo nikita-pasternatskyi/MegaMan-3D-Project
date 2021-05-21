@@ -1,8 +1,8 @@
 ###
 # Unity folders and files
 ###
-[Aa]ssets/AssetStoreTools*
-[Aa]ssets/AssetStoreTools/Mirror*
+[Aa]ssets/AssetStorePacks/JMO Assets*
+[Aa]ssets/AssetStorePacks/Mirror*
 [Bb]uild/
 [Ll]ibrary/
 [Ll]ocal[Cc]ache/
