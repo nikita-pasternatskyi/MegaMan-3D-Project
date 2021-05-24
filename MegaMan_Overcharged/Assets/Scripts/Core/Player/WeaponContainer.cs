@@ -18,8 +18,6 @@ namespace Core.Player
         [SerializeField] private int _currentAlternateWeaponIndex;
         [SerializeField] private Weapon[] _mainWeapons;
         [SerializeField] private Weapon[] _alternateWeapons;
-        [SerializeField] private VisualEffect _mainMuzzleFlash;
-        [SerializeField] private VisualEffect _alternateMuzzleFlash;
         private Weapon _currentMainWeapon;
         private Weapon _currentAlternateWeapon;
 
@@ -102,15 +100,11 @@ namespace Core.Player
 
         protected override void OnMainFire()
         {
-            _mainMuzzleFlash.SendEvent("Fire");
-            _mainMuzzleFlash.Play();
             _currentMainWeapon?.OnMainFire();
         }
 
         protected override void OnAlternateFire()
         {
-            _alternateMuzzleFlash.SendEvent("Fire");
-            _mainMuzzleFlash.Play();
             _currentAlternateWeapon?.OnAlternateFire();
         }
 

@@ -21,11 +21,12 @@ namespace NonCore.Player.MegaMan
             effectCalls+=1;
             if (_particleSystem)
             {
-                    _particleSystem.Play();
+                 _particleSystem.Play();
             }
 
             else if (_visualEffect)
             {
+                _visualEffect.SendEvent("Fire");
                 _visualEffect.Play();
             }
             else
