@@ -13,9 +13,10 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private MegaManMovement _playerMovement;
         [SerializeField] private PlayerPhysics _playerPhysics;
+
+        [SerializeField] private PlayerHealthWithUI _playerHealthWithUI;
         [SerializeField] private Slide _slide;
         [SerializeField] private WallRun _wallRun;
-        [SerializeField] private PlayerHealthWithUI _playerHealthWithUI;
         [SerializeField] private VFXCaller _speedLineEffect;
 
         private Vector2 _movementInput;

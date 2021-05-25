@@ -23,19 +23,19 @@ namespace NonCore.Player.MegaMan
             {
                  _particleSystem.Play();
             }
-
-            else if (_visualEffect)
+            if (_visualEffect)
             {
-                _visualEffect.SendEvent("Fire");
+                _visualEffect.SendEvent("OnPlay");
                 _visualEffect.Play();
             }
-            else
-                throw new MissingReferenceException("No particle system or visual effect found");
+            else if (!_particleSystem && !_visualEffect)
+            {
+                Debug.LogWarning("No effects found");
+            }
         }
 
         public void DisableVFX()
         {
-            Debug.Log("Disable");
             effectCalls-=1;
             if (effectCalls <= 0)
             {
@@ -44,7 +44,7 @@ namespace NonCore.Player.MegaMan
                     if (_particleSystem.isPlaying)
                         _particleSystem.Stop();
                 }
-                else if (_visualEffect)
+                if (_visualEffect)
                 {
                     _visualEffect.Stop();
                 }

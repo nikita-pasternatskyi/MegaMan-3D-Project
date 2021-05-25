@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MB_UnChrgd_Shot_Core
+  m_Name: MB_ChargeShot
   m_Shader: {fileID: 4800000, guid: 0017c60f9f2db6d47a19ea8fafec2204, type: 3}
   m_ShaderKeywords: TCP2_NONE TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK
     TCP2_RIM_OUTLINE TCP2_SHADOW_LIGHT_COLOR TCP2_UV_NORMALS_FULL
@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 5c936ba288807144db1481ad2b9c3689, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -254,12 +254,12 @@ Material:
     - Color_34f4be5703c1427e8817e7a738db5f34: {r: 0, g: 0.5581398, b: 1, a: 1}
     - Color_98d6f25f2ab94ac68376efff7a06e7b8: {r: 1, g: 0.71948665, b: 0.1745283, a: 0}
     - Color_e140be6c49c242c3823f1eb5bc33cfef: {r: 1, g: 0.78736246, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 0.80655015, b: 0, a: 1}
+    - _BaseColor: {r: 0.5943396, g: 0.18163663, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorBack: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 1, g: 0.8118372, b: 0, a: 1}
+    - _Emission: {r: 1.319508, g: 1.07113, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 0.8639405, g: 1, b: 0, a: 1}
+    - _HColor: {r: 1, g: 0.7052166, b: 0, a: 1}
     - _HologramColor: {r: 0, g: 0.502, b: 1, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

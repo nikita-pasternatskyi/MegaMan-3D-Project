@@ -1,7 +1,7 @@
-using UnityEngine;
-using Core.Player;
 using Core.General;
 using Core.Levels;
+using Core.Player;
+using UnityEngine;
 
 namespace NonCore.Player.MegaMan
 {
@@ -10,19 +10,22 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private Transform _whereToSpawn;
         [SerializeField] private Transform _referenceRotation;
 
+        [SerializeField] private Projectile _alternateFireProjectile;
         private GameObject _currentArmProjectile;
 
-        public MegaArm(Transform whereToSpawn, Transform referenceRotation)
+        public override void OnMainFire()
         {
-            _whereToSpawn = whereToSpawn;
-            _referenceRotation = referenceRotation;
+        }
+
+        public override void Refill(int value)
+        {
         }
 
         public override void OnAlternateFire()
         {
             if (_currentArmProjectile == null && !LevelSettings.Instance.IsPaused)
             {
-                _currentArmProjectile = ObjectSpawner.SpawnObject(AlternateFireProjectile, _whereToSpawn.position, _referenceRotation.rotation);
+                _currentArmProjectile = ObjectSpawner.SpawnObject(_alternateFireProjectile.gameObject, _whereToSpawn.position, _referenceRotation.rotation);
                 _currentArmProjectile.GetComponent<MegaArmProjectile>().Initialize(_whereToSpawn);
             }
         }

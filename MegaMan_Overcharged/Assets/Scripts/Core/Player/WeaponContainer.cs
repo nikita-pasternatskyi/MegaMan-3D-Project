@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Core.ScriptableObjects;
 using UnityEngine.InputSystem;
-using System;
-using UnityEngine.VFX;
 
 namespace Core.Player
 {
-    enum WeaponSwitchType { 
-            MainWeapon, AlternateWeapon,
+    enum WeaponSwitchType
+    {
+        MainWeapon, AlternateWeapon,
     }
     public class WeaponContainer : RequiresInput
     {
@@ -40,7 +36,7 @@ namespace Core.Player
         {
             float switchValue = value.Get<float>();
             if (_weaponSwitchType == WeaponSwitchType.AlternateWeapon)
-            {               
+            {
                 DetermineWeaponSwitch(switchValue, _alternateWeapons, ref _currentAlternateWeaponIndex, ref _currentAlternateWeapon);
             }
             else

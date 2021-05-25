@@ -1,24 +1,22 @@
-using Core.ScriptableObjects;
-using UnityEngine;
-
 namespace Core.Player
 {
-    [System.Serializable]
+
     public abstract class Weapon : RequiresInput
     {
-        [SerializeField] private WeaponClassConfiguration _weaponClassConfiguration;
-        public GameObject MainFireProjectile { get => _weaponClassConfiguration.MainFireProjectile; private set { } }
-        public GameObject AlternateFireProjectile { get => _weaponClassConfiguration.AlternateFireProjectile; private set { } }
+        public virtual new void OnAlternateFire()
+        {
+            throw new System.NotImplementedException();
+        }
 
-        public virtual void Refill(int refillValue)
-        { }
+        public virtual new void OnMainFire()
+        {
+            throw new System.NotImplementedException();
+        }
 
-        public new virtual void OnMainFire()
-        { }
-
-        public new virtual void OnAlternateFire()
-        { }
+        public virtual void Refill(int value)
+        {
+            throw new System.NotImplementedException();
+        }
     }
-
 
 }
