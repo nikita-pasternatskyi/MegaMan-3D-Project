@@ -1,11 +1,16 @@
+using Core.General;
 using Core.Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace NonCore.Player.MegaMan
 {
-    [System.Serializable]
-    public class WallRun
+    [RequireComponent(typeof(PlayerPhysics))]
+    public class WallRun : RequiresInput
     {
+        [SerializeField] private CameraControl _playerCamera;
+        [SerializeField] private VFXCaller _speedLineEffect;
+        [SerializeField] private Transform _referenceRotation;
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private LayerMask WhatIsWall;
         [SerializeField] private float ClosestWallDistance;
@@ -17,36 +22,24 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private float WallJumpNormalForce;
         [SerializeField] private float WallJumpForwardForce;
         [SerializeField] private float _cameraTransitionDuration;
-        [SerializeField] private CameraControl _playerCamera;
 
-
-        private VFXCaller _speedLineEffect;
-        private Transform _referenceRotation;
         private PlayerPhysics _playerPhysics;
-        private Transform _parentTransform;
-
         private Vector2 _unprocessedMovementInput;
         private Vector3 _lastWallNormal;
 
         private Vector3 _lastInputDirection;
         private bool isWallRunning;
 
-        public void Start(in Transform parentTransform, in Transform referenceTransform, in PlayerPhysics playerPhysics, VFXCaller speedLineEffect)
+        public void Start()
         {
-            _speedLineEffect = speedLineEffect;
             _unprocessedMovementInput = new Vector2();
-            _playerPhysics = playerPhysics;
-            _parentTransform = parentTransform;
-            _referenceRotation = referenceTransform;
-        }
-
-        public WallRun(Transform _child)
-        {
-            _referenceRotation = _child;
+            _playerPhysics = GetComponent<PlayerPhysics>();
         }
 
         public void FixedUpdate()
         {
+            Debugging();
+
             Vector3 movementInputDirection = CurrentMovementInputDirection();
 
             if (CanWallRun(movementInputDirection, out RaycastHit wallHit))
@@ -55,8 +48,8 @@ namespace NonCore.Player.MegaMan
             if (isWallRunning)
                 WallRunning();
         }
-        public void OnMovement(in Vector2 value) => _unprocessedMovementInput = value;
-        public void Jump()
+        public new void OnMovement(InputValue value) => _unprocessedMovementInput = value.Get<Vector2>();
+        public new void OnJump()
         {
             if (isWallRunning)
             {
@@ -77,8 +70,16 @@ namespace NonCore.Player.MegaMan
                 targetZ *= -1;
             }
 
-            if (_lastWallNormal.z == 0) //if its not forward hit/backward then rotate
+            if (_lastWallNormal.z == 0)
+            {  //if its not forward hit/backward then rotate
+                Debug.Log("CallRotateZCamera");
                 _playerCamera.CallRotateZCamera(targetZ);
+            }
+
+            else {
+                Debug.Log("NotCallRotateZCamera");
+                _playerCamera.CallRotateZCamera(targetZ);
+            }
 
             if (_playerPhysics.Velocity.y < 0)
                 _playerPhysics.ResetYVelocity();
@@ -107,7 +108,7 @@ namespace NonCore.Player.MegaMan
             direction.y = 0;
             Debug.DrawRay(_referenceRotation.position, direction * ClosestWallDistance, Color.red);
 
-            Debug.DrawRay(_parentTransform.position, -_parentTransform.up * MinimumDistanceToGround, Color.blue);
+            Debug.DrawRay(transform.position, -transform.up * MinimumDistanceToGround, Color.blue);
         }
         private bool CanWallRun(in Vector3 checkDirection, out RaycastHit hit)
         {
@@ -126,12 +127,12 @@ namespace NonCore.Player.MegaMan
         }
         private bool CanWallRunRelativeGround()
         {
-            if (Physics.Raycast(_parentTransform.position, -_parentTransform.up, out RaycastHit groundHit, Mathf.Infinity, WhatIsWall))
+            if (Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit, Mathf.Infinity, WhatIsWall))
             {
                 if (groundHit.distance >= MinimumDistanceToGround)
                     return true;
             }
-            else if (!Physics.Raycast(_parentTransform.position, -_parentTransform.up, MinimumDistanceToGround, WhatIsWall))
+            else if (!Physics.Raycast(transform.position, -transform.up, MinimumDistanceToGround, WhatIsWall))
             {
                 return true;
             }

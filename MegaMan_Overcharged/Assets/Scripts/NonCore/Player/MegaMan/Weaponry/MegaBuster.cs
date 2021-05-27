@@ -1,4 +1,5 @@
-﻿using Core.Player;
+﻿using Core.General;
+using Core.Player;
 using UnityEngine;
 
 namespace NonCore.Player.MegaMan

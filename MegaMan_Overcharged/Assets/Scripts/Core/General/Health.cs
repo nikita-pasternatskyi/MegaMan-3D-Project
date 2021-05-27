@@ -12,30 +12,51 @@ namespace Core.General
     public class Health : MonoBehaviour, IHasHealth
     {
         [SerializeField] private int _maxHealth;
-        private InternalHealth _health;
+        public event Action ActorKilled;
+        public event Action<int, float> HealthChanged;
         public UnityEvent<int, float> ObjectHealthChanged;
         public UnityEvent ObjectKilled;
+        
+        private int _currentHealth;
+        
+
         private void Start()
         {
-            _health = new InternalHealth(_maxHealth);
-            _health.Start();
-            _health.ActorKilled += ObjectKilled.Invoke;
-            _health.HealthChanged += ObjectHealthChanged.Invoke;
-            _health.ActorKilled += Kill;
+            HealthChanged += ObjectHealthChanged.Invoke;
+            ActorKilled += ObjectKilled.Invoke;
+            HealthChanged?.Invoke(_maxHealth, 1);
         }
-        public void TakeDamage(int damage) => _health.TakeDamage(damage);
-        public void Heal(int healCount) => _health.Heal(healCount);
 
-        protected virtual void Kill()
+        public void TakeDamage(int damage)
         {
-            Destroy(this.gameObject);
+            _currentHealth -= damage;
+
+            if (_currentHealth <= 0)
+            {
+                Die();
+            }
+
+            HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maxHealth);
+        }
+        public void Heal(int healthToHeal)
+        {
+            _currentHealth = _currentHealth + healthToHeal < _maxHealth ? _currentHealth + healthToHeal : _maxHealth;
+            HealthChanged?.Invoke(_currentHealth, (float)_currentHealth / _maxHealth);
+        }
+        private void Die()
+        {                   
+            ActorKilled?.Invoke();
         }
 
         private void OnDisable()
         {
-            _health.ActorKilled -= ObjectKilled.Invoke;
-            _health.HealthChanged -= ObjectHealthChanged.Invoke;
-            _health.ActorKilled -= Kill;
+            HealthChanged -= ObjectHealthChanged.Invoke;
+            ActorKilled -= ObjectKilled.Invoke;
+        }
+
+        private void Kill()
+        {
+            Destroy(this.gameObject);
         }
     }
 }

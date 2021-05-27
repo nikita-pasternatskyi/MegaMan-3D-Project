@@ -1,23 +1,26 @@
-﻿using System.Threading;
+﻿using Core.ScriptableObjects;
+using System.Threading;
 using UnityEngine;
 
 namespace Core.Player
 {
-    [System.Serializable]
-    public class PlayerPhysics
+    [RequireComponent(typeof(CharacterController))]
+    public class PlayerPhysics : MonoBehaviour
     {
+        public Vector3 Velocity { get => _velocity; }
         public bool IsGrounded { get => isGrounded(); private set { } }
+
         [SerializeField] private LayerMask _whatIsGround;
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private float _gravity;
-        public Vector3 Velocity { get => _velocity; }
+        [SerializeField] private bool _useGravity;
+
+        [SerializeField] private float _mass;
+        [SerializeField] private float _airDrag;
+        [SerializeField] private float _groundDrag;
 
         private CharacterController _characterController;
         private Vector3 _velocity;
-        private float _mass;
-        private float _airDrag;
-        private float _groundDrag;
-        private bool _useGravity;
         private bool isGrounded()
         {
             if (_characterController)
@@ -31,13 +34,9 @@ namespace Core.Player
             return false;
         }
 
-        public void Start(float mass, float airDrag, float groundDrag, in CharacterController characterController)
+        private void Start()
         {
-            _useGravity = true;
-            _mass = mass;
-            _airDrag = airDrag;
-            _groundDrag = groundDrag;
-            _characterController = characterController;
+            _characterController = GetComponent<CharacterController>();
         }
 
         public void AddVelocity(Vector3 velocityToAdd)

@@ -1,22 +1,12 @@
 namespace Core.Player
 {
-
     public abstract class Weapon : RequiresInput
     {
-        public virtual new void OnAlternateFire()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract new void OnAlternateFire();
 
-        public virtual new void OnMainFire()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract new void OnMainFire();
 
-        public virtual void Refill(int value)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void Refill(int value);
     }
 
 }

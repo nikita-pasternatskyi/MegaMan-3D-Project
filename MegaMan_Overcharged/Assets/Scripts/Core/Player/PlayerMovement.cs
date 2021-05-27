@@ -1,61 +1,51 @@
 using Core.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Core.Player
 {
-    [System.Serializable]
-    public class PlayerMovement
+    [RequireComponent(typeof(PlayerPhysics))]
+    public abstract class PlayerMovement : RequiresInput
     {
         protected PlayerPhysics _playerPhysics;
-        protected Transform _body;
-        protected float _walkingSpeed;
-        protected float _runSpeed;
-        protected float _jumpHeight;
+        [SerializeField] protected Transform _referenceDirectionTransform;
+        [SerializeField] protected float _walkingSpeed;
+        [SerializeField] protected float _runSpeed;
+        [SerializeField] protected float _jumpHeight;
+
         protected bool _isRunning;
 
-        protected Vector3 _velocity;
+        protected Vector2 _input;
 
-        public virtual void Start(in PlayerPhysics playerPhysics, in Transform body, PlayerClassConfiguration playerClassConfiguration)
+        private void Start()
         {
-            _playerPhysics = playerPhysics;
-            _jumpHeight = playerClassConfiguration.JumpHeight;
-            _walkingSpeed = playerClassConfiguration.WalkSpeed;
-            _runSpeed = playerClassConfiguration.RunSpeed;
-            _body = body;
+            _playerPhysics = GetComponent<PlayerPhysics>();
         }
-
-        public PlayerMovement(in PlayerPhysics playerPhysics, in Transform body, PlayerClassConfiguration playerClassConfiguration)
+        private new void OnMovement(InputValue value)
         {
-            _playerPhysics = playerPhysics;
-            _jumpHeight = playerClassConfiguration.JumpHeight;
-            _walkingSpeed = playerClassConfiguration.WalkSpeed;
-            _runSpeed = playerClassConfiguration.RunSpeed;
-            _body = body;
+            _input = value.Get<Vector2>();
         }
-
-        public void FixedUpdate(Vector2 movementInput)
+        private Vector3 CalculateVelocity(Vector2 movementInput)
         {
-            CalculateVelocity(movementInput);
-            _playerPhysics.AddVelocity(_velocity);
-        }
-
-        public void Jump()
-        {
-            if (_playerPhysics.IsGrounded)
-            {
-                _playerPhysics.AddVelocity(_jumpHeight * _body.up);
-            }
-        }
-
-        private void CalculateVelocity(Vector2 movementInput)
-        {
-            var direction = _body.forward * movementInput.y + _body.right * movementInput.x;
+            var direction = _referenceDirectionTransform.forward * movementInput.y + _referenceDirectionTransform.right * movementInput.x;
             direction.Normalize();
             var speed = _walkingSpeed;
             if (_playerPhysics.IsGrounded)
                 speed = _isRunning ? _runSpeed : _walkingSpeed;
-            _velocity = new Vector3(direction.x * speed, _velocity.y, direction.z * speed);
+            return new Vector3(direction.x * speed, 0, direction.z * speed);
         }
+        protected virtual void FixedUpdate()
+        {
+            _playerPhysics.AddVelocity(CalculateVelocity(_input));
+        }
+        protected override void OnJump()
+        {
+            if (_playerPhysics.IsGrounded)
+            {
+                _playerPhysics.AddVelocity(_jumpHeight * _referenceDirectionTransform.up);
+            }
+        }
+
     }
 
 

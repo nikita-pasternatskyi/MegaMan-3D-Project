@@ -19,7 +19,7 @@ namespace Core.Levels
         [SerializeField] private LevelType _levelType;
 
         [Header("Level Type: Defeat enemy")]
-        [SerializeField] private InternalHealth _enemyToDefeat;
+        [SerializeField] private Health _enemyToDefeat;
 
         [Header("Level Type: Collect an item")]
         [SerializeField] private Item _itemToCollect;

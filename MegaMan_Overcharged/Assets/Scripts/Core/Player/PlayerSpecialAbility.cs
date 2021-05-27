@@ -4,14 +4,8 @@ using UnityEngine;
 
 namespace Core.Player
 {
-    public abstract class PlayerSpecialAbility
+    public abstract class PlayerSpecialAbility : RequiresInput
     {
-        public virtual void UseSpecialAbility()
-        {
-            if (!LevelSettings.Instance.IsPaused)
-            {
-                throw new NotImplementedException();
-            }
-        }
+        protected abstract override void OnSpecialAbility();
     }
 }

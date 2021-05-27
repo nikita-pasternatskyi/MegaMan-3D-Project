@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 1630129324850174296}
   - component: {fileID: 1630129324850174297}
   - component: {fileID: 1630129324850174298}
+  - component: {fileID: 1315188509}
   m_Layer: 0
   m_Name: Metool_1
   m_TagString: Untagged
@@ -466,7 +467,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630129324850174299}
-  m_LocalRotation: {x: -0, y: 0.70711493, z: -0, w: -0.70709866}
+  m_LocalRotation: {x: 0, y: 0.70711315, z: -0, w: -0.70710045}
   m_LocalPosition: {x: 3.4634728, y: 1.2745807, z: 68.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -492,7 +493,19 @@ MonoBehaviour:
       m_Calls: []
   ObjectKilled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1315188509}
+        m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+        m_MethodName: DestroyGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1630129324850174297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -519,3 +532,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1655397, y: 1.3344603, z: 1.6730055}
   m_Center: {x: -0.08276993, y: 0.6496432, z: -0.03652531}
+--- !u!114 &1315188509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630129324850174299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186759d58900fbc4fadd91014b4be9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectToDestroy: {fileID: 1630129324850174299}

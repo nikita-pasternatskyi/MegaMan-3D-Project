@@ -1,4 +1,5 @@
-﻿using Core.Player;
+﻿using Core.General;
+using Core.Player;
 
 namespace NonCore.Player.MegaMan
 {

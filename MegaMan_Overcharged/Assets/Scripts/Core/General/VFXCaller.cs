@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.VFX;
 
-namespace NonCore.Player.MegaMan
+namespace Core.General
 {
-
-    [System.Serializable]
-    public class VFXCaller
+    public class VFXCaller : MonoBehaviour
     {
         private int effectCalls;
-        [SerializeField] private ParticleSystem _particleSystem;
-        [SerializeField] private VisualEffect _visualEffect;
+        private ParticleSystem _particleSystem;
+        private VisualEffect _visualEffect;
+
+        private void Start()
+        {
+           TryGetComponent<ParticleSystem>(out _particleSystem);
+           TryGetComponent<VisualEffect>(out _visualEffect);
+        }
 
         public void EnableVFX()
         {
@@ -27,10 +31,6 @@ namespace NonCore.Player.MegaMan
             {
                 _visualEffect.SendEvent("OnPlay");
                 _visualEffect.Play();
-            }
-            else if (!_particleSystem && !_visualEffect)
-            {
-                Debug.LogWarning("No effects found");
             }
         }
 

@@ -1,13 +1,17 @@
-﻿using Core.Levels;
+﻿using Core.General;
+using Core.Levels;
 using Core.Player;
 using System.Collections;
 using UnityEngine;
 
 namespace NonCore.Player.MegaMan
 {
-    [System.Serializable]
+    [RequireComponent(typeof(PlayerPhysics))]
     public class Slide : PlayerSpecialAbility
     {
+
+        [SerializeField] private Transform _referenceTransform;
+        [SerializeField] private VFXCaller _speedLineEffect;
         [SerializeField] private float _slideBurst;
         [SerializeField] private float _slideForce;
         [SerializeField] private float _slideTime;
@@ -16,33 +20,29 @@ namespace NonCore.Player.MegaMan
 
         private bool _isSliding;
         private float _normalColliderHeight;
-
-        private VFXCaller _speedLineEffect;
         private CharacterController _characterControllerToShrink;
-        private MonoBehaviour _parentMonoBehaviour;
         private PlayerPhysics _playerPhysics;
-        private Transform _referenceTransform;
 
-        public void Start(in Transform referenceTransform, in PlayerPhysics playerPhysics, in MonoBehaviour parentMonoBehaviour, ref CharacterController characterController, VFXCaller speedLineEffect)
+        private void Start()
         {
-            _speedLineEffect = speedLineEffect;
-            _characterControllerToShrink = characterController;
-            _normalColliderHeight = _characterControllerToShrink.height;
-            _referenceTransform = referenceTransform;
-            _playerPhysics = playerPhysics;
-            _parentMonoBehaviour = parentMonoBehaviour;
+            _playerPhysics = GetComponent<PlayerPhysics>();
+            _characterControllerToShrink = GetComponent<CharacterController>();
         }
 
-        public override void UseSpecialAbility()
+        protected override void OnSpecialAbility()
         {
-            if (!_isSliding && _playerPhysics.IsGrounded && !LevelSettings.Instance.IsPaused)
-                _parentMonoBehaviour.StartCoroutine(AddSlideVelocity());
+            if (isActiveAndEnabled)
+            {
+                if (!_isSliding && _playerPhysics.IsGrounded && !LevelSettings.Instance.IsPaused)
+                    StartCoroutine(AddSlideVelocity());
+            }
         }
 
         private IEnumerator AddSlideVelocity()
         {
+            _normalColliderHeight = _characterControllerToShrink.height;
             _speedLineEffect.EnableVFX();
-               _isSliding = true;
+            _isSliding = true;
             _characterControllerToShrink.height = _slideColliderHeight;
             float currentTime = _slideTime;
             _playerPhysics.AddVelocity(_referenceTransform.forward * _slideBurst);
