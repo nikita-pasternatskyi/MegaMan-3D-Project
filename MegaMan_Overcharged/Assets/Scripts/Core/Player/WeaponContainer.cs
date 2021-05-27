@@ -96,12 +96,19 @@ namespace Core.Player
 
         protected override void OnMainFire()
         {
-            _currentMainWeapon?.OnMainFire();
+            if (isActiveAndEnabled)
+            {
+                Debug.Log("hello");
+                _currentMainWeapon?.OnMainFire();
+            }
         }
 
         protected override void OnAlternateFire()
         {
-            _currentAlternateWeapon?.OnAlternateFire();
+            if (isActiveAndEnabled)
+            {
+                _currentAlternateWeapon?.OnAlternateFire();
+            }
         }
 
 

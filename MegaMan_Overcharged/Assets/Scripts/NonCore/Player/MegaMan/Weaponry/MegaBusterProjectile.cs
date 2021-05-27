@@ -25,7 +25,10 @@ namespace NonCore.Player.MegaMan
                 FlyForward(_speed);
         }
 
-        public void ToggleFlight() => _flight = true;
+        public void ToggleFlight()
+        {
+            _flight = true;
+        }
 
         private void OnTriggerEnter(Collider other)
         {

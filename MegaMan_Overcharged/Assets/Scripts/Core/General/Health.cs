@@ -22,9 +22,10 @@ namespace Core.General
 
         private void Start()
         {
+            _currentHealth = _maxHealth;
             HealthChanged += ObjectHealthChanged.Invoke;
             ActorKilled += ObjectKilled.Invoke;
-            HealthChanged?.Invoke(_maxHealth, 1);
+            HealthChanged?.Invoke(_currentHealth, 1);
         }
 
         public void TakeDamage(int damage)
@@ -52,11 +53,6 @@ namespace Core.General
         {
             HealthChanged -= ObjectHealthChanged.Invoke;
             ActorKilled -= ObjectKilled.Invoke;
-        }
-
-        private void Kill()
-        {
-            Destroy(this.gameObject);
         }
     }
 }

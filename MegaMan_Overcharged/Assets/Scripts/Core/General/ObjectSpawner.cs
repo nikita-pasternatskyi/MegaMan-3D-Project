@@ -15,6 +15,15 @@ namespace Core.General
             return null;
         }
 
+        public static GameObject SpawnObject(in GameObject projectile, in Vector3 spawnPosition, in Quaternion spawnRotation, in Transform parentObject)
+        {
+            if (!LevelSettings.Instance.IsPaused)
+            {
+                return MonoBehaviour.Instantiate(projectile, spawnPosition, spawnRotation, parentObject);
+            }
+            return null;
+        }
+
         public static GameObject SpawnRandomObject(in GameObject[] gameObjects, in Vector3 spawnPosition, in Quaternion spawnRotation)
         {
             if (!LevelSettings.Instance.IsPaused)

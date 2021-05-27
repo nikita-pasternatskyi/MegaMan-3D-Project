@@ -36,11 +36,14 @@ namespace Core.Player
         }
         protected virtual void FixedUpdate()
         {
-            _playerPhysics.AddVelocity(CalculateVelocity(_input));
+            if (isActiveAndEnabled)
+            {
+                _playerPhysics.AddVelocity(CalculateVelocity(_input));
+            }
         }
         protected override void OnJump()
         {
-            if (_playerPhysics.IsGrounded)
+            if (_playerPhysics.IsGrounded && isActiveAndEnabled)
             {
                 _playerPhysics.AddVelocity(_jumpHeight * _referenceDirectionTransform.up);
             }

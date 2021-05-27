@@ -11,15 +11,18 @@ namespace NonCore.Player.MegaMan
 
         protected override void OnSprint()
         {
-            if (!_isRunning)
-            {           
-                _isRunning = true;
-                _speedLineEffect.EnableVFX();
-            }
-            else
+            if (isActiveAndEnabled)
             {
-                _speedLineEffect.DisableVFX();
-                _isRunning = false;
+                if (!_isRunning)
+                {
+                    _isRunning = true;
+                    _speedLineEffect.EnableVFX();
+                }
+                else
+                {
+                    _speedLineEffect.DisableVFX();
+                    _isRunning = false;
+                }
             }
         }
 
