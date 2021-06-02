@@ -5,6 +5,11 @@ namespace Core.Player
 {
     public abstract class RequiresInput : MonoBehaviour
     {
+        protected virtual void OnSwitchRushType()
+        { 
+        
+        }
+
         protected virtual void OnMovement(InputValue value)
         { 
         

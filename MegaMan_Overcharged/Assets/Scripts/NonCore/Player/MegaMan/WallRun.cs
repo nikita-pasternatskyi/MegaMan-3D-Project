@@ -11,7 +11,6 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private CameraControl _playerCamera;
         [SerializeField] private VFXCaller _speedLineEffect;
         [SerializeField] private Transform _referenceRotation;
-        [SerializeField] private Transform _cameraTransform;
         [SerializeField] private LayerMask WhatIsWall;
         [SerializeField] private float ClosestWallDistance;
         [SerializeField] private float MinimumDistanceToGround;
@@ -21,7 +20,6 @@ namespace NonCore.Player.MegaMan
         [SerializeField] private float WallJumpUpForce;
         [SerializeField] private float WallJumpNormalForce;
         [SerializeField] private float WallJumpForwardForce;
-        [SerializeField] private float _cameraTransitionDuration;
 
         private PlayerPhysics _playerPhysics;
         private Vector2 _unprocessedMovementInput;
@@ -30,17 +28,17 @@ namespace NonCore.Player.MegaMan
         private Vector3 _lastInputDirection;
         private bool isWallRunning;
 
-        public void Start()
+        private void Start()
         {
             _unprocessedMovementInput = new Vector2();
             _playerPhysics = GetComponent<PlayerPhysics>();
         }
 
-        public void FixedUpdate()
+        private void FixedUpdate()
         {
             Debugging();
 
-            Vector3 movementInputDirection = CurrentMovementInputDirection();
+            Vector3 movementInputDirection = MovementDirection();
 
             if (CanWallRun(movementInputDirection, out RaycastHit wallHit))
                 StartWallRun(movementInputDirection, wallHit);
@@ -48,37 +46,33 @@ namespace NonCore.Player.MegaMan
             if (isWallRunning)
                 WallRunning();
         }
-        public new void OnMovement(InputValue value) => _unprocessedMovementInput = value.Get<Vector2>();
-        public new void OnJump()
+        private new void OnMovement(InputValue value) => _unprocessedMovementInput = value.Get<Vector2>();
+        private new void OnJump()
         {
             if (isWallRunning)
             {
                 _playerPhysics.ResetYVelocity();
-                _playerPhysics.AddVelocity(WallJumpDirection());
+                _playerPhysics.AddVelocity(JumpFromWallForce());
             }
         }
 
         private void StartWallRun(in Vector3 movementInputDirection, in RaycastHit wallHit)
         {
+            var targetZRotation = _maxAngleRoll;
             _speedLineEffect.EnableVFX();
-            var targetZ = _maxAngleRoll;
             _lastInputDirection = movementInputDirection;
             _lastWallNormal = wallHit.normal;
             isWallRunning = true;
-            if (_referenceRotation.TransformVector(_lastWallNormal).x > 0)
+
+            if (_referenceRotation.InverseTransformVector(_lastWallNormal).x > 0)
             {
-                targetZ *= -1;
+                targetZRotation *= -1;
             }
 
-            if (_lastWallNormal.z == 0)
-            {  //if its not forward hit/backward then rotate
-                Debug.Log("CallRotateZCamera");
-                _playerCamera.CallRotateZCamera(targetZ);
-            }
-
-            else {
-                Debug.Log("NotCallRotateZCamera");
-                _playerCamera.CallRotateZCamera(targetZ);
+            //if the wall is in front of us
+            if (Mathf.Abs(_referenceRotation.InverseTransformVector(_lastWallNormal).z) < .5f)
+            {  
+                _playerCamera.CallRotateZCamera(targetZRotation);
             }
 
             if (_playerPhysics.Velocity.y < 0)
@@ -110,12 +104,12 @@ namespace NonCore.Player.MegaMan
 
             Debug.DrawRay(transform.position, -transform.up * MinimumDistanceToGround, Color.blue);
         }
-        private bool CanWallRun(in Vector3 checkDirection, out RaycastHit hit)
+        private bool CanWallRun(in Vector3 checkDirection, out RaycastHit WallHit)
         {
-            bool hitWall = Physics.Raycast(_referenceRotation.position, checkDirection, out hit, ClosestWallDistance, WhatIsWall);
-            if (CanWallRunRelativeGround() && hitWall && !isWallRunning)
+            bool hitWall = Physics.Raycast(_referenceRotation.position, checkDirection, out WallHit, ClosestWallDistance, WhatIsWall);
+            if (RelativeToGround() && hitWall && !isWallRunning)
             {
-                if (CheckSurfaceAngle(hit.normal, 90))
+                if (CheckSurfaceAngle(WallHit.normal, 90))
                     return true;
                 else
                     return false;
@@ -125,7 +119,7 @@ namespace NonCore.Player.MegaMan
                 return false;
             }
         }
-        private bool CanWallRunRelativeGround()
+        private bool RelativeToGround()
         {
             if (Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit, Mathf.Infinity, WhatIsWall))
             {
@@ -138,27 +132,20 @@ namespace NonCore.Player.MegaMan
             }
             return false;
         }
-        private bool CheckSurfaceAngle(Vector3 surface, float targetAngle)
-        {
-            return Mathf.Abs(targetAngle - Vector3.Angle(Vector3.up, surface)) < 0.1f;
-        }
-        private Vector3 ReferenceForwardTransform(Transform transform)
-        {
-            Vector3 returnValue = transform.forward;
-            returnValue.y = 0;
-            return returnValue;
-        }
-        private Vector3 CurrentMovementInputDirection()
+        private bool CheckSurfaceAngle(Vector3 surface, float targetAngle) => Mathf.Abs(targetAngle - Vector3.Angle(Vector3.up, surface)) < 0.1f;
+        private Vector3 MovementDirection()
         {
             Vector3 movementInputDirection = new Vector3(_unprocessedMovementInput.x, _referenceRotation.position.y, _unprocessedMovementInput.y);
             movementInputDirection = _referenceRotation.TransformDirection(movementInputDirection);
             movementInputDirection.y = .5f;
             return movementInputDirection.normalized;
         }
-        private Vector3 WallJumpDirection()
+        private Vector3 JumpFromWallForce()
         {
-            Vector3 forceModificators = (Vector3.up * WallJumpUpForce + ReferenceForwardTransform(_referenceRotation) * WallJumpForwardForce);
-            return _lastWallNormal * WallJumpNormalForce + forceModificators * Time.fixedDeltaTime;
+            var JumpForwardDirection = _referenceRotation.forward;
+            JumpForwardDirection.y = 0;
+            Vector3 forceModificators = (Vector3.up * WallJumpUpForce + JumpForwardDirection * WallJumpForwardForce);
+            return _lastWallNormal * WallJumpNormalForce + forceModificators;
         }
 
     }

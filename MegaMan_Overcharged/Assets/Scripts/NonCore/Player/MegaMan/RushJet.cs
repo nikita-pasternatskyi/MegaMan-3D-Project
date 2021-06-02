@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using Core.Player;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace NonCore.Player.MegaMan
 {
-    class RushJet : MonoBehaviour
+    public class RushJet : RequiresInput
     {
+        public InputActionReference Movement;
         [SerializeField] private float _flightTime;
         [SerializeField] private float _currentFlightTime;
         [SerializeField] private float _flightSpeed;
@@ -13,6 +16,18 @@ namespace NonCore.Player.MegaMan
 
         [SerializeField] private bool _isFlying;
         [SerializeField] public float turnSpeed;
+
+        private Vector2 _input;
+
+        private void OnEnable()
+        {
+            Movement.action.performed += context => _input = context.ReadValue<Vector2>();
+        }
+
+        private void OnDisable()
+        {
+            Movement.action.performed -= context => _input = context.ReadValue<Vector2>();
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -25,26 +40,25 @@ namespace NonCore.Player.MegaMan
             }
         }
 
-
         private void FixedUpdate()
-        {
+        {        
             if (_isFlying)
                 Fly();
         }
 
         private void Fly()
         {
-            transform.Rotate(Vector3.up * Time.fixedDeltaTime * xRotSpeed * UnityEngine.Input.GetAxis("Horizontal"));
-            transform.Rotate(Vector3.right * Time.fixedDeltaTime * yRotSpeed * UnityEngine.Input.GetAxis("Vertical"));
+            transform.Rotate(Vector3.up * Time.fixedDeltaTime * xRotSpeed * _input.x);
+            transform.Rotate(Vector3.right * Time.fixedDeltaTime * yRotSpeed * _input.y);
 
             Quaternion tempRot = transform.rotation;
 
             float zRot = 0;
-            if (UnityEngine.Input.GetAxis("Horizontal") > 0.1)
+            if (_input.x > 0.1)
             {
                 zRot = -25f;
             }
-            else if (UnityEngine.Input.GetAxis("Horizontal") < -0.1)
+            else if (_input.y < -0.1)
             {
                 zRot = 25f;
             }

@@ -44,7 +44,7 @@ namespace NonCore.Player.MegaMan
             _speedLineEffect.EnableVFX();
             _isSliding = true;
             _characterControllerToShrink.height = _slideColliderHeight;
-            float currentTime = _slideTime;
+            var currentTime = _slideTime;
             _playerPhysics.AddVelocity(_referenceTransform.forward * _slideBurst);
             while (currentTime > 0)
             {

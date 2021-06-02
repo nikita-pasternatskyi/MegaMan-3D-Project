@@ -86,7 +86,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SwitchWeapon",
+                    "name": "Switch Weapon",
                     "type": "Value",
                     "id": "a6611806-7377-43ba-a3f8-5c87d96a7b82",
                     "expectedControlType": "",
@@ -94,12 +94,20 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SwitchWeaponType",
+                    "name": "Switch Weapon Type",
                     "type": "Button",
                     "id": "8a6df967-5cf8-49a5-8c3b-afa9d1fbd63f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Switch Rush Type",
+                    "type": "Button",
+                    "id": "57406f21-162d-48c2-9081-84027a0f5238",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -216,8 +224,8 @@
                 {
                     "name": "",
                     "id": "b1f945cb-348a-4a6b-8942-2e3232e91a6d",
-                    "path": "",
-                    "interactions": "",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
                     "action": "Rush Call",
@@ -264,7 +272,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "SwitchWeapon",
+                    "action": "Switch Weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -275,7 +283,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchWeapon",
+                    "action": "Switch Weapon",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -286,7 +294,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchWeapon",
+                    "action": "Switch Weapon",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -297,7 +305,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchWeapon",
+                    "action": "Switch Weapon",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -308,7 +316,18 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "SwitchWeaponType",
+                    "action": "Switch Weapon Type",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6220108f-bce3-4177-a5c0-2a05b48b53b0",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Switch Rush Type",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

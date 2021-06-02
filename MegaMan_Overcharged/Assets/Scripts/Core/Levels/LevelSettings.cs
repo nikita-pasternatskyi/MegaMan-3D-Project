@@ -46,7 +46,7 @@ namespace Core.Levels
             {
                 Instance = this;
             }
-            else if(Instance == this) 
+            else if(Instance == this)
             {
                 Destroy(gameObject);
             }

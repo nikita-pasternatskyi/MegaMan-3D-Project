@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InputSettings/MainControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Setup/InputSettings/MainControls.inputactions'
 
 using System;
 using System.Collections;
@@ -99,7 +99,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SwitchWeapon"",
+                    ""name"": ""Switch Weapon"",
                     ""type"": ""Value"",
                     ""id"": ""a6611806-7377-43ba-a3f8-5c87d96a7b82"",
                     ""expectedControlType"": """",
@@ -107,12 +107,20 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SwitchWeaponType"",
+                    ""name"": ""Switch Weapon Type"",
                     ""type"": ""Button"",
                     ""id"": ""8a6df967-5cf8-49a5-8c3b-afa9d1fbd63f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Switch Rush Type"",
+                    ""type"": ""Button"",
+                    ""id"": ""57406f21-162d-48c2-9081-84027a0f5238"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -229,8 +237,8 @@ public class @MainControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b1f945cb-348a-4a6b-8942-2e3232e91a6d"",
-                    ""path"": """",
-                    ""interactions"": """",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Rush Call"",
@@ -277,7 +285,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""SwitchWeapon"",
+                    ""action"": ""Switch Weapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -288,7 +296,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchWeapon"",
+                    ""action"": ""Switch Weapon"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -299,7 +307,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchWeapon"",
+                    ""action"": ""Switch Weapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -310,7 +318,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchWeapon"",
+                    ""action"": ""Switch Weapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -321,7 +329,18 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""SwitchWeaponType"",
+                    ""action"": ""Switch Weapon Type"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6220108f-bce3-4177-a5c0-2a05b48b53b0"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Switch Rush Type"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -359,8 +378,9 @@ public class @MainControls : IInputActionCollection, IDisposable
         m_Gameplay_MouseLook = m_Gameplay.FindAction("Mouse Look", throwIfNotFound: true);
         m_Gameplay_SpecialAbility = m_Gameplay.FindAction("Special Ability", throwIfNotFound: true);
         m_Gameplay_PauseGame = m_Gameplay.FindAction("Pause Game", throwIfNotFound: true);
-        m_Gameplay_SwitchWeapon = m_Gameplay.FindAction("SwitchWeapon", throwIfNotFound: true);
-        m_Gameplay_SwitchWeaponType = m_Gameplay.FindAction("SwitchWeaponType", throwIfNotFound: true);
+        m_Gameplay_SwitchWeapon = m_Gameplay.FindAction("Switch Weapon", throwIfNotFound: true);
+        m_Gameplay_SwitchWeaponType = m_Gameplay.FindAction("Switch Weapon Type", throwIfNotFound: true);
+        m_Gameplay_SwitchRushType = m_Gameplay.FindAction("Switch Rush Type", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -422,6 +442,7 @@ public class @MainControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_PauseGame;
     private readonly InputAction m_Gameplay_SwitchWeapon;
     private readonly InputAction m_Gameplay_SwitchWeaponType;
+    private readonly InputAction m_Gameplay_SwitchRushType;
     public struct GameplayActions
     {
         private @MainControls m_Wrapper;
@@ -438,6 +459,7 @@ public class @MainControls : IInputActionCollection, IDisposable
         public InputAction @PauseGame => m_Wrapper.m_Gameplay_PauseGame;
         public InputAction @SwitchWeapon => m_Wrapper.m_Gameplay_SwitchWeapon;
         public InputAction @SwitchWeaponType => m_Wrapper.m_Gameplay_SwitchWeaponType;
+        public InputAction @SwitchRushType => m_Wrapper.m_Gameplay_SwitchRushType;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -483,6 +505,9 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @SwitchWeaponType.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponType;
                 @SwitchWeaponType.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponType;
                 @SwitchWeaponType.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchWeaponType;
+                @SwitchRushType.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchRushType;
+                @SwitchRushType.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchRushType;
+                @SwitchRushType.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwitchRushType;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -523,6 +548,9 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @SwitchWeaponType.started += instance.OnSwitchWeaponType;
                 @SwitchWeaponType.performed += instance.OnSwitchWeaponType;
                 @SwitchWeaponType.canceled += instance.OnSwitchWeaponType;
+                @SwitchRushType.started += instance.OnSwitchRushType;
+                @SwitchRushType.performed += instance.OnSwitchRushType;
+                @SwitchRushType.canceled += instance.OnSwitchRushType;
             }
         }
     }
@@ -550,5 +578,6 @@ public class @MainControls : IInputActionCollection, IDisposable
         void OnPauseGame(InputAction.CallbackContext context);
         void OnSwitchWeapon(InputAction.CallbackContext context);
         void OnSwitchWeaponType(InputAction.CallbackContext context);
+        void OnSwitchRushType(InputAction.CallbackContext context);
     }
 }

@@ -15,7 +15,7 @@ TagManager:
   - Ground
   - Enemy
   - Item
-  - 
+  - Rush
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1866303681
+    locked: 0
+  - name: Items
+    uniqueID: 1227270485
+    locked: 0
+  - name: Enemies
+    uniqueID: 2539377397
+    locked: 0
+  - name: Path
+    uniqueID: 960064749
+    locked: 0
+  - name: Environmeny
+    uniqueID: 3532804373
     locked: 0

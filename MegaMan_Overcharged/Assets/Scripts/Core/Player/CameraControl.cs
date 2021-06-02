@@ -39,6 +39,7 @@ namespace Core.Player
         private void OnMouseLook(InputValue value)
         {
             _mouseInput = value.Get<Vector2>();
+      
         }
 
         private void Update()

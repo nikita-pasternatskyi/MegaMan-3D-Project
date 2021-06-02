@@ -419,7 +419,7 @@ MonoBehaviour:
   _damage: 2
   _speed: 20
   _lifeTime: 3
-  usesAnimationToTriggerFlight: 1
+  usesAnimationToTriggerFlight: 0
 --- !u!111 &-9139279123152571047
 Animation:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922346639194795697}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 2215ee9d4940c634d94660cf0536343d, type: 2}
   m_Animations:

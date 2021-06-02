@@ -8,30 +8,80 @@ using UnityEngine.VFX;
 
 namespace Core.General
 {
-    public class VFXCaller : MonoBehaviour
+    [System.Serializable]
+    public class VFXCaller
     {
         private int effectCalls;
-        private ParticleSystem _particleSystem;
-        private VisualEffect _visualEffect;
+        [SerializeField] private ParticleSystem[] _particleSystems;
+        [SerializeField] private VisualEffect[] _visualEffects;
 
-        private void Start()
+
+        private void StartParticleSystems(ParticleSystem[] particleSystems)
         {
-           TryGetComponent<ParticleSystem>(out _particleSystem);
-           TryGetComponent<VisualEffect>(out _visualEffect);
+            try
+            {
+                foreach (var particleSystem in particleSystems)
+                {
+                    particleSystem.Play();
+                }
+            }
+            catch 
+            {
+                Debug.LogWarning("No Particle systems found");
+            }
+        }
+        private void StopParticleSystems(ParticleSystem[] particleSystems)
+        {
+            try
+            {
+                foreach (var particleSystem in particleSystems)
+                {
+                    if (particleSystem.isPlaying)
+                    {
+                        particleSystem.Stop();
+                    }
+                }
+            }
+            catch
+            {
+                Debug.LogWarning("No Particle systems found");
+            }
+        }
+        private void StartVisualEffects(VisualEffect[] visualEffects)
+        {
+            try
+            {
+                foreach (var visualEffect in visualEffects)
+                {
+                    visualEffect.SendEvent("OnPlay");
+                    visualEffect.Play();
+                }
+            }
+            catch
+            {
+                Debug.LogWarning("No Visual effecs found");
+            }
+        }
+        private void StopVisualEffects(VisualEffect[] visualEffects)
+        {
+            try
+            {
+                foreach (var visualEffect in visualEffects)
+                {
+                    visualEffect.Stop();
+                }
+            }
+            catch
+            {
+                Debug.LogWarning("No Visual effecs found");
+            }
         }
 
         public void EnableVFX()
         {
             effectCalls+=1;
-            if (_particleSystem)
-            {
-                 _particleSystem.Play();
-            }
-            if (_visualEffect)
-            {
-                _visualEffect.SendEvent("OnPlay");
-                _visualEffect.Play();
-            }
+            StartParticleSystems(_particleSystems);
+            StartVisualEffects(_visualEffects);
         }
 
         public void DisableVFX()
@@ -39,15 +89,8 @@ namespace Core.General
             effectCalls-=1;
             if (effectCalls <= 0)
             {
-                if (_particleSystem)
-                {
-                    if (_particleSystem.isPlaying)
-                        _particleSystem.Stop();
-                }
-                if (_visualEffect)
-                {
-                    _visualEffect.Stop();
-                }
+                StopParticleSystems(_particleSystems);
+                StopVisualEffects(_visualEffects);
                 effectCalls = 0;
             }
         }

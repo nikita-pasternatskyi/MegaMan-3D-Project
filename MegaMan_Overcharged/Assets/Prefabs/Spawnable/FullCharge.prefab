@@ -5328,7 +5328,6 @@ GameObject:
   - component: {fileID: 5922346639194795703}
   - component: {fileID: 5922346639194795700}
   - component: {fileID: 2515865636621884135}
-  - component: {fileID: 1360104574353153610}
   - component: {fileID: 8340301782989882641}
   - component: {fileID: 2820231563732548259}
   m_Layer: 0
@@ -5368,7 +5367,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.32
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5922346639194795700
 Rigidbody:
@@ -5401,23 +5400,7 @@ MonoBehaviour:
   _damage: 8
   _speed: 30
   _lifeTime: 10
-  usesAnimationToTriggerFlight: 1
---- !u!114 &1360104574353153610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5922346639194795697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b1babd4967e144ab82168e690afa15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _whatAxis: 0
-  AnimationDuration: 0
-  ZStepOne: 1.5
-  ZStepTwo: 1
+  usesAnimationToTriggerFlight: 0
 --- !u!111 &8340301782989882641
 Animation:
   m_ObjectHideFlags: 0
@@ -5425,7 +5408,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922346639194795697}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 2215ee9d4940c634d94660cf0536343d, type: 2}
   m_Animations:

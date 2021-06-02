@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core.Player;
+using UnityEngine;
 
 namespace NonCore.Player.MegaMan
 {
@@ -8,11 +9,7 @@ namespace NonCore.Player.MegaMan
 
         private void OnTriggerEnter(Collider other)
         {
-            //if (other.GetComponent<PlayerMove>() != null)
-            //{
-            //    other.GetComponent<PlayerMove>().Jump(_jumpHeight);
-            //}
+            other.GetComponent<PlayerPhysics>()?.AddVelocity(_jumpHeight * transform.up);
         }
-
     }
 }
